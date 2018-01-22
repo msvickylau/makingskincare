@@ -1,6 +1,11 @@
+<%= link_to "Back", root_path %><br><br>
+
 <h1><%= @formula.title %></h1>
 <p><%= @formula.description %></p>
 <p><%= @formula.direction %></p>
 
 
-<%= link_to "Back", root_path %>
+<%= link_to "EDIT", edit_formula_path, class: "btn btn-primary" %>
+<%= link_to "DELETE", formula_path, method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-primary" %>
+
+

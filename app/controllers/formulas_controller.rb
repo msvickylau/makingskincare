@@ -26,9 +26,16 @@ class FormulasController < ApplicationController
   end
 
   def update
+    if @formula.update(formula_params)
+      redirect_to @formula
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    @formula.destroy
+    redirect_to root_path, notice: "Sucessfully deleted formula."
   end
 
   private

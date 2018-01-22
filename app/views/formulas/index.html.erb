@@ -4,3 +4,5 @@
 <% @formulas.each do |formula| %>
   <h2><%=link_to formula.title, formula_path(formula)%></h2>
 <% end %> 
+
+<%= link_to "New Formula", new_formula_path, class: "btn btn-primary btn-lg" %>
