@@ -1,1 +1,6 @@
 <h1>Placeholder for Formulas Index</h1>
+
+
+<% @formulas.each do |formula| %>
+  <h2><%=link_to formula.title, formula_path(formula)%></h2>
+<% end %> 

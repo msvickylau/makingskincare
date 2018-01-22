@@ -1,0 +1,14 @@
+<%= form_for(@formula) do |f| %>
+
+  <div class="field"> <%= f.label :title %><br>
+  <%= f.text_field :title %></div>
+
+  <div class="field"> <%= f.label :description %><br>
+  <%= f.text_field :description %></div>
+
+  <div class="field"> <%= f.label :direction %><br>
+  <%= f.text_field :direction %></div>
+  
+  <div class="actions"><%= f.submit 'Submit', :class => 'btn btn-primary' %></div>
+
+<% end %>
