@@ -16,11 +16,21 @@ SkinConcern.create([
   ])
 
 Category.create([
-    {name: 'Cleanser'},
-    {name: 'Toner'},
-    {name: 'Makeup Remover'},
-    {name: 'Mositurizer'},
-    {name: 'Serum'},
-    {name: 'Scrub/Exfoliant'},
-    {name: 'Mask'}
+    {part: 'face', name: 'Cleanser'},
+    {part: 'face', name: 'Toner'},
+    {part: 'face', name: 'Makeup Remover'},
+    {part: 'face', name: 'Mositurizer'},
+    {part: 'face', name: 'Serum'},
+    {part: 'face', name: 'Scrub/Exfoliant'},
+    {part: 'face', name: 'Mask'},
+    {part: 'hair', name: 'Shampoo'},
+    {part: 'hair', name: 'Conditioner'},
+    {part: 'hair', name: 'Styling'},
+    {part: 'body', name: 'Body Wash'},
+    {part: 'body', name: 'Scrub & Exfoliants'},
+    {part: 'body', name: 'Body Mositurizer'},
+    {part: 'body', name: 'Sunscreen & After Sun Care'},
+    {part: 'body', name: 'Deodorant & Antiperspirant'},
+    {part: 'body', name: 'Body Wash'}
   ])
+

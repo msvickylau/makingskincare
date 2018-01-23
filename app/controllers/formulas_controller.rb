@@ -41,7 +41,7 @@ class FormulasController < ApplicationController
   private
 
   def formula_params
-    params.require(:formula).permit(:user_id, :title, :description, :direction)
+    params.require(:formula).permit(:user_id, :title, :description, :direction, :image)
   end
 
   def find_formula

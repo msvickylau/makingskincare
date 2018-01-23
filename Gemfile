@@ -28,11 +28,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
+# Easy upload management for ActiveRecord
+gem 'paperclip', '~> 5.1'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 group :development do
   gem 'web-console'

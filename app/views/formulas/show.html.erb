@@ -3,6 +3,8 @@
 <h1><%= @formula.title %></h1>
 <p><%= @formula.description %></p>
 <p><%= @formula.direction %></p>
+<p><%= image_tag @formula.image.url(:medium, class: "formula_image") %></p>
+
 
 
 <%= link_to "EDIT", edit_formula_path, class: "btn btn-primary" %>

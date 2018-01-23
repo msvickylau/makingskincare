@@ -1,8 +1,12 @@
-<h1>Placeholder for Formulas Index</h1>
+<h1>All Formulas</h1>
 
 
 <% @formulas.each do |formula| %>
-  <h2><%=link_to formula.title, formula_path(formula)%></h2>
+  <%=link_to formula do %>
+    <%= image_tag formula.image.url(:medium) %>
+  <% end %>
+  <h4><%=link_to formula.title, formula_path(formula)%></h4>
+  <br>
 <% end %> 
 
 <%= link_to "New Formula", new_formula_path, class: "btn btn-primary btn-lg" %>
