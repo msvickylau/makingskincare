@@ -1,5 +1,6 @@
 class FormulasController < ApplicationController
   before_action :find_formula, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @formulas = Formula.all.order("created_at DESC")
@@ -9,11 +10,11 @@ class FormulasController < ApplicationController
   end
 
   def new
-    @formula = Formula.new
+    @formula = current_user.formulas.build
   end
 
   def create
-    @formula = Formula.new(formula_params)
+    @formula = current_user.formulas.build(formula_params)
 
     if @formula.save
       redirect_to @formula, notice: "Yay! Successfully created new formula!"

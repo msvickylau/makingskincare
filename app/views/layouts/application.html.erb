@@ -9,7 +9,7 @@
     <%= analytics_init if Rails.env.production? %>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" 
     href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-/qQob+A1P2FeRYphuSbqp7heEKdhjZxqgAz/yWLX9CQKU9FTB8wKTexI0IiFlIXC" crossorigin="anonymous">
 
@@ -33,17 +33,21 @@
         
         <ul class="navbar-nav ml-auto">
           
-          <li class="nav-item">
-            <a class="nav-link" <%=link_to "Home", root_path %> </a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link" <%=link_to "New Formula", new_formula_path %> </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" <%=link_to "Sign Out", root_path %> </a>
-          </li>
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <a class="nav-link" <%=link_to "New Formula", new_formula_path %> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" <%=link_to "Sign Out", destroy_user_session_path, method: :delete %> </a>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <a class="nav-link" <%=link_to "Sign Up", new_user_registration_path %> </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" <%=link_to "Sign In", new_user_session_path %> </a>
+            </li>
+          <% end %>
         
         </ul>
       </div>
@@ -55,7 +59,10 @@
       <% end %>
     </div>
 
+    <br><br>
+ 
     <%= yield %>
+     
 
   </body>
 </html>

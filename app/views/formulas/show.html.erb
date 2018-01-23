@@ -1,13 +1,15 @@
 <%= link_to "Back", root_path %><br><br>
 
 <h1><%= @formula.title %></h1>
+<p>Created by: <%= @formula.user.username %></p>
 <p><%= @formula.description %></p>
 <p><%= @formula.direction %></p>
 <p><%= image_tag @formula.image.url(:medium, class: "formula_image") %></p>
 
 
-
-<%= link_to "EDIT", edit_formula_path, class: "btn btn-primary" %>
-<%= link_to "DELETE", formula_path, method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-primary" %>
+<% if user_signed_in? %>
+  <%= link_to "EDIT", edit_formula_path, class: "btn btn-primary" %>
+  <%= link_to "DELETE", formula_path, method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-primary" %>
+<% end %>  
 
 
