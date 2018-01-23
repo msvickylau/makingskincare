@@ -19,7 +19,7 @@ class FormulasController < ApplicationController
     if @formula.save
       redirect_to @formula, notice: "Yay! Successfully created new formula!"
     else
-      redner 'new'
+      render 'new'
     end
   end
 
@@ -42,7 +42,7 @@ class FormulasController < ApplicationController
   private
 
   def formula_params
-    params.require(:formula).permit(:user_id, :title, :description, :direction, :image)
+    params.require(:formula).permit(:user_id, :title, :description, :direction)
   end
 
   def find_formula

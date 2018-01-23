@@ -2,11 +2,9 @@
 
 
 <% @formulas.each do |formula| %>
-  <%=link_to formula do %>
-    <%= image_tag formula.image.url(:medium) %>
-  <% end %>
   <h4><%=link_to formula.title, formula_path(formula)%></h4>
-  <br>
 <% end %> 
+
+<br><br>
 
 <%= link_to "New Formula", new_formula_path, class: "btn btn-primary btn-lg" %>

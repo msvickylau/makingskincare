@@ -4,7 +4,7 @@ class Formula < ActiveRecord::Base
   has_many :formula_ingredient
   has_many :ingredients, through: :formula_ingredient
 
-  validates :title, :description, :image, presence: true
+  validates :title, :description, :direction, presence: true
 
   #paperclip, to add image files
   has_attached_file :image, styles: { :medium => "200x200#"}

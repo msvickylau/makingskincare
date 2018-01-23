@@ -4,8 +4,10 @@
 <p>Created by: <%= @formula.user.username %></p>
 <p><%= @formula.description %></p>
 <p><%= @formula.direction %></p>
-<p><%= image_tag @formula.image.url(:medium, class: "formula_image") %></p>
 
+<% if @formula.image_file_size != nil %>
+  <p><%= image_tag @formula.image.url(:medium, class: "formula_image") %></p>
+<% end %>
 
 <% if user_signed_in? %>
   <%= link_to "EDIT", edit_formula_path, class: "btn btn-primary" %>
