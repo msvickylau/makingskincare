@@ -1,19 +1,17 @@
 class User < ActiveRecord::Base
   has_many :formulas
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-         # authentication_keys: [:login]
 
   validates :username, presence: :true, uniqueness: { case_sensitive: false }       
   validate :validate_username
 
-  attr_accessor :login
-
   # Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'username'
-  # attr_accessor :login
+  attr_accessor :login
   
 
   def validate_username
@@ -31,5 +29,4 @@ class User < ActiveRecord::Base
       where(conditions.to_hash).first
     end
   end
-
 end
