@@ -26,6 +26,12 @@ class FormulasController < ApplicationController
   def edit
   end
 
+  def image_delete
+    @formula = Formula.find(params[:id])
+    @formula.image.destroy
+  end
+
+
   def update
     if @formula.update(formula_params)
       redirect_to @formula
@@ -42,7 +48,7 @@ class FormulasController < ApplicationController
   private
 
   def formula_params
-    params.require(:formula).permit(:user_id, :title, :description, :direction, :image)
+    params.require(:formula).permit(:user_id, :title, :description, :direction, :image, :image_delete)
   end
 
   def find_formula
