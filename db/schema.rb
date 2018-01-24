@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180123060209) do
+ActiveRecord::Schema.define(version: 20180124004308) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "part"
@@ -20,16 +20,9 @@ ActiveRecord::Schema.define(version: 20180123060209) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "formula_ingredients", force: :cascade do |t|
-    t.integer  "formula_id"
-    t.integer  "ingredient_id"
-    t.integer  "measurement_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
   create_table "formulas", force: :cascade do |t|
     t.integer  "user_id"
+    t.integer  "category_id"
     t.string   "title"
     t.text     "description"
     t.text     "direction"
@@ -47,13 +40,12 @@ ActiveRecord::Schema.define(version: 20180123060209) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "measurements", force: :cascade do |t|
-    t.string   "amount"
+  create_table "skinconcern_formulas", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "skin_concerns", force: :cascade do |t|
+  create_table "skinconcerns", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

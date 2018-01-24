@@ -1,3 +1,3 @@
 class Category < ActiveRecord::Base
-  belongs_to :formula
+  has_many :formulas
 end

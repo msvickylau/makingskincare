@@ -1,8 +1,8 @@
 class Formula < ActiveRecord::Base
   belongs_to :user
-  has_many :categories 
-  has_many :formula_ingredient
-  has_many :ingredients, through: :formula_ingredient
+  belongs_to :category 
+  has_many :skinconcern_formulas
+  has_many :skinconcerns, through: :skinconcern_formulas
 
   validates :title, :description, :direction, presence: true
 
