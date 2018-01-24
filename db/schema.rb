@@ -36,13 +36,16 @@ ActiveRecord::Schema.define(version: 20180124004308) do
 
   create_table "ingredients", force: :cascade do |t|
     t.string   "name"
+    t.integer  "formula_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "skinconcern_formulas", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "skinconcern_id"
+    t.integer  "formula_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "skinconcerns", force: :cascade do |t|

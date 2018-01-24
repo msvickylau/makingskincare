@@ -57,12 +57,12 @@
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, class: "alert" %>
       <% end %>
+
+      <br>
+
+      <%= yield %>
     </div>
 
-    <br><br>
- 
-    <%= yield %>
-     
-
+    
   </body>
 </html>

@@ -1,6 +1,7 @@
 class Formula < ActiveRecord::Base
   belongs_to :user
-  belongs_to :category 
+  belongs_to :category
+   
   has_many :skinconcern_formulas
   has_many :skinconcerns, through: :skinconcern_formulas
 
