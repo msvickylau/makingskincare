@@ -2,6 +2,8 @@ class Formula < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
   has_many :ingredients
+  # accepts_nested_attributes_for :ingredients, reject_if: proc { |attributes| attributes['name'].blank? }
+  accepts_nested_attributes_for :ingredients, :allow_destroy => true 
    
   has_many :skinconcern_formulas
   has_many :skinconcerns, through: :skinconcern_formulas

@@ -1,13 +1,26 @@
 <%= link_to "Back", root_path %><br><br>
 
 <h1><%= @formula.title %></h1>
+
 <p>Created by: <%= @formula.user.username %></p>
+
+<h4>Description:</h4>
 <p><%= @formula.description %></p>
-<p><%= @formula.direction %></p>
 
 <% if @formula.image_file_size != nil %>
   <p><%= image_tag @formula.image.url(:medium, class: "formula_image") %></p>
 <% end %>
+
+<h4>Ingredients:</h4>
+<ul>
+  <% @formula.ingredients.each do |i| %>
+    <li><%= i.name %></li>
+  <% end %>
+</ul>
+
+<h4>Instuctions:</h4>
+<p><%= @formula.direction %></p>
+  
 
 <% if user_signed_in? %>
   <%= link_to "EDIT", edit_formula_path, class: "btn btn-primary" %>
