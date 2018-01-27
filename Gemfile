@@ -31,7 +31,6 @@ gem 'devise'
 # Easy upload management for ActiveRecord
 gem 'paperclip', '~> 5.1'
 
-
 group :development do
   gem 'web-console'
 end
