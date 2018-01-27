@@ -10,6 +10,8 @@
 
     <meta charset="utf-8">
 
+
+
     <link rel="stylesheet" 
     href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-/qQob+A1P2FeRYphuSbqp7heEKdhjZxqgAz/yWLX9CQKU9FTB8wKTexI0IiFlIXC" crossorigin="anonymous">
 
@@ -57,12 +59,11 @@
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, class: "alert" %>
       <% end %>
-
-      <br>
-
+      <br><br>
       <%= yield %>
+      <br><br>
     </div>
-
+    
     
   </body>
 </html>

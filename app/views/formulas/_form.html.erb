@@ -11,22 +11,12 @@
   <% end %>
 
   <div class="field">
-    <h4>Title:</h4>
-    <%= f.text_field :title, :size => 50 %>
+    <h5>Title:</h5>
+    <%= f.text_field :title, size: 50%>
   </div><br>
 
   <div class="field">
-    <h4>Description:</h4>
-    <%= f.text_field :description, :size => 50 %>
-  </div><br>
-
-  <div class="field">
-    <h4>Category:</h4>
-    <%= f.collection_select(:category_id, Category.all, :id , :name, :prompt => true)%>
-  </div><br>
-
-  <div class="field">
-    <h4>Image (optional):</h4> 
+    <h5>Image: (optional)</h5> 
       <% if @formula.image.exists? %>
         <%= image_tag @formula.image.url(:medium, class: "formula_image") %><br>
         <p>Remove Image <%= f.check_box :image_delete %></p>
@@ -37,35 +27,48 @@
   </div><br>
 
   <div class="field">
-    <h4>Ingredients:</h4> (Please write amount and ingredient on each line)
-    <%= f.fields_for :ingredients do |ingredient_fields| %>
-      <p>
-        <%= ingredient_fields.text_field :name, :size => 40 %>
-        <%= ingredient_fields.check_box :_destroy %> delete
-      </p>
-    <% end %>
-    <%= f.submit 'Add ingredient', :name => "add_ingredient" %>
-    <%= f.submit 'Delete checked ingredients', :name => "remove_ingredient" %>
+    <h5>Description:</h5>
+    <%= f.text_area :description, cols: 50, rows: 2 %>
   </div><br>
 
+  <div class="field">
+    <h5>Category:</h5>
+    <%= f.collection_select(:category_id, Category.all, :id , :name, :prompt => true)%>
+  </div><br>
+
+  <div class="field">
+    <h5>Ingredients: (Please write amount and ingredient on each line)</h5>
+    <%= f.fields_for :ingredients do |ingredient_fields| %>
+      <%= ingredient_fields.text_field :name, size: 50%>
+      <%= ingredient_fields.check_box :_destroy %> delete
+    <% end %><br><br>
+    
+    <%= f.submit 'Add ingredient', :name => "add_ingredient", :class => 'btn btn-secondary btn-sm' %>
+    <%= f.submit 'Delete checked ingredients', :name => "remove_ingredient", :class => 'btn btn-secondary btn-sm' %>
+  </div><br>
+  
   <div class="field">
     <h4>Directions:</h4>
-    <%= f.text_area :direction, :rows => 6, :cols => 50 %>
-  </div><br>
+    <%= f.text_area :direction, cols: 50, rows: 6 %>
+  </div><br> 
 
   <div class="field">
-    <h4>Skin Concerns: (select all that apply)</h4>
-    <%= f.collection_check_boxes :skinconcern_ids, Skinconcern.all, :id, :name %>
-    <%= f.fields_for :skinconcerns, @formula.skinconcerns.build do |skinconcerns_feilds| %>
-      <%= skinconcerns_feilds.text_field :name %>
+    <h5>Skin Concerns: (select all that apply)</h5>
+    <%= f.collection_check_boxes(:skinconcern_ids, Skinconcern.all, :id, :name, :class => "custom-control-input" ) do |s| %>
+      <%=s.check_box%> <%=s.text %> <br>
     <% end %>
-   </div><br>
+
+    <p>Or add new:
+      <%= f.fields_for :skinconcerns, @formula.skinconcerns.build do |x| %>
+        <%= x.text_field :name, size: 30%>
+      <% end %>
+    </p>
+  </div><br>
 
   <div class="actions">
     <%= f.submit 'Submit', :class => 'btn btn-primary' %>
   </div>
 <% end %>
-
 
 
  
