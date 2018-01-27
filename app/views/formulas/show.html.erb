@@ -24,6 +24,13 @@
 <h4>Directions:</h4>
 <p><%= @formula.direction %></p>
 
+<h4>Skin Concerns:</h4>
+<ul>
+  <% @formula.skinconcerns.each do |s| %>
+    <li><%= s.name %></li>
+  <% end %>
+</ul>
+
 <% if user_signed_in? %>
   <%= link_to "EDIT", edit_formula_path, class: "btn btn-primary" %>
   <%= link_to "DELETE", formula_path, method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-primary" %>

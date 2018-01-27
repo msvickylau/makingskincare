@@ -99,15 +99,16 @@ class FormulasController < ApplicationController
       :user_id, 
       :title, 
       :description, 
-      :direction, 
+      :category_id,
       :image, 
       :image_delete,
+      :direction,
       :add_ingredient,
       :remove_ingredient,
-      :category_id,
+      :ingredient_ids => [],
       :ingredients_attributes => [:name],
-      :ingredient_ids => []
-
+      :skinconcern_ids => [],
+      :skinconcern_attributes => [:name]
     )
   end
 

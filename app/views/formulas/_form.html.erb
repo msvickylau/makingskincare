@@ -53,6 +53,14 @@
     <%= f.text_area :direction, :rows => 6, :cols => 50 %>
   </div><br>
 
+  <div class="field">
+    <h4>Skin Concerns: (select all that apply)</h4>
+    <%= f.collection_check_boxes :skinconcern_ids, Skinconcern.all, :id, :name %>
+    <%= f.fields_for :skinconcerns, @formula.skinconcerns.build do |skinconcerns_feilds| %>
+      <%= skinconcerns_feilds.text_field :name %>
+    <% end %>
+   </div><br>
+
   <div class="actions">
     <%= f.submit 'Submit', :class => 'btn btn-primary' %>
   </div>
