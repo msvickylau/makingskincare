@@ -7,6 +7,9 @@
 <h4>Description:</h4>
 <p><%= @formula.description %></p>
 
+<h4>Category:</h4>
+<p><%= @formula.category.name %></p>
+
 <% if @formula.image_file_size != nil %>
   <p><%= image_tag @formula.image.url(:medium, class: "formula_image") %></p>
 <% end %>
@@ -18,9 +21,8 @@
   <% end %>
 </ul>
 
-<h4>Instuctions:</h4>
+<h4>Directions:</h4>
 <p><%= @formula.direction %></p>
-  
 
 <% if user_signed_in? %>
   <%= link_to "EDIT", edit_formula_path, class: "btn btn-primary" %>

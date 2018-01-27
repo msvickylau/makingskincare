@@ -104,8 +104,10 @@ class FormulasController < ApplicationController
       :image_delete,
       :add_ingredient,
       :remove_ingredient,
-      :ingredients_attributes => [:name], 
+      :category_id,
+      :ingredients_attributes => [:name],
       :ingredient_ids => []
+
     )
   end
 
