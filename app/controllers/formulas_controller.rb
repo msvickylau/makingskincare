@@ -81,7 +81,6 @@ class FormulasController < ApplicationController
     else
       # save goes like usual
       if @formula.update_attributes(formula_params)
-        binding.pry
         redirect_to @formula and return
       end
     end

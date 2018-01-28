@@ -7,9 +7,9 @@ class Formula < ActiveRecord::Base
 
   has_many :skinconcern_formulas
   has_many :skinconcerns, through: :skinconcern_formulas
-  accepts_nested_attributes_for :skinconcerns, reject_if: proc { |attributes| attributes['name'].blank? }
+  accepts_nested_attributes_for :skinconcerns, :reject_if => :all_blank
 
-  validates :title, :description, :direction, :category, presence: true
+  validates :title, :description, :category, :ingredients, :direction, presence: true
 
   #paperclip, to add image file
   has_attached_file :image, styles: { :medium => "200x200#"}
