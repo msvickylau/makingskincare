@@ -105,10 +105,10 @@ class FormulasController < ApplicationController
       :direction,
       :add_ingredient,
       :remove_ingredient,
-      :ingredient_ids => [],
-      :ingredients_attributes => [:name],
-      :skinconcern_ids => [],
-      :skinconcern_attributes => [:name]
+      # :ingredient_ids => [],
+      :ingredients_attributes => [:id, :name],
+      # :skinconcern_ids => [],
+      :skinconcern_attributes => [:id, :name]
     )
   end
 
