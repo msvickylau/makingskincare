@@ -26,6 +26,13 @@ class Formula < ActiveRecord::Base
     @image_delete = value
   end
 
+  def skinconcerns_attributes=(skinconcern_attributes)
+    skinconcern_attributes.values.each do |skinconcern_attribute|
+      skinconcern = Skinconcern.find_or_create_by(skinconcern_attribute)
+      self.skinconcerns << skinconcern
+    end
+  end
+
   private
 
   def destroy_image?

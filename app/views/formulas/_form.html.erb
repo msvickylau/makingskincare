@@ -40,7 +40,7 @@
     <h5>Ingredients: (Please write amount and ingredient on each line)</h5>
     <%= f.fields_for :ingredients do |ingredient_fields| %>
       <%= ingredient_fields.text_field :name, size: 50%>
-      <%= ingredient_fields.check_box :_destroy %> delete
+      <%= ingredient_fields.check_box :_destroy %> delete <br>
     <% end %><br><br>
     
     <%= f.submit 'Add ingredient', :name => "add_ingredient", :class => 'btn btn-secondary btn-sm' %>
@@ -59,8 +59,8 @@
     <% end %>
 
     <p>Or add new:
-      <%= f.fields_for :skinconcerns, @formula.skinconcerns.build do |x| %>
-        <%= x.text_field :name, size: 30%>
+      <%= f.fields_for :skinconcerns, @formula.skinconcerns.build do |skinconcern_attributes| %>
+        <%= skinconcern_attributes.text_field :name, size: 30%>
       <% end %>
     </p>
   </div><br>

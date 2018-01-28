@@ -81,6 +81,7 @@ class FormulasController < ApplicationController
     else
       # save goes like usual
       if @formula.update_attributes(formula_params)
+        binding.pry
         redirect_to @formula and return
       end
     end
@@ -107,8 +108,8 @@ class FormulasController < ApplicationController
       :remove_ingredient,
       # :ingredient_ids => [],
       :ingredients_attributes => [:id, :name],
-      # :skinconcern_ids => [],
-      :skinconcern_attributes => [:id, :name]
+      :skinconcern_ids => [],
+      :skinconcerns_attributes => [:name]
     )
   end
 
