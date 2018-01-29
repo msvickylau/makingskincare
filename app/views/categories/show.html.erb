@@ -1,0 +1,5 @@
+<h2>All <%=@Category.name%> formulas:</h2>
+
+<% @Category.formulas.each do |formula|%>
+ <h4><%=link_to formula.title, formula_path(formula)%></h4>
+<% end %>
