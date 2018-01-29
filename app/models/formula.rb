@@ -5,8 +5,9 @@ class Formula < ActiveRecord::Base
   # accepts_nested_attributes_for :ingredients, reject_if: proc { |attributes| attributes['name'].blank? }
   accepts_nested_attributes_for :ingredients, :reject_if => :all_blank, :allow_destroy => true
 
-  has_many :skinconcern_formulas
-  has_many :skinconcerns, through: :skinconcern_formulas
+  # has_many :skinconcern_formulas
+  # has_many :skinconcerns, through: :skinconcern_formulas
+  has_and_belongs_to_many :skinconcerns, -> { uniq }
   accepts_nested_attributes_for :skinconcerns, :reject_if => :all_blank
 
   validates :title, :description, :category, :ingredients, :direction, presence: true

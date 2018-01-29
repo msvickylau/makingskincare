@@ -34,18 +34,18 @@ ActiveRecord::Schema.define(version: 20180124004308) do
     t.datetime "image_updated_at"
   end
 
+  create_table "formulas_skinconcerns", force: :cascade do |t|
+    t.integer  "formula_id"
+    t.integer  "skinconcern_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "ingredients", force: :cascade do |t|
     t.string   "name"
     t.integer  "formula_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "skinconcern_formulas", force: :cascade do |t|
-    t.integer  "skinconcern_id"
-    t.integer  "formula_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
   end
 
   create_table "skinconcerns", force: :cascade do |t|

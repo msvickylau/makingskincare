@@ -7,27 +7,27 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Skinconcern.create([
-    {name: 'Acne & Blemishes'},
-    {name: 'Anti-Aging'},
-    {name: 'Dark Spots'},
-    {name: 'Dryness'},
-    {name: 'Dullness'},
-    {name: 'Pores'}
+    {name: 'acne & blemishes'},
+    {name: 'anti-aging'},
+    {name: 'dark spots'},
+    {name: 'dryness'},
+    {name: 'dullness'},
+    {name: 'pores'}
   ])
 
 Category.create([
     {part: 'face', name: 'Cleanser'},
     {part: 'face', name: 'Toner'},
     {part: 'face', name: 'Makeup Remover'},
-    {part: 'face', name: 'Mositurizer'},
-    {part: 'face', name: 'Serum'},
-    {part: 'face', name: 'Scrub/Exfoliant'},
-    {part: 'face', name: 'Mask'},
+    {part: 'face', name: 'Face Mositurizer'},
+    {part: 'face', name: 'Face Serum'},
+    {part: 'face', name: 'Face Scrub/Exfoliant'},
+    {part: 'face', name: 'Face Mask'},
     {part: 'hair', name: 'Shampoo'},
     {part: 'hair', name: 'Conditioner'},
     {part: 'hair', name: 'Styling'},
     {part: 'body', name: 'Body Wash'},
-    {part: 'body', name: 'Scrub & Exfoliants'},
+    {part: 'body', name: 'Body Scrubs & Exfoliants'},
     {part: 'body', name: 'Body Mositurizer'},
     {part: 'body', name: 'Sunscreen & After Sun Care'},
     {part: 'body', name: 'Deodorant & Antiperspirant'},
