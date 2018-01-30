@@ -1,4 +1,4 @@
-
+<%= link_to "Back to all formulas", root_path %><br><br>
 <div class="card mb-3">
 
   <div class="card-body">
@@ -15,7 +15,7 @@
 
         <h5>Category:</h5>
         <p class="text-primary">
-          <%= @formula.category.name %>  
+          <%= link_to @formula.category.name, @formula.category %>  
         </p>
       </div>
 

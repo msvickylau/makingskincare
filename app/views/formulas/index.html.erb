@@ -1,5 +1,8 @@
 <h1>All Formulas</h1>
 
+or view by <%= link_to "category", categories_path  %> 
+
+<br><br>
 
 <% @formulas.each do |formula| %>
   <h4><%=link_to formula.title, formula_path(formula)%></h4>
