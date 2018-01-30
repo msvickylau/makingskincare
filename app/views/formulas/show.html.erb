@@ -32,8 +32,8 @@
 
     <li class="list-group-item">
       <h5>Skin Concerns:</h5>
-      <% @formula.skinconcerns.each do |s| %>
-        <span class="badge badge-primary"><%= s.name %></span>
+      <% @formula.skinconcerns.each do |concern| %>
+          <%= link_to concern.name, concern, class: "badge badge-primary" %>
       <% end %>
     </li>
 

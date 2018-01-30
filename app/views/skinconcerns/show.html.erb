@@ -1,0 +1,5 @@
+<h2>All formulas for <%=@skinconcern.name%>:</h2>
+
+<% @skinconcern.formulas.each do |formula|%>
+ <h4><%=link_to formula.title, formula_path(formula)%></h4>
+<% end %>

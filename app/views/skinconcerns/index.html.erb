@@ -1,0 +1,5 @@
+<h1>View formulas by Skin Concern:</h1>
+
+<% @skinconcerns.each do |concern| %>
+  <h4><%=link_to concern.name, skinconcern_path(concern)%></h4>
+<% end %><br>
