@@ -26,7 +26,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'devise'
+gem 'omniauth-facebook'
+
 
 # Easy upload management for ActiveRecord
 gem 'paperclip', '~> 5.1'
