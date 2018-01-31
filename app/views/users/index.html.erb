@@ -1,7 +1,0 @@
-<h1>Hello <%= current_user.username %>! </h1>
-
-<h4>All your formulas</h4>
-
-<% current_user.formulas.each do |formula| %>
-  <h4><%=link_to formula.title, formula_path(formula)%></h4>
-<% end %> 

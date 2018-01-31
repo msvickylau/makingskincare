@@ -1,16 +1,18 @@
-<div class="card mb-3">
-  <div class="card-body">
-    <% if current_user == @user %>
-      <h1 class="card-title">Hello <%= @user.username %>!</h1>
-      <h4 class="card-subtitle mb-2 text-muted">All formulas created by you:</h4>  
-    <% else %>
-      <h1 class="card-title"><%=@user.username%>'s profile page</h1>
-      <h4 class="card-subtitle mb-2 text-muted">All formulas created by <%=@user.username%>:</h4>
-    <% end %>
-  </div>
-  <div class="card-body">
-    <% @user.formulas.each do |formula| %>
-      <h4><%=link_to formula.title, formula_path(formula)%></h4>
-    <% end %>
+<div class="container"><br><br>
+  <div class="card mb-3">
+    <div class="card-body">
+      <% if current_user == @user %>
+        <h1 class="card-title">Hello <%= @user.username %>!</h1>
+        <h4 class="card-subtitle mb-2 text-muted">All formulas created by you:</h4>  
+      <% else %>
+        <h1 class="card-title"><%=@user.username%>'s profile page</h1>
+        <h4 class="card-subtitle mb-2 text-muted">All formulas created by <%=@user.username%>:</h4>
+      <% end %>
+    </div>
+    <div class="card-body">
+      <% @user.formulas.each do |formula| %>
+        <h4><%=link_to formula.title, formula_path(formula)%></h4>
+      <% end %>
+    </div>
   </div>
 </div>

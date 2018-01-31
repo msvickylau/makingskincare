@@ -26,6 +26,7 @@ class FormulasController < ApplicationController
     else
       # save goes like usual
       if @formula.save
+        flash[:message] = "Sucessfully created formula!"
         redirect_to @formula and return
       end
     end

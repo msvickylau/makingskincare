@@ -1,5 +1,9 @@
-<h2>All <%=@category.name%> formulas:</h2>
+<%= link_to "Back to all categories", categories_path %><br><br>
 
-<% @category.formulas.each do |formula|%>
- <h4><%=link_to formula.title, formula_path(formula)%></h4>
-<% end %>
+<div class="container">
+  <h2>All <%=@category.name%> formulas:</h2>
+
+  <% @category.formulas.each do |formula|%>
+   <h4><%=link_to formula.title, formula_path(formula)%></h4>
+  <% end %>
+</div>

@@ -1,5 +1,9 @@
-<h2>All formulas for <%=@skinconcern.name%>:</h2>
+<%= link_to "Back to all skin concerns", skinconcerns_path %><br><br>
 
-<% @skinconcern.formulas.each do |formula|%>
- <h4><%=link_to formula.title, formula_path(formula)%></h4>
-<% end %>
+<div class="container">
+  <h2>All formulas for <%=@skinconcern.name%>:</h2>
+
+  <% @skinconcern.formulas.each do |formula|%>
+   <h4><%=link_to formula.title, formula_path(formula)%></h4>
+  <% end %>
+</div>

@@ -1,60 +1,63 @@
-<%= link_to "Back to all formulas", root_path %><br><br>
-<div class="card mb-3">
+<%= link_to "Back to all formulas", formulas_path %><br><br>
 
-  <div class="card-body">
-    <div class="row">
-      <div class="col-sm-7">  
-        <h1 class="card-title"><%= @formula.title %></h1>
+<div class="container">
+  <div class="card mb-3">
 
-        <h6 class="card-subtitle text-muted">Created by: <a href="/users/<%= @formula.user.id %>"><%=@formula.user.username%></a></h6><br>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-7">  
+          <h1 class="card-title"><%= @formula.title %></h1>
 
-        <h5>Description:</h5>
-        <p><%= @formula.description %></p>
+          <h6 class="card-subtitle text-muted">Created by: <a href="/users/<%= @formula.user.id %>"><%=@formula.user.username%></a></h6><br>
 
-        <h5>Category:</h5>
-        <%= link_to @formula.category.name, @formula.category, class: "badge badge-primary" %>  
-        
-      </div>
+          <h5>Description:</h5>
+          <p><%= @formula.description %></p>
 
-      <div class="col-sm-5">
-        <% if @formula.image_file_size != nil %><br>
-          <%= image_tag @formula.image.url(:medium), :style => "float :right;" %>
+          <h5>Category:</h5>
+          <%= link_to @formula.category.name, @formula.category, class: "badge badge-primary" %>  
+          
+        </div>
+
+        <div class="col-sm-5">
+          <% if @formula.image_file_size != nil %><br>
+            <%= image_tag @formula.image.url(:medium), :style => "float :right;" %>
+          <% end %>
+        </div>
+      </div> <!-- end of row -->
+    </div> <!-- end of card-body -->
+
+
+    <ul class="list-group list-group-flush">
+
+      <li class="list-group-item">
+        <h5>Skin Concerns:</h5>
+        <% @formula.skinconcerns.each do |concern| %>
+            <%= link_to concern.name, concern, class: "badge badge-primary" %>
         <% end %>
-      </div>
-    </div> <!-- end of row -->
-  </div> <!-- end of card-body -->
+      </li>
 
+      <li class="list-group-item">
+        <h5>Ingredients:</h5>
+        <ul>
+          <% @formula.ingredients.each do |i| %>
+            <li><%= i.name %></li>
+          <% end %>
+        </ul>
+      </li>
 
-  <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <h5>Directions:</h5>
+        <p><%= @formula.direction %></p>
 
-    <li class="list-group-item">
-      <h5>Skin Concerns:</h5>
-      <% @formula.skinconcerns.each do |concern| %>
-          <%= link_to concern.name, concern, class: "badge badge-primary" %>
-      <% end %>
-    </li>
+        <% if @formula.user == current_user %>
+          <%= link_to "EDIT", edit_formula_path, class: "btn btn-primary" %>
+          <%= link_to "DELETE", formula_path, method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-primary" %>
+        <% end %>  
+      </li>
 
-    <li class="list-group-item">
-      <h5>Ingredients:</h5>
-      <ul>
-        <% @formula.ingredients.each do |i| %>
-          <li><%= i.name %></li>
-        <% end %>
-      </ul>
-    </li>
+    </ul>
 
-    <li class="list-group-item">
-      <h5>Directions:</h5>
-      <p><%= @formula.direction %></p>
-
-      <% if @formula.user == current_user %>
-        <%= link_to "EDIT", edit_formula_path, class: "btn btn-primary" %>
-        <%= link_to "DELETE", formula_path, method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-primary" %>
-      <% end %>  
-    </li>
-
-  </ul>
-
-</div><!-- end of card mb-3 -->
+  </div><!-- end of card mb-3 -->
+</div><!-- end of container -->
 
 

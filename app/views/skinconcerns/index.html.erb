@@ -1,5 +1,19 @@
-<h1>View formulas by Skin Concern:</h1>
+<img style="height: 100%; width: 100%; display: block;" src="http://www.makingskincare.com/wp-content/uploads/2015/04/shut-cream-with-peaches-leman-web-slider-1500x430.jpg" alt="Card image"><br><br>
 
-<% @skinconcerns.each do |concern| %>
-  <h4><%=link_to concern.name, skinconcern_path(concern)%></h4>
-<% end %><br>
+<div class="container">
+
+  <h1>View formulas by Skin Concern:</h1><br>
+
+  <div class="row">
+
+    <div class="col-sm-6"> 
+      <div class="list-group">
+        <a href="/skinconcerns" class="list-group-item list-group-item-action active">All Skin Concerns</a>
+
+        <% @skinconcerns.each do |concern| %>
+          <a><%=link_to concern.name, skinconcern_path(concern), :class => "list-group-item list-group-item-action"%></a>
+        <% end %><br>
+      </div>
+    </div> <!-- col -->
+  </div> <!-- end of row --> 
+</div><!-- end of container --> 

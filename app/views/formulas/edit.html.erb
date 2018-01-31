@@ -1,7 +1,11 @@
-<% if @formula.user == current_user %>
-  <h1>Edit Formula</h1>
-  <%= render 'form' %>
-<% else %>
-  <h2> Sorry! You cannot a formula that is not yours! </h2>
-  <h3> Create a post <%= link_to "here.", new_formula_path %> </h3>
-<% end %>  
+<%= link_to "Back to all formulas", formulas_path %><br><br>
+
+<div class="container">
+  <% if @formula.user == current_user %>
+    <h1>Edit Formula</h1>
+    <%= render 'form' %>
+  <% else %>
+    <h2> Sorry! You cannot edit a formula that is not yours! </h2>
+    <h3> Create a post <%= link_to "here.", new_formula_path %> </h3>
+  <% end %>  
+</div>

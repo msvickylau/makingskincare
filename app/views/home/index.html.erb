@@ -1,0 +1,81 @@
+<img style="height: 100%; width: 100%; display: block;" src="http://www.makingskincare.com/wp-content/uploads/2015/04/shut-pink-cream-with-lime-leman-web-slider-1500x430.jpg" alt="Card image">
+<br><br>
+
+
+<div class="row">
+  <div class="col-sm-7"> 
+    <h1>Welcome!</h1>
+    <img style="height: ; width: 100%; display: block;" src="https://cranberrylane.com/pub/media/home/classes.png" alt="Card image"><br><br>
+    <!--    
+
+    add welcome message
+
+    list 5 newest formulas created
+
+    list 5 newest users that joined
+
+    list 5 top skin concerns
+
+    -->
+  </div><!-- end of col-7 -->
+
+
+  <div class="col-sm-5"><br>
+    <h4> View Formulas by: </h4>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active show" data-toggle="tab" href="#first">skin concern</a>
+      </li> 
+    
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#second">categories</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#third">all formulas</a>
+      </li> 
+    </ul>
+
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade active show" id="first"><br>
+        <div class="list-group">
+          <% @skinconcerns.each do |concern| %>
+            <a><%=link_to concern.name, skinconcern_path(concern), :class => "list-group-item list-group-item-action"%></a>
+          <% end %>
+        </div>
+      </div><!-- end of tab -->
+      
+      <div class="tab-pane fade" id="second"><br>
+        <div class="list-group">
+          <h6>Face</h6>
+          <% @face_categories.each do |category| %>
+            <a><%=link_to category.name, category_path(category), :class => "list-group-item list-group-item-action"%></a>
+          <% end %>
+        </div>
+        <br>
+        <div class="list-group">
+          <h6>Body</h6>
+          <% @body_categories.each do |category| %>
+            <a><%=link_to category.name, category_path(category), :class => "list-group-item list-group-item-action"%></a>
+          <% end %>
+        </div>
+        <br>
+        <div class="list-group">
+          <h6>Hair</h6>
+          <% @hair_categories.each do |category| %>
+            <a><%=link_to category.name, category_path(category), :class => "list-group-item list-group-item-action"%></a>
+          <% end %>
+        </div>
+      </div><!-- end of tab -->
+
+      <div class="tab-pane fade" id="third"><br>
+        <div class="list-group">
+          <% @formulas.each do |formula| %>
+            <a><%=link_to formula.title, formula_path(formula), :class => "list-group-item list-group-item-action"%></a>
+          <% end %> 
+        </div>
+      </div><!-- end of tab -->
+    </div><!-- end of all tabs  -->
+  </div><!-- end of col-5 -->
+
+</div> <!-- end of row -->
