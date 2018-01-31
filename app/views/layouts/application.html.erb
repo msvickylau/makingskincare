@@ -40,6 +40,9 @@
               <a class="nav-link" <%=link_to "New Formula", new_formula_path %> </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" <%=link_to "My Profile", user_path(current_user) %> </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" <%=link_to "Sign Out", destroy_user_session_path, method: :delete %> </a>
             </li>
           <% else %>
@@ -55,15 +58,18 @@
       </div>
     </nav>
 
+    <% if !!flash[:message] %>
+      <div class="alert alert-dismissible alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash[:message] %>
+      </div>
+    <% end %>
+
     <div class="container">
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, class: "alert" %>
-      <% end %>
       <br><br>
       <%= yield %>
       <br><br>
-    </div>
-    
-    
+    </div>   
+
   </body>
 </html>
