@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :categories, only: [:show, :index]
   resources :users, only: [:show]
 
-  root "formulas#index"
+  root "home#index"
   
 end

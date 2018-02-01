@@ -5,10 +5,15 @@
 <div class="row">
   <div class="col-sm-7"> 
     <h1>Welcome!</h1>
+      
+    <h3>Last 5 formulas just created!</h3>
+    <% Formula.last_five_formulas.each do |x| %>
+      <h5><%= link_to x.title, formula_path(x)%> </h5>
+      <p> by: <%= x.user.username%>, on <%=x.created_at.gmtime.localtime%> </p>
+    <% end %>
+
     <img style="height: ; width: 100%; display: block;" src="https://cranberrylane.com/pub/media/home/classes.png" alt="Card image"><br><br>
     <!--    
-
-    add welcome message
 
     list 5 newest formulas created
 

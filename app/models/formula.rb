@@ -30,6 +30,14 @@ class Formula < ActiveRecord::Base
     end
   end
 
+  def self.last_five_formulas
+    limit(5).order('created_at desc')
+  end
+
+  def self.by_user(user_id)
+    where(user: user_id)
+  end
+
   private
 
   def destroy_image?
