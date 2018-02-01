@@ -1,40 +1,35 @@
-<img style="height: 100%; width: 100%; display: block;" src="http://www.makingskincare.com/wp-content/uploads/2015/04/shut-cucumber-leman-web-slider-1500x430.jpg" alt="Card image"><br><br>
+<h1>All Categories</h1><br>
 
-<div class="container">
+<div class="row">
 
-  <h1>All Categories</h1><br>
+  <div class="col-sm-4"> 
+    <div class="list-group">
+      <a href="/categories" class="list-group-item list-group-item-action active">For Face</a>
 
-  <div class="row">
+      <% @face_categories.each do |category| %>
+        <a><%=link_to category.name, category_path(category), :class => "list-group-item list-group-item-action"%></a>
+      <% end %>
+    </div><br>
+  </div> <!-- col 1 -->
 
-    <div class="col-sm-4"> 
-      <div class="list-group">
-        <a href="/categories" class="list-group-item list-group-item-action active">For Face</a>
+  <div class="col-sm-4"> 
+    <div class="list-group">
+      <a href="/categories" class="list-group-item list-group-item-action active">For Body</a>
 
-        <% @face_categories.each do |category| %>
-          <a><%=link_to category.name, category_path(category), :class => "list-group-item list-group-item-action"%></a>
-        <% end %>
-      </div><br>
-    </div> <!-- col 1 -->
+      <% @body_categories.each do |category| %>
+        <a><%=link_to category.name, category_path(category), :class => "list-group-item list-group-item-action"%></a>
+      <% end %>
+    </div><br>
+  </div> <!-- col 2 -->
 
-    <div class="col-sm-4"> 
-      <div class="list-group">
-        <a href="/categories" class="list-group-item list-group-item-action active">For Body</a>
+  <div class="col-sm-4"> 
+    <div class="list-group">
+      <a href="/categories" class="list-group-item list-group-item-action active">For Hair</a>
 
-        <% @body_categories.each do |category| %>
-          <a><%=link_to category.name, category_path(category), :class => "list-group-item list-group-item-action"%></a>
-        <% end %>
-      </div><br>
-    </div> <!-- col 2 -->
+      <% @hair_categories.each do |category| %>
+        <a><%=link_to category.name, category_path(category), :class => "list-group-item list-group-item-action"%></a>
+      <% end %>
+    </div>
+  </div> <!-- col 3 -->
 
-    <div class="col-sm-4"> 
-      <div class="list-group">
-        <a href="/categories" class="list-group-item list-group-item-action active">For Hair</a>
-
-        <% @hair_categories.each do |category| %>
-          <a><%=link_to category.name, category_path(category), :class => "list-group-item list-group-item-action"%></a>
-        <% end %>
-      </div>
-    </div> <!-- col 3 -->
-
-  </div> <!-- end of row --> 
-</div><!-- end of container --> 
+</div> <!-- end of row --> 

@@ -1,20 +1,15 @@
-<img style="height: 100%; width: 100%; display: block;" src="http://www.makingskincare.com/wp-content/uploads/2015/04/shut-pink-cream-with-lime-leman-web-slider-1500x430.jpg" alt="Card image">
-<br><br>
+<h1>All Formulas</h1><br>
 
-<div class="container">
-  <h1>All Formulas</h1><br>
-  
-  <div class="row">
+<div class="row">
 
-    <div class="col-sm-6"> 
-      <div class="list-group">
-        <a href="/formulas" class="list-group-item list-group-item-action active">All Formulas</a>
-        
-        <% @formulas.each do |formula| %>
-          <a><%=link_to formula.title, formula_path(formula), :class => "list-group-item list-group-item-action"%></a>
-        <% end %> 
-      </div>
-    </div> <!-- col -->
+  <div class="col-sm-6"> 
+    <div class="list-group">
+      <a href="/formulas" class="list-group-item list-group-item-action active">All Formulas</a>
+      
+      <% @formulas.each do |formula| %>
+        <a><%=link_to formula.title, formula_path(formula), :class => "list-group-item list-group-item-action"%></a>
+      <% end %> 
+    </div>
+  </div> <!-- col -->
 
-  </div> <!-- end of row --> 
-</div><!-- end of container --> 
+</div> <!-- end of row --> 

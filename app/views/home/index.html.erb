@@ -1,55 +1,49 @@
-<img style="height: 100%; width: 100%; display: block;" src="http://www.makingskincare.com/wp-content/uploads/2015/04/shut-pink-cream-with-lime-leman-web-slider-1500x430.jpg" alt="Card image">
-<br><br>
-
-
 <div class="row">
   <div class="col-sm-7"> 
     <h1>Welcome!</h1>
-      
-    <h3>Last 5 formulas just created!</h3>
+     
+    <h4>Check out our newest formulas!</h4>
     <% Formula.last_five_formulas.each do |x| %>
       <h5><%= link_to x.title, formula_path(x)%> </h5>
-      <p> by: <%= x.user.username%>, on <%=x.created_at.gmtime.localtime%> </p>
+      <p>
+        by: <%= x.user.username%>, on <%=x.created_at.gmtime.localtime%><br>
+        <%=x.description%>
+      </p>
     <% end %>
 
-    <img style="height: ; width: 100%; display: block;" src="https://cranberrylane.com/pub/media/home/classes.png" alt="Card image"><br><br>
-    <!--    
-
-    list 5 newest formulas created
-
-    list 5 newest users that joined
-
-    list 5 top skin concerns
-
-    -->
+    <img style="width: 100%;" src="https://cranberrylane.com/pub/media/home/classes.png">
   </div><!-- end of col-7 -->
 
 
   <div class="col-sm-5"><br>
-    <h4> View Formulas by: </h4>
+
+    <h5> View Formulas by: </h5>
     <ul class="nav nav-tabs">
       <li class="nav-item">
-        <a class="nav-link active show" data-toggle="tab" href="#first">skin concern</a>
+        <a class="nav-link active show" data-toggle="tab" href="#first">Skin Concerns</a>
       </li> 
     
       <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#second">categories</a>
+        <a class="nav-link" data-toggle="tab" href="#second">Categories</a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#third">all formulas</a>
+        <a class="nav-link" data-toggle="tab" href="#third">Formulas</a>
       </li> 
     </ul>
 
+
     <div id="myTabContent" class="tab-content">
+
       <div class="tab-pane fade active show" id="first"><br>
         <div class="list-group">
+          <h6>All</h6>
           <% @skinconcerns.each do |concern| %>
             <a><%=link_to concern.name, skinconcern_path(concern), :class => "list-group-item list-group-item-action"%></a>
           <% end %>
         </div>
       </div><!-- end of tab -->
-      
+    
       <div class="tab-pane fade" id="second"><br>
         <div class="list-group">
           <h6>Face</h6>
@@ -75,12 +69,14 @@
 
       <div class="tab-pane fade" id="third"><br>
         <div class="list-group">
+          <h6>All</h6>
           <% @formulas.each do |formula| %>
             <a><%=link_to formula.title, formula_path(formula), :class => "list-group-item list-group-item-action"%></a>
           <% end %> 
         </div>
       </div><!-- end of tab -->
-    </div><!-- end of all tabs  -->
-  </div><!-- end of col-5 -->
 
+    </div><!-- end of all tabs  -->
+
+  </div><!-- end of col-5 -->
 </div> <!-- end of row -->
