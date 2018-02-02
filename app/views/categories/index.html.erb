@@ -1,35 +1,18 @@
 <h1>All Categories</h1><br>
 
 <div class="row">
+  <div class="col-sm-4"> 
+    <h6>Face</h6>
+    <%= render partial: 'categories/category', collection: @face_categories, as: :x%><br>
+  </div>
 
   <div class="col-sm-4"> 
-    <div class="list-group">
-      <a href="/categories" class="list-group-item list-group-item-action active">For Face</a>
-
-      <% @face_categories.each do |category| %>
-        <a><%=link_to category.name, category_path(category), :class => "list-group-item list-group-item-action"%></a>
-      <% end %>
-    </div><br>
-  </div> <!-- col 1 -->
+    <h6>Body</h6>
+    <%= render partial: 'categories/category', collection: @body_categories, as: :x%><br>
+  </div>
 
   <div class="col-sm-4"> 
-    <div class="list-group">
-      <a href="/categories" class="list-group-item list-group-item-action active">For Body</a>
-
-      <% @body_categories.each do |category| %>
-        <a><%=link_to category.name, category_path(category), :class => "list-group-item list-group-item-action"%></a>
-      <% end %>
-    </div><br>
-  </div> <!-- col 2 -->
-
-  <div class="col-sm-4"> 
-    <div class="list-group">
-      <a href="/categories" class="list-group-item list-group-item-action active">For Hair</a>
-
-      <% @hair_categories.each do |category| %>
-        <a><%=link_to category.name, category_path(category), :class => "list-group-item list-group-item-action"%></a>
-      <% end %>
-    </div>
-  </div> <!-- col 3 -->
-
-</div> <!-- end of row --> 
+    <h6>Hair</h6>
+    <%= render partial: 'categories/category', collection: @hair_categories, as: :x%><br>
+  </div>
+</div>

@@ -7,56 +7,13 @@
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
     <%= analytics_init if Rails.env.production? %>
-
     <meta charset="utf-8">
 
-
-
-    <link rel="stylesheet" 
-    href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-/qQob+A1P2FeRYphuSbqp7heEKdhjZxqgAz/yWLX9CQKU9FTB8wKTexI0IiFlIXC" crossorigin="anonymous">
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+    <%= render 'layouts/bootstrapcdn' %>
   </head>
 
   <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      
-      <a class="navbar-brand" href="/">MAKING SKINCARE</a>
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarColor01">
-        
-        <ul class="navbar-nav ml-auto">
-          
-          <% if user_signed_in? %>
-            <li class="nav-item">
-              <a class="nav-link" <%=link_to "New Formula", new_formula_path %> </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" <%=link_to "My Profile", user_path(current_user) %> </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" <%=link_to "Sign Out", destroy_user_session_path, method: :delete %> </a>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <a class="nav-link" <%=link_to "Sign Up", new_user_registration_path %> </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" <%=link_to "Log In", new_user_session_path %> </a>
-            </li>
-          <% end %>
-        
-        </ul>
-      </div>
-    </nav>
+    <%= render 'layouts/navbar' %>
 
     <% if !!flash[:message] %>
       <div class="alert alert-dismissible alert-warning">
@@ -64,12 +21,12 @@
         <%= flash[:message] %>
       </div>
     <% end %>
+
     <div class ="container">
       <br><br>
       <%= yield %>
       <br><br>
     </div>
     
-
   </body>
 </html>

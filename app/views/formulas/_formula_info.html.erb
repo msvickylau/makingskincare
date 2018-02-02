@@ -1,0 +1,5 @@
+<div>
+  <h5><%= link_to x.title, formula_path(x)%> </h5>
+  <h6>By: <%= link_to x.user.username, x.user %>, Created on <%=time_created(x)%></h6>
+  <p class="text-muted"><%=x.description%></p>
+</div>

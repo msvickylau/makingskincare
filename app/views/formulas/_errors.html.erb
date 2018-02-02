@@ -1,0 +1,10 @@
+<% if x.errors.any? %>
+   <div id="error_explanation">
+    <h2><%= pluralize(x.errors.count, "error") %> prohibited this formula from being saved:</h2>
+    <ul>
+      <% x.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

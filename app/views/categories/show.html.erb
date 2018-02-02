@@ -1,7 +1,3 @@
-<div class="container">
-  <h2>All <%=@category.name%> formulas:</h2>
+<h2>All <%=@category.name%> formulas:</h2>
+<%= render partial: 'formulas/formula_info', collection: @category.formulas, as: :x %>
 
-  <% @category.formulas.each do |formula|%>
-   <h4><%=link_to formula.title, formula_path(formula)%></h4>
-  <% end %>
-</div>

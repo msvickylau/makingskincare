@@ -1,7 +1,6 @@
-<div class="container">
-  <h2>All formulas for <%=@skinconcern.name%>:</h2>
+<h2>All formulas for <%=@skinconcern.name%>:</h2>
 
-  <% @skinconcern.formulas.each do |formula|%>
-   <h4><%=link_to formula.title, formula_path(formula)%></h4>
-  <% end %>
-</div>
+<% @formula.each do |formula|%>
+ <%= render partial: 'formulas/formula_info', locals: {x: formula} %>
+<% end %>
+

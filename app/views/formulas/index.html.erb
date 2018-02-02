@@ -1,15 +1,2 @@
 <h1>All Formulas</h1><br>
-
-<div class="row">
-
-  <div class="col-sm-6"> 
-    <div class="list-group">
-      <a href="/formulas" class="list-group-item list-group-item-action active">All Formulas</a>
-      
-      <% @formulas.each do |formula| %>
-        <a><%=link_to formula.title, formula_path(formula), :class => "list-group-item list-group-item-action"%></a>
-      <% end %> 
-    </div>
-  </div> <!-- col -->
-
-</div> <!-- end of row --> 
+<%= render partial: 'formulas/formula_info', collection: @formulas, as: :x %>

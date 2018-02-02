@@ -1,74 +1,58 @@
-<%= form_for(@formula) do |f| %>
-  <% if @formula.errors.any? %>
-     <div id="error_explanation">
-      <h2><%= pluralize(@formula.errors.count, "error") %> prohibited this formula from being saved:</h2>
-      <ul>
-        <% @formula.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div class="field">
+  <h5>Title:</h5>
+  <%= f.text_field :title, size: 50%>
+</div><br>
 
-  <div class="field">
-    <h5>Title:</h5>
-    <%= f.text_field :title, size: 50%>
-  </div><br>
+<div class="field">
+  <h5>Description:</h5>
+  <%= f.text_field :description, size: 50%>
+</div><br>
 
-  <div class="field">
-    <h5>Description:</h5>
-    <%= f.text_field :description, size: 50%>
-  </div><br>
+<div class="field">
+  <h5>Category:</h5>
+  <%= f.collection_select(:category_id, Category.all, :id , :name, :prompt => true)%>
+</div><br>
 
-  <div class="field">
-    <h5>Category:</h5>
-    <%= f.collection_select(:category_id, Category.all, :id , :name, :prompt => true)%>
-  </div><br>
-
-  <div class="field">
-    <h5>Ingredients: (Please write amount and ingredient on each line)</h5>
-    <%= f.fields_for :ingredients do |ingredient_fields| %>
-      <%= ingredient_fields.text_field :name, size: 50%>
-      <%= ingredient_fields.check_box :_destroy %> delete <br>
-    <% end %><br>
-    
-    <%= f.submit 'Add ingredient', :name => "add_ingredient", :class => 'btn btn-secondary btn-sm' %>
-    <%= f.submit 'Delete checked ingredients', :name => "remove_ingredient", :class => 'btn btn-secondary btn-sm' %>
-  </div><br>
+<div class="field">
+  <h5>Ingredients: (Please write amount and ingredient on each line)</h5>
+  <%= f.fields_for :ingredients do |ingredient_fields| %>
+    <%= ingredient_fields.text_field :name, size: 50%>
+    <%= ingredient_fields.check_box :_destroy %> delete <br>
+  <% end %><br>
   
-  <div class="field">
-    <h4>Directions:</h4>
-    <%= f.text_area :direction, cols: 50, rows: 6 %>
-  </div><br> 
+  <%= f.submit 'Add ingredient', :name => "add_ingredient", :class => 'btn btn-secondary btn-sm' %>
+  <%= f.submit 'Delete checked ingredients', :name => "remove_ingredient", :class => 'btn btn-secondary btn-sm' %>
+</div><br>
 
-  <div class="field">
-    <h5>Skin Concerns: (select all that apply)</h5>
-    <%= f.collection_check_boxes(:skinconcern_ids, Skinconcern.all.select { |concern| !concern[:name].blank? }, :id, :name, :class => "custom-control-input") do |s| %>
-      <%=s.check_box%> <%=s.text %> <br>
+<div class="field">
+  <h4>Directions:</h4>
+  <%= f.text_area :direction, cols: 50, rows: 6 %>
+</div><br> 
+
+<div class="field">
+  <h5>Skin Concerns: (select all that apply)</h5>
+  <%= f.collection_check_boxes(:skinconcern_ids, Skinconcern.all.order("name ASC").select { |concern| !concern[:name].blank? }, :id, :name, :class => "custom-control-input") do |s| %>
+    <%=s.check_box%> <%=s.text %> <br>
+  <% end %>
+  <p>
+    Or add new:
+    <%= f.fields_for :skinconcerns, @formula.skinconcerns.build do |skinconcern_attributes| %>
+      <%= skinconcern_attributes.text_field :name, size: 30%>
     <% end %>
-    <p>
-      Or add new:
-      <%= f.fields_for :skinconcerns, @formula.skinconcerns.build do |skinconcern_attributes| %>
-        <%= skinconcern_attributes.text_field :name, size: 30%>
-      <% end %>
-    </p>
-  </div><br>
+  </p>
+</div><br>
 
-  <div class="field">
-    <h5>Image: (optional)</h5> 
-      <% if @formula.image.exists? %>
-        <%= image_tag @formula.image.url(:medium, class: "formula_image") %><br>
-        <p>Remove Image <%= f.check_box :image_delete %></p>
-        <p>Or Choose another image:</p>
-      <% end %>
-      <%= f.file_field :image %>
-    </p>
-  </div><br>
+<div class="field">
+  <h5>Image: (optional)</h5> 
+    <% if @formula.image.exists? %>
+      <%= image_tag @formula.image.url(:medium, class: "formula_image") %><br>
+      <p>Remove Image <%= f.check_box :image_delete %></p>
+      <p>Or Choose another image:</p>
+    <% end %>
+    <%= f.file_field :image %>
+  </p>
+</div><br>
 
-  <div class="actions">
-    <%= f.submit 'Submit', :class => 'btn btn-primary' %>
-  </div>
-<% end %>
-
-
- 
+<div class="actions">
+  <%= f.submit 'Submit', :class => 'btn btn-primary' %>
+</div>

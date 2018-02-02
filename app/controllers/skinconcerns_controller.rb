@@ -5,5 +5,6 @@ class SkinconcernsController < ApplicationController
 
   def show
     @skinconcern = Skinconcern.find(params[:id])
+    @formula = @skinconcern.formulas.order("updated_at DESC")
   end
 end

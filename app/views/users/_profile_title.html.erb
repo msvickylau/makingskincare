@@ -1,0 +1,7 @@
+<% if current_user == x %>
+  <h1 class="card-title">Hello <%= x.username %>!</h1>
+  <h4 class="card-subtitle mb-2 text-muted">All formulas created by you:</h4>  
+<% else %>
+  <h1 class="card-title"><%=x.username%>'s profile page</h1>
+  <h4 class="card-subtitle mb-2 text-muted">All formulas created by <%=x.username%>:</h4>
+<% end %>
