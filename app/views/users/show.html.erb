@@ -1,13 +1,12 @@
-<div class="card mb-3">
 
-  <div class="card-body">
-    <%= render partial: 'users/profile_title', locals: {x: @user} %>
-  </div>
+<div class="jumbotron">
+  <%= render partial: 'users/profile_title', locals: {x: @user}%>
 
-  <div class="card-body">
-    <% @user.formulas.each do |formula| %>
-      <%= render partial: 'formulas/formula_info', locals: {x: formula} %> 
-    <% end %>
-  </div>
+  <hr class="my-4">
+  
+  <h4><%=@user.username%> has created <span class="badge badge-pill badge-primary"><%=@number_of_formulas%></span> formulas!</h4>
+  
+
+  <%= link_to "View Formulas", user_formulas_path(@user), :class => "btn btn-primary btn-lg" %>
 
 </div>
