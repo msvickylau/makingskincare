@@ -1,3 +1,6 @@
 <h2>All <%=@category.name%> formulas:</h2>
-<%= render partial: 'formulas/formula_info', collection: @category.formulas, as: :x %>
+
+<% @formula.each do |formula|%>
+ <%= render partial: 'formulas/formula_info', locals: {x: formula} %>
+<% end %>
 

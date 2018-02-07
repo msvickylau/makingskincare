@@ -8,6 +8,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
+    @formula = @category.formulas.order("updated_at DESC")
   end
 
 end
