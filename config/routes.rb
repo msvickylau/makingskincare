@@ -5,11 +5,13 @@ Rails.application.routes.draw do
   resources :categories, only: [:show, :index]
 
   resources :users, only: [:show] do
-    resources :formulas, only: [:show, :index]
+    resources :formulas
   end
 
-  resources :formulas, only: [:index, :show, :new, :create, :edit, :update]
+  resources :formulas
 
   root "home#index"
   
 end
+
+
