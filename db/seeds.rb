@@ -43,7 +43,6 @@ Category.create([
     {part: 'body', name: 'Body Mositurizer'},
     {part: 'body', name: 'Sunscreen & After Sun Care'},
     {part: 'body', name: 'Deodorant & Antiperspirant'},
-    {part: 'body', name: 'Body Wash'}
     ])
 
 
