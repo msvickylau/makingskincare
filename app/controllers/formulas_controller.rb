@@ -3,9 +3,11 @@ class FormulasController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    if params[:user_id]  # GET /users/#/formulas
+    # GET /users/#/formulas
+    if params[:user_id]
       @formulas = User.find(params[:user_id]).formulas.order("created_at ASC")
-    else # GET /formulas
+    # GET /formulas
+    else
       @formulas = Formula.all.order("created_at ASC")
     end
   end

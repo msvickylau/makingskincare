@@ -23,8 +23,8 @@ class Formula < ActiveRecord::Base
 
   def skinconcerns_attributes=(skinconcern_attributes)
     skinconcern_attributes.values.each do |skinconcern_attribute|
-      skinconcern = Skinconcern.find_or_create_by(skinconcern_attribute)
-      self.skinconcerns << skinconcern
+      new_skinconcern = Skinconcern.find_or_create_by(skinconcern_attribute)
+      self.skinconcerns << new_skinconcern
     end
   end
 

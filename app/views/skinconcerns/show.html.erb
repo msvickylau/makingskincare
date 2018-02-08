@@ -1,6 +1,3 @@
-<h2>All formulas for <%=@skinconcern.name%>:</h2>
+<h2>All formulas for <%=@skinconcern.name%>:</h2><br>
 
-<% @formula.each do |formula|%>
- <%= render partial: 'formulas/formula_info', locals: {x: formula} %>
-<% end %>
-
+<%= render partial: 'formulas/formula_info', collection: @formula, as: :x%>
