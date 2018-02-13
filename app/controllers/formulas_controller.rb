@@ -44,7 +44,7 @@ class FormulasController < ApplicationController
 
   def update
     if params[:add_ingredient]
-      # rebuild the ingredient attributes that doesn't have an id
+      # rebuild the ingredient attributes that doesn't have an id, newly added ingredient that hasn't been saved yet. 
       unless params[:formula][:ingredients_attributes].blank?
         for attribute in params[:formula][:ingredients_attributes]
           @formula.ingredients.build(attribute.last.except(:_destroy)) unless attribute.last.has_key?(:id)

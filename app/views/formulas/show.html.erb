@@ -5,7 +5,13 @@
       <div class="col-sm-8">  
         <h1><%= @formula.title %></h1>
         <h6 class="text-muted">Created on <%=time_created(@formula)%> <h6>
-        <h6 class="text-muted">By: <%= link_to @formula.user.username, @formula.user %></h6>
+
+        <% if @formula.user != nil %>
+          <h6 class="text-muted">By: <%= link_to @formula.user.username, @formula.user %></h6>
+        <% else %>
+          <h6 class="text-muted">By: anonymous</h6>
+        <% end %>
+
         <p><%= @formula.description %></p>
       </div>
       <div class="col-sm-4">
@@ -42,7 +48,7 @@
       <h5>Directions:</h5>
       <p><%= @formula.direction %></p>
 
-      <% if @formula.user == current_user %>
+      <% if @formula.user != nil && @formula.user == current_user %>
         <%= link_to "EDIT", edit_formula_path, class: "btn btn-primary" %>
         <%= link_to "DELETE", formula_path, method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-primary" %>
       <% end %>  

@@ -1,7 +1,11 @@
 <div class="row">
   <div class="col-sm-8">
     <h5><%= link_to x.title, formula_path(x)%> </h5>
-    <h6>By: <%= link_to x.user.username, x.user %>, Created on <%=time_created(x)%></h6>
+    <% if x.user != nil %>
+      <h6>By: <%= link_to x.user.username, x.user %>, Created on <%=time_created(x)%></h6>
+    <% else %>
+      <h6>By: anonymous, Created on <%=time_created(x)%></h6>
+    <% end %>
     <p class="text-muted"><%=x.description%></p>
   </div>
 

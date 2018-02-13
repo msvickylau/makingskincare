@@ -6,6 +6,12 @@
   <h4><%=@user.username%> has created <span class="badge badge-pill badge-primary"><%=@number_of_formulas%></span> formulas!</h4>
   
 
-  <%= link_to "View Formulas", user_formulas_path(@user), :class => "btn btn-primary btn-lg" %>
+  <%= link_to "View Formulas", user_formulas_path(@user), class: "btn btn-primary btn-lg" %>
+
+
 
 </div>
+
+  <% if @user == current_user %>
+    <%= link_to "DELETE ACCOUNT", user_registration_path, method: :delete, data: { confirm: "Are you sure you want to delete your accout? (this cannot be undone!)"}, class: "btn btn-secondary" %>
+  <% end %> 
