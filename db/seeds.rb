@@ -19,9 +19,9 @@ Skinconcern.create([
     {id: 3, name: "dark spots"},
     {id: 4, name: "dryness"},
     {id: 5, name: "dullness"},
-    {id: 6, name: "pore"}
+    {id: 6, name: "pore"},
     {id: 7, name: ""},
-    {id: 8, name: "sunprotection"}
+    {id: 8, name: "sunprotection"},
     {id: 9, name: "oily skin"},
     {id: 10, name: "redness"},
     {id: 11, name: "cellulite"}
