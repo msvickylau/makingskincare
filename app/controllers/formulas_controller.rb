@@ -5,7 +5,7 @@ class FormulasController < ApplicationController
   def index
     # GET /users/#/formulas
     if params[:user_id]
-      @formulas = User.find(params[:user_id]).formulas.order("created_at DECS")
+      @formulas = User.find(params[:user_id]).formulas.order("created_at DESC")
     # GET /formulas
     else
       @formulas = Formula.all.order("created_at DESC")
