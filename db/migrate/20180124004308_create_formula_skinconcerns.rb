@@ -1,6 +1,6 @@
 class CreateFormulaSkinconcerns < ActiveRecord::Migration
   def change
-    create_table :formulas_skinconcerns do |t|
+    create_table :formula_skinconcerns do |t|
       t.integer :formula_id
       t.integer :skinconcern_id
 

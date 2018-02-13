@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 20180130193618) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "formula_skinconcerns", force: :cascade do |t|
+    t.integer  "formula_id"
+    t.integer  "skinconcern_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "formulas", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "category_id"
@@ -32,13 +39,6 @@ ActiveRecord::Schema.define(version: 20180130193618) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-  end
-
-  create_table "formulas_skinconcerns", force: :cascade do |t|
-    t.integer  "formula_id"
-    t.integer  "skinconcern_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
   end
 
   create_table "ingredients", force: :cascade do |t|
