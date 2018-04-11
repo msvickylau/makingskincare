@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     resources :formulas
   end
 
-  resources :formulas
+  resources :formulas, only: [:show] do
+    resources :comments
+  end
 
   root "home#index"
   

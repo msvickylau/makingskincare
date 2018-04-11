@@ -2,6 +2,7 @@ class Formula < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
   has_many :ingredients
+  has_many :comments
   accepts_nested_attributes_for :ingredients, :reject_if => :all_blank, :allow_destroy => true
   
   has_many :formula_skinconcerns
