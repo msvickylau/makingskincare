@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create([
-    {id: 1, email: "vivi@gmail.com", username: "vivi", provider: nil, uid: nil},
-    {id: 2, email: "coconutlover@gmail.com", username: "coconutlover", provider: nil, uid: nil},
-    {id: 3, email: "chocobear@gmail.com", username: "chocobear", provider: nil, uid: nil},
-    {id: 4, email: "jessicavocada@gmail.com", username: "Jessicavocado", provider: nil, uid: nil}
+    {id: 1, email: "vivi@gmail.com", username: "vivi"},
+    {id: 2, email: "coconutlover@gmail.com", username: "coconutlover"},
+    {id: 3, email: "chocobear@gmail.com", username: "chocobear"},
+    {id: 4, email: "jessicavocada@gmail.com", username: "Jessicavocado"}
     ])
 
 Skinconcern.create([
