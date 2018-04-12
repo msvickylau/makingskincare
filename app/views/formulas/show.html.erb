@@ -1,3 +1,14 @@
+<ul class="pagination">
+  <li class="page-item disabled"> <!-- only disable of list and last of list -->
+    <a class="js-previous page-link" href="#" data-id="<%=@formula.id%>"> &laquo; </a>
+  </li>
+
+  <li class="page-item">
+    <a class="js-next page-link" href="#" data-id="<%=@formula.id%>"> &raquo; </a>
+  </li>
+</ul>
+
+
 <div class="card mb-3">
 
   <div class="card-body">
@@ -53,9 +64,46 @@
         <%= link_to "DELETE", formula_path, method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-primary" %>
       <% end %>  
     </li>
-
   </ul>
-
 </div><!-- end of card mb-3 -->
+
+<br><br>
+
+
+
+<div class="container" style="width:60%;">
+  <h4>Comments:</h4>
+  
+  <div id="submitted-comments">
+    
+    <% @formula.comments.each do |comment| %>
+      <div class="card" id="comment-<%= comment.id %>">
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted">Posted by:  <%= link_to comment.user.username, comment.user %></h6>
+          <p class="card-text"><%= comment.content %></p>
+           <!-- NEED TO ADD: User can see delete button, if it is their comment.
+           if comment.user != nil && comment.user == current_user %>
+           link_to "DELETE", formula_comment_path(@formula), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-primary" %>
+           end%>
+          -->
+        </div>
+      </div><br>
+    <%end%>
+
+  </div>
+
+  <% if current_user %>
+      <h4>Add a comment:</h4>
+      <%= form_for ([@formula, @comment]) do |f| %>
+        <p><%= f.text_area :content, class: 'commentBox form-control' %></p>
+        <%= f.submit 'Create Comment', :class => 'btn btn-primary' %>
+      <% end %>
+  <% else %>
+    <p>Please log in order to add a comment.</p>
+  <% end %>
+
+</div>
+
+
 
 

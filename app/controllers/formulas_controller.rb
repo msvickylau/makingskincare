@@ -13,6 +13,14 @@ class FormulasController < ApplicationController
   end
 
   def show
+    @formula = Formula.find(params[:id])
+    if current_user
+      @comment = current_user.comments.build(formula: @formula)
+    end
+      respond_to do |format|
+      format.html { render :show }
+      format.json { render json:  @formula }
+    end
   end
 
   def new
