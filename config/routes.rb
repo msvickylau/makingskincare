@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :formulas
   end
 
-  resources :formulas, only: [:show] do
+  resources :formulas do
     resources :comments
   end
 
