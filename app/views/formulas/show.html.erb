@@ -76,12 +76,13 @@
   
   <div id="submitted-comments">
     <% @formula.comments.each do |comment| %>
+      <br>
       <div class="card" id="comment-<%= comment.id %>">
         <div class="card-body">
           <h6 class="card-subtitle mb-2 text-muted">Posted by:  <%= link_to comment.user.username, comment.user %></h6>
           <p class="card-text"><%= comment.content %></p>
         </div>
-      </div><br>
+      </div>
     <%end%>
   </div>
 
