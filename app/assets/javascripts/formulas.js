@@ -1,4 +1,23 @@
-// Submit Comments via AJAX
+$(function(){
+   $("#new_comment").on("submit", function(e){
+     $.ajax({
+       type: "POST",
+       url: this.action,
+       data: $(this).serialize(), // either JSON or querystring serializing
+       success: function(response){
+        //update the DOM
+        var comment = new Comment(response);
+        comment.renderComments();
+        $(".commentBox").val("");
+       }
+     });
+
+     e.preventDefault();
+   })
+ });
+
+
+
 
 function Comment(data) {
   this.id = data.id;
@@ -6,34 +25,14 @@ function Comment(data) {
   this.user = data.user;
 }
 
-
-
-$(function(){
-  $("form#new_comment").on("submit", function(e){
-    // 1. we need the URL to submit the POST request to
-    // 2. we need the form data.
-
-    url = this.action
-    console.log(url)
- 
-debugger
-
-    $.ajax({
-      type: "POST",
-      url: url,
-      data: $(this).serialize(),
-      success: function(response){
-        debugger
-      }
-    })
-
-    
-    
-
-    // Send a POST request to the correct plaec that form would have gone to...
-    //along with the actual form data.
-    e.preventDefault();
-    
-  })
-});
-
+Comment.prototype.renderComments = function() {
+  var html = "" ;
+  html += 
+  "<div class=\'card' id=\'comment-\' + comment.id + '\'>" +
+    "<div class=\'card-body'>" +
+      "<h6 class=\'card-subtitle mb-2 text-muted'>Posted by: "  + this.user.username + "</h6>" + 
+      "<p class=\'card-text'>" + this.content + "</p>"
+    "</div>"
+  "</div><br>";
+  $("#submitted-comments").append(html);
+}
