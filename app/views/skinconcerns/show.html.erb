@@ -1,3 +1,38 @@
-<h2>All formulas for <%=@skinconcern.name%>:</h2><br>
+<button type="button" class="btn btn-secondary" style="float: left;">View Previous</button>
 
-<%= render partial: 'formulas/formula_info', collection: @formula, as: :x%>
+<button type="button" class="btn btn-secondary" style="float: right;">View Next</button>
+
+<h2 style="text-align: center;">All formulas for <large class="text-primary"><%=@skinconcern.name%></large>:</h2>
+
+<br>
+
+<div class="row">
+  <% @formulas.each do |formula| %>
+    <div class="col-lg-3">
+      <div class="card border-light" style="max-width: 17rem; min-width: 14rem;">
+        <div class="card-body">
+
+          <h5><%= link_to formula.title, formula_path(formula)%> </h5>
+
+          <% if formula.user != nil %>
+              <h6>By: <%= link_to formula.user.username, formula.user %> </h6>
+            <% else %>
+              <h6>By: anonymous </h6>
+          <% end %>
+
+          <% if formula.image_file_size != nil %>
+            <%= link_to formula_path(formula) do %>
+              <%= image_tag formula.image.url(:medium) %>
+            <% end %>
+          <% end %>
+
+          <p class="card-text">
+            <h6><%= formula.description %> </h6>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  <%end%>
+</div>
+
