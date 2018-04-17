@@ -1,4 +1,30 @@
-<h2>All <%=@category.name%> formulas:</h2><br>
+<a href="/categories/<%= @category.previous.id %>" class="js-previous btn btn-secondary" style="float: left;" data-id="<%=@category.id%>"> < </a>
+<a href="/categories/<%= @category.next.id %>" class="js-next btn btn-secondary" style="float: right;" data-id="<%=@category.id%>"> > </a>
 
-<%= render partial: 'formulas/formula_info', collection: @formula, as: :x%>
+<h2 style="text-align: center;">All formulas for <large class="text-primary"><%=@category.name%></large>:</h2>
+
+<br>
+
+<div class="row" id="category-page">
+  <% @formulas.each do |formula| %>
+    <div class="col-lg-3">
+      <div class="card border-light" style="max-width: 16rem; min-width: 15rem;">
+        <div class="card-body">
+          <h5><%= link_to formula.title, formula_path(formula)%> </h5>
+
+          <% if formula.user != nil %>
+              <h6>By: <%= formula.user.username %> </h6>
+            <% else %>
+              <h6>By: anonymous </h6>
+          <% end %>
+
+          <%= link_to formula_path(formula) do %>
+            <%= image_tag formula.image.url(:medium) %>
+          <% end %>
+          
+        </div>
+      </div><br>
+    </div>
+  <%end%>
+</div> 
 
