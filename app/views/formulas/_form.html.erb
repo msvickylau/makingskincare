@@ -43,7 +43,7 @@
 </div><br>
 
 <div class="field">
-  <h5>Image: (optional)</h5> 
+  <h5>Image:</h5> 
     <% if @formula.image.exists? %>
       <%= image_tag @formula.image.url(:medium, class: "formula_image") %><br>
       <p>Remove Image <%= f.check_box :image_delete %></p>

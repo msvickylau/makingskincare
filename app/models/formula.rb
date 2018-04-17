@@ -8,7 +8,7 @@ class Formula < ActiveRecord::Base
   has_many :formula_skinconcerns
   has_many :skinconcerns, :through => :formula_skinconcerns
   
-  validates :title, :description, :category, :ingredients, :direction, presence: true
+  validates :title, :description, :category, :ingredients, :direction, :image, presence: true
 
   #paperclip, to add image file
   has_attached_file :image, styles: { :medium => "200x200#"}
