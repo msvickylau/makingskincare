@@ -1,7 +1,7 @@
 class FormulaSerializer < ActiveModel::Serializer
-  attributes :id, :title, :description, :direction, :image_file_name, :image_content_type, :image_file_size, :image_updated_at, :comment_list
-  belongs_to :user
-  belongs_to :category
+  attributes :id, :title, :description, :direction, :image_file_name, :comment_list
+  has_one :user
+  has_one :category
 
   def comment_list
     object.comments.map do |comment|
