@@ -1,74 +1,62 @@
-<ul class="pagination">
-  <li class="page-item disabled"> <!-- only disable of list and last of list -->
-    <a class="js-previous page-link" href="#" data-id="<%=@formula.id%>"> &laquo; </a>
-  </li>
+<div class="container" style="width:80%;">
+  <div class="card mb-3">
 
-  <li class="page-item">
-    <a class="js-next page-link" href="#" data-id="<%=@formula.id%>"> &raquo; </a>
-  </li>
-</ul>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-8">  
+          <h1><%= @formula.title %></h1>
+          <h6 class="text-muted">Created on <%=time_created(@formula)%> <h6>
 
+          <% if @formula.user != nil %>
+            <h6 class="text-muted">By: <%= link_to @formula.user.username, @formula.user %></h6>
+          <% else %>
+            <h6 class="text-muted">By: anonymous</h6>
+          <% end %>
 
-<div class="card mb-3">
+          <p><%= @formula.description %></p>
+        </div>
+        <div class="col-sm-4">
+          <% if @formula.image_file_size != nil %><br>
+            <%= image_tag @formula.image.url(:medium), :style => "float :right;" %>
+          <% end %>
+        </div>
+      </div> <!-- end of row -->
+    </div> <!-- end of card-body -->
 
-  <div class="card-body">
-    <div class="row">
-      <div class="col-sm-8">  
-        <h1><%= @formula.title %></h1>
-        <h6 class="text-muted">Created on <%=time_created(@formula)%> <h6>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <h5>Category:</h5>
+        <%= link_to @formula.category.name, @formula.category, class: "badge badge-primary" %>  
+      </li>
 
-        <% if @formula.user != nil %>
-          <h6 class="text-muted">By: <%= link_to @formula.user.username, @formula.user %></h6>
-        <% else %>
-          <h6 class="text-muted">By: anonymous</h6>
+      <li class="list-group-item">
+        <h5>Skin Concerns:</h5>
+        <% @formula.skinconcerns.each do |concern| %>
+            <%= link_to concern.name, concern, class: "badge badge-primary" %>
         <% end %>
+      </li>
 
-        <p><%= @formula.description %></p>
-      </div>
-      <div class="col-sm-4">
-        <% if @formula.image_file_size != nil %><br>
-          <%= image_tag @formula.image.url(:medium), :style => "float :right;" %>
-        <% end %>
-      </div>
-    </div> <!-- end of row -->
-  </div> <!-- end of card-body -->
+      <li class="list-group-item">
+        <h5>Ingredients:</h5>
+        <ul>
+          <% @formula.ingredients.each do |i| %>
+            <li><%= i.name %></li>
+          <% end %>
+        </ul>
+      </li>
 
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">
-      <h5>Category:</h5>
-      <%= link_to @formula.category.name, @formula.category, class: "badge badge-primary" %>  
-    </li>
+      <li class="list-group-item">
+        <h5>Directions:</h5>
+        <p><%= @formula.direction %></p>
 
-    <li class="list-group-item">
-      <h5>Skin Concerns:</h5>
-      <% @formula.skinconcerns.each do |concern| %>
-          <%= link_to concern.name, concern, class: "badge badge-primary" %>
-      <% end %>
-    </li>
-
-    <li class="list-group-item">
-      <h5>Ingredients:</h5>
-      <ul>
-        <% @formula.ingredients.each do |i| %>
-          <li><%= i.name %></li>
-        <% end %>
-      </ul>
-    </li>
-
-    <li class="list-group-item">
-      <h5>Directions:</h5>
-      <p><%= @formula.direction %></p>
-
-      <% if @formula.user != nil && @formula.user == current_user %>
-        <%= link_to "EDIT", edit_formula_path, class: "btn btn-primary" %>
-        <%= link_to "DELETE", formula_path, method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-primary" %>
-      <% end %>  
-    </li>
-  </ul>
-</div><!-- end of card mb-3 -->
-
-<br><br>
-
+        <% if @formula.user != nil && @formula.user == current_user %>
+          <%= link_to "EDIT", edit_formula_path, class: "btn btn-primary" %>
+          <%= link_to "DELETE", formula_path, method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-primary" %>
+        <% end %>  
+      </li>
+    </ul>
+  </div><!-- end of card mb-3 -->
+</div><br><br>
 
 
 <div class="container" style="width:60%;">
@@ -99,7 +87,3 @@
   <% end %>
 
 </div>
-
-
-
-
