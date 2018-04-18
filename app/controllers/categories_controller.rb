@@ -9,6 +9,11 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @formulas = @category.formulas.order("created_at DESC")
+
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @category }
+    end
   end
 
 end
