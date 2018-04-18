@@ -13,18 +13,16 @@ class SkinconcernsController < ApplicationController
     end
   end
 
-  # def next_skinconcern 
-      #get '/skinconcerns/:id/next', to: 'skinconcerns#next_skinconcern'
-  #   @skinconcern = Skinconcern.find(params[:id])
-  #   @next_skinconcern = @skinconcern.next
-  #   render json: @next_skinconcern
-  # end
+  def next_skinconcern # get '/skinconcerns/:id/next', to: 'skinconcerns#next_skinconcern'
+    @skinconcern = Skinconcern.find(params[:id])
+    @next_skinconcern = @skinconcern.next
+    render json: @next_skinconcern
+  end
 
-  # def previous_skinconcern 
-      #get '/skinconcerns/:id/previous', to: 'skinconcerns#previous_skinconcern'
-  #   @skinconcern = Skinconcern.find(params[:id])
-  #   @previous_skinconcern = @skinconcern.previous
-  #   render json: @previous_skinconcern
-  # end
+  def previous_skinconcern # get '/skinconcerns/:id/previous', to: 'skinconcerns#previous_skinconcern'
+    @skinconcern = Skinconcern.find(params[:id])
+    @previous_skinconcern = @skinconcern.previous
+    render json: @previous_skinconcern
+  end
 
 end
