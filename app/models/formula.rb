@@ -16,6 +16,10 @@ class Formula < ActiveRecord::Base
 
   before_save :destroy_image?
 
+  def image_url
+    image.url(:medium)
+  end
+
   def image_delete
     @image_delete ||= "0"
   end

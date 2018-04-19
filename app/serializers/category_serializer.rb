@@ -11,6 +11,7 @@ class CategorySerializer < ActiveModel::Serializer
           username: User.find(formula.user_id).username
         },
         image_file_name: formula.image_file_name
+        image_url: formula.image_url
       }
     end
   end
