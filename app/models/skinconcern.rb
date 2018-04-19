@@ -8,24 +8,20 @@ class Skinconcern < ActiveRecord::Base
     self.name.downcase!
   end
 
-  def next  #sort alph
-    # how to add => unless name = "" or id == 0
-    # @skinconcerns = Skinconcern.all.order("name ASC").select { |concern| !concern[:name].blank? }
+  def next  #finds next skinconcern in accending by name
     if next_skinconcern = self.class.order("name ASC").where("name > ?", name).first 
       next_skinconcern
     else
-       Skinconcern.first
+      self.class.order("name ASC").first
     end
   end
 
-  def previous
-    if previous_skinconcern = self.class.order("name ASC").where("name < ?", name).last
+  def previous #finds previous skinconcern in descending by name
+    if previous_skinconcern = self.class.order("name DESC").where("name < ?", name).first
       previous_skinconcern
     else
-      Skinconcern.last
+      self.class.order("name DESC").first
     end
   end
 
 end
-
-
