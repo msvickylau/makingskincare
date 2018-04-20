@@ -1,5 +1,5 @@
 class FormulaSerializer < ActiveModel::Serializer
-  attributes :id, :title, :description, :direction, :image_file_name, :image_url, :comment_list
+  attributes :id, :title, :description, :direction, :updated_at, :image_file_name, :image_url, :comment_list
   has_one :user
   has_one :category
 
