@@ -16,4 +16,16 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def next_category  # get '/categories/:id/next', to: 'categories#next_category'
+    @category = Category.find(params[:id])
+    @next_category = @category.next
+    render json: @next_category
+  end
+
+  def previous_category #get '/categories/:id/previous', to: 'categories#previous_category'
+    @category = Category.find(params[:id])
+    @previous_category = @category.previous
+    render json: @previous_category
+  end
+
 end

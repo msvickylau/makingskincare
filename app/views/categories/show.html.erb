@@ -1,27 +1,29 @@
-<a href="/categories/<%= @category.previous.id %>" class="js-previous btn btn-secondary" style="float: left;" data-id="<%=@category.id%>"> < </a>
-<a href="/categories/<%= @category.next.id %>" class="js-next btn btn-secondary" style="float: right;" data-id="<%=@category.id%>"> > </a>
+<a href="#" class="js-previous-category btn btn-secondary" style="float: left;" data-id="<%=@category.id%>"> < </a>
+<a href="#" class="js-next-category btn btn-secondary" style="float: right;" data-id="<%=@category.id%>"> > </a>
 
 <h2 style="text-align: center;">All formulas for category:</h2>
-<h1 style="text-align: center;"><large class="text-primary"><%=@category.name%></large></h1>
+<h1 style="text-align: center;"><large class="categoryName text-primary"><%=@category.name%></large></h1>
 
 <br>
 
-<div class="row" id="category-page">
+<div class="row" id="categoryFormulaPage">
   <% @formulas.each do |formula| %>
-    <div class="col-lg-3">
+    <div class="categoryFormula col-lg-3">
       <div class="card border-light" style="max-width: 16rem; min-width: 15rem;">
         <div class="card-body">
           <h5><%= link_to formula.title, formula_path(formula)%> </h5>
 
           <% if formula.user != nil %>
-              <h6>By: <%= formula.user.username %> </h6>
+              <h6 class="formulaUserName">By: <%= formula.user.username %> </h6>
             <% else %>
               <h6>By: anonymous </h6>
           <% end %>
 
-          <%= link_to formula_path(formula) do %>
-            <%= image_tag formula.image.url(:medium) %>
-          <% end %>
+          <span class="formulaImage">
+            <%= link_to formula_path(formula) do %>
+              <%= image_tag formula.image.url(:medium) %>
+            <% end %>
+          </span>
           
         </div>
       </div><br>

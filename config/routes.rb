@@ -16,6 +16,9 @@ Rails.application.routes.draw do
 
   get '/skinconcerns/:id/next', to: 'skinconcerns#next_skinconcern'
   get '/skinconcerns/:id/previous', to: 'skinconcerns#previous_skinconcern'
+
+  get '/categories/:id/next', to: 'categories#next_category'
+  get '/categories/:id/previous', to: 'categories#previous_category'
   
 end
 
