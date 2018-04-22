@@ -15,10 +15,10 @@ function loadUserFormula(data) {
   /// USERS FORMULAS DIV ///// 
   var formulas = data["formulas"]; //only gives the array of users formulas.
   
-  formulas.sort(function(firstFormula, secondFormula) {
-    firstDate = new Date(firstFormula.updated_at);
+  formulas.sort(function(firstFormula, secondFormula) { //sort JS obkect array by date.
+    firstDate = new Date(firstFormula.updated_at); //Turn strings into dates
     secondDate = new Date(secondFormula.updated_at);
-    if (firstDate > secondDate) {
+    if (firstDate > secondDate) { //dates arranged from the most recent to the oldest
       return -1;
     } else if (firstDate < secondDate) {
       return 1;
@@ -58,7 +58,7 @@ function loadUserFormula(data) {
       "<div class='row'>" +
         "<div class='col-sm-8'>" +
           "<h5><a href='/formulas/"+ formulas[formula].id + "'>" + formulas[formula].title + "</a></h5>" + 
-            "<h6>By: <a href='/users/" + userID + "'>chocobear</a>, Created on "+ localDate +"</h6>" +
+            "<h6>By: <a href='/users/" + userID + "'>" + username +"</a>, Created on "+ localDate +"</h6>" +
           "<p class='text-muted'>"+formulas[formula].description+"</p>" +
         "</div>" +
 
