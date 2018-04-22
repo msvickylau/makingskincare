@@ -1,27 +1,39 @@
 $(function(){
   $(".js-view-formulas").on("click", function (e) {
-    var id = $(".js-view-formulas").attr("data-id") //grab the user.id
+    var id = $(".js-view-formulas").attr("data-id"); //grab the user.id
     $.get("/users/" + id + ".json", function(data) {
-      loadUserFormula(data) //load user.formulas
+      loadUserFormula(data); //load user.formulas
     })
     event.preventDefault();
   })
-})
+});
 
 function loadUserFormula(data) {
 
   // console.log(data); 
 
   /// USERS FORMULAS DIV ///// 
-  var formulas = (data["formulas"]) //only gives the array of users formulas.
+  var formulas = data["formulas"]; //only gives the array of users formulas.
+  
+  formulas.sort(function(firstFormula, secondFormula) {
+    firstDate = new Date(firstFormula.updated_at);
+    secondDate = new Date(secondFormula.updated_at);
+    if (firstDate > secondDate) {
+      return -1;
+    } else if (firstDate < secondDate) {
+      return 1;
+    } 
+    return 0;
+  });
+
   // console.log((data["formulas"]))
-  var usersFormulasDiv = $(".usersFormulas")
+  var usersFormulasDiv = $(".usersFormulas");
 
   //empty the div first
-  usersFormulasDiv.empty()
+  usersFormulasDiv.empty();
 
-  var userID = data["id"]
-  var username = data["username"]
+  var userID = data["id"];
+  var username = data["username"];
 
 
   //iterate over each formula in the formulas array JSON object, and then insert back into skinconcernFormulaPage div.
@@ -37,8 +49,8 @@ function loadUserFormula(data) {
     // console.log(formulas[formula].updated_at);
 
 
-    var savedDate = formulas[formula].updated_at //date as saved in DB
-    var creationDate = new Date(savedDate) //created a new date object in JS
+    var savedDate = formulas[formula].updated_at; //date as saved in DB
+    var creationDate = new Date(savedDate); //created a new date object in JS
     var options = {month: 'short', day: 'numeric', year: 'numeric',  hour:'numeric', minute:'numeric', second:'numeric'}; //needed by toLocaleDateString, organizing date format
     var localDate = creationDate.toLocaleDateString('en-US', options); // returns: Apr 19, 2018 07:50:31 PM
 
@@ -57,7 +69,7 @@ function loadUserFormula(data) {
         "</div>" +
       "</div><hr>"
     )
-  })
-} 
+  });
+}
 
 
