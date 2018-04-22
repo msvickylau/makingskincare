@@ -6,9 +6,15 @@ class FormulasController < ApplicationController
     # GET /users/#/formulas
     if params[:user_id]
       @formulas = User.find(params[:user_id]).formulas.order("created_at DESC")
+    
     # GET /formulas
     else
       @formulas = Formula.all.order("created_at DESC")
+    end
+    
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json:  @formulas }
     end
   end
 
