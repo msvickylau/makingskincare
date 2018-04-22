@@ -1,5 +1,5 @@
-$(function(){
-  $(".js-view-formulas").on("click", function (e) {
+$(function() {
+  $(".js-view-formulas").on("click", function(event) {
     var id = $(".js-view-formulas").attr("data-id"); //grab the user.id
     $.get("/users/" + id + ".json", function(data) {
       loadUserFormula(data); //load user.formulas
