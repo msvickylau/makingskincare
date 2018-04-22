@@ -1,4 +1,6 @@
-<div class="container" style="width:80%;">
+
+
+    <div class="container" style="width:80%;">
   <div class="card mb-3">
 
     <div class="card-body">
@@ -79,7 +81,7 @@
   <% if current_user %>
       <h4>Add a comment:</h4>
       <%= form_for ([@formula, @comment]) do |f| %>
-        <p><%= f.text_area :content, class: 'commentBox form-control' %></p>
+        <p><%= f.text_area :content, rows:3, class: 'commentBox form-control' %></p>
         <%= f.submit 'Create Comment', :class => 'btn btn-primary' %>
       <% end %>
   <% else %>
@@ -87,3 +89,5 @@
   <% end %>
 
 </div>
+
+<style>body {background-color: #e7e7e7;}</style>

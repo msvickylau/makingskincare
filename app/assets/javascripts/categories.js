@@ -21,7 +21,7 @@ function loadCategory(data) {
     
     categoryFormulaPage.append(
       "<div class='categoryFormula col-lg-3'>" +
-        "<div class='card border-light' style='max-width: 16rem; min-width: 15rem;'>" +
+        "<div class='card border-light' style='max-width: 15rem; min-width: 15rem;'>" +
           "<div class='card-body'>" +
           "<h5 class='formulaTitle'><a href='/formulas/" + (formulas[formula].id) + "'>" + (formulas[formula].title) + "</a> </h5>" +
           "<h6 class='formulaUserName'>By: " + (formulas[formula].user.username) + "</h6>" +

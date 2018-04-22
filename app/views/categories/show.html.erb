@@ -9,7 +9,7 @@
 <div class="row" id="categoryFormulaPage">
   <% @formulas.each do |formula| %>
     <div class="categoryFormula col-lg-3">
-      <div class="card border-light" style="max-width: 16rem; min-width: 15rem;">
+      <div class="card border-light" style="max-width: 15rem; min-width: 15rem;">
         <div class="card-body">
           <h5><%= link_to formula.title, formula_path(formula)%> </h5>
 
@@ -31,3 +31,4 @@
   <%end%>
 </div> 
 
+<style>body {background-color: #e7e7e7;}</style>

@@ -1,9 +1,9 @@
-<h1>All Formulas</h1><br>
+<h1 style="text-align: center;">All formulas:</h1><br>
 
 <div class="row" id="formulasIndex">
   <% @formulas.each do |formula| %>
     <div class="formula col-lg-3">
-      <div class="card border-light" style="max-width: 16rem; min-width: 15rem;">
+      <div class="card border-light" style="max-width: 15rem; min-width: 15rem;">
         <div class="formula card-body">
           <h5 class="formulaTitle"><%= link_to formula.title, formula_path(formula)%> </h5>
 
@@ -19,6 +19,8 @@
             <% end %>
           </span>
 
+          <p><small> Created on <%=time_created(formula)%> </small></p>
+
           <div id="description-<%= formula.id %>" class="text-muted"><%=formula.description.truncate(0)%>
             <a href='#' data-id="<%= formula.id %>" class='js-more'>see description</a>
           </div>
@@ -28,3 +30,5 @@
     </div>
   <%end%>
 </div> 
+
+<style>body {background-color: #e7e7e7;}</style>
