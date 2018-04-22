@@ -1,26 +1,25 @@
 $(function(){
-   $("#new_comment").on("submit", function(e){
-     $.ajax({
-       type: "POST",
-       url: this.action,
-       data: $(this).serialize(), // either JSON or querystring serializing
-       success: function(response){
+  $("#new_comment").on("submit", function(e) {
+    $.ajax({
+      type: "POST",
+      url: this.action, // this refers to whatever triggered the action
+      data: $(this).serialize(), // takes our form data and serializes it
+      success: function(response) {
         //update the DOM
         var comment = new Comment(response);
         comment.renderComments();
         $(".commentBox").val("");
-       }
-     });
-
-     e.preventDefault();
-   })
- });
+      };
+    });
+    e.preventDefault();
+  })
+});
 
 function Comment(data) {
   this.id = data.id;
   this.content = data.content;
   this.user = data.user;
-}
+};
 
 Comment.prototype.renderComments = function() {
   var html = "" ;
@@ -36,8 +35,4 @@ Comment.prototype.renderComments = function() {
   "</div>";
 
   $("#submitted-comments").append(html);
-}
-
-
-
-   
+};
