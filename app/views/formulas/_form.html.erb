@@ -13,15 +13,18 @@
   <%= f.collection_select(:category_id, Category.all, :id , :name, :prompt => true)%>
 </div><br>
 
-<div class="field">
+<div class="field" id="ingredientsHeader">
   <h5>Ingredients: (Please write amount and ingredient on each line)</h5>
-  <%= f.fields_for :ingredients do |ingredient_fields| %>
-    <%= ingredient_fields.text_field :name, size: 50%>
-    <%= ingredient_fields.check_box :_destroy %> delete <br>
-  <% end %><br>
-  
-  <%= f.submit 'Add ingredient', :name => "add_ingredient", :class => 'btn btn-secondary btn-sm' %>
-  <%= f.submit 'Delete checked ingredients', :name => "remove_ingredient", :class => 'btn btn-secondary btn-sm' %>
+  <ul id="ingredientsList">
+    <%= f.fields_for :ingredients do |ingredient_fields| %>
+      <li>
+        <%= ingredient_fields.text_field :name, size: 47%>
+      </li>
+    <% end %>
+  </ul>
+  <div class ="actions">
+    <%= submit_tag 'Add ingredient', :type => 'button', :id => 'addIngredient', :class => 'btn btn-secondary btn-sm', :onclick => 'addIngredientField()' %> 
+  </div>
 </div><br>
 
 <div class="field">

@@ -41,19 +41,12 @@ class FormulasController < ApplicationController
     @formula = Formula.new(formula_params)
     @formula.user_id = current_user.id
 
-    if params[:add_ingredient]
-      # add empty ingredient associated with @formula
-      @formula.ingredients.build
-    elsif params[:remove_ingredient]
-      # nested model that have _destroy attribute = 1 automatically deleted by rails
+    if @formula.save
+      flash[:message] = "Sucessfully created formula!"
+      redirect_to @formula and return
     else
-      # save goes like usual
-      if @formula.save
-        flash[:message] = "Sucessfully created formula!"
-        redirect_to @formula and return
-      end
+      render 'new'
     end
-    render :action => 'new'
   end
 
   def update
