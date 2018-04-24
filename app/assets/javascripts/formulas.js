@@ -11,7 +11,7 @@ $(function() {
 });
 
 //Formula Form
-function addIngredientField() {
+$(document).ready(function(){
   //create date object
   var date = new Date();
 
@@ -24,20 +24,23 @@ function addIngredientField() {
    "formula_ingredients_attributes_0_name".replace("0", mSec);
   nameAttributeIngredient = 
     "formula[ingredients_attributes][0][name]".replace("0", mSec);
-           
-  //create <li> tag  
-  var li = document.createElement("li");
 
-  var inputIngredient = document.createElement("input");
-  inputIngredient.setAttribute("size", "47");
-  inputIngredient.setAttribute("type", "text");
-  inputIngredient.setAttribute("name", nameAttributeIngredient);
-  inputIngredient.setAttribute("id", idAttributeIngredient);
-
-  li.appendChild(inputIngredient);
-
-  //add created <li> element with its child elements 
-  //(label and input) to myList (<ul>) element
-  document.getElementById("ingredientsList").appendChild(li);
-
-}
+  $('#addNewIngredient').click(function(){
+  $('div#ingredientsSet').append(
+        "<div class='ingredientsForm input-group mb-3'>" +
+          "<input class='form-control' type='text' name='"+ nameAttributeIngredient+"' id='"+idAttributeIngredient+"'>" +
+          "<div class='input-group-append'>" +
+            "<span class='input-group-text'>" +
+              "<button type='button' class='removeIngredient close'> ×</button>" +
+            "</span>" +
+          "</div>" +
+        "</div>"
+    );
+  });
+    
+$("div#ingredientsSet").on('click', '.removeIngredient', function(){
+  //closest goes up thru the DOM, looking for the first ancestor with the class ingredientsForm
+  $(this).closest('.ingredientsForm').remove(); 
+  console.log(this)
+});
+});
