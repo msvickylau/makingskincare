@@ -67,7 +67,12 @@
       <br>
       <div class="card" id="comment-<%= comment.id %>">
         <div class="card-body">
-          <h6 class="card-subtitle mb-2 text-muted">Posted by:  <%= link_to comment.user.username, comment.user %></h6>
+          <% if comment.user != nil %>
+            <h6 class="card-subtitle mb-2 text-muted">Posted by:  <%= link_to comment.user.username, comment.user %></h6>
+          <% else %>
+            <h6 class="text-muted">By: anonymous</h6>
+          <% end %>
+
           <p class="card-text"><%= comment.content %></p>
         </div>
       </div>
