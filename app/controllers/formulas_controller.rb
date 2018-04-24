@@ -8,6 +8,7 @@ class FormulasController < ApplicationController
       @formulas = User.find(params[:user_id]).formulas.order("created_at DESC")
     
     # GET /formulas
+    # GET /formulas.json
     else
       @formulas = Formula.all.order("created_at DESC")
     end
@@ -18,6 +19,8 @@ class FormulasController < ApplicationController
     end
   end
 
+  # GET /formulas/1
+  # GET /formulas/1.json
   def show
     @formula = Formula.find(params[:id])
     if current_user
@@ -29,55 +32,42 @@ class FormulasController < ApplicationController
     end
   end
 
+  # GET /users/1/formulas/new
+  # GET /formulas/new
   def new
     @formula = Formula.new
     @formula.ingredients.build
   end
 
+  # GET /formulas/4/edit
+  # GET /users/1/formulas/4/edit
   def edit
   end
 
+  # POST /formulas
   def create
     @formula = Formula.new(formula_params)
     @formula.user_id = current_user.id
 
     if @formula.save
       flash[:message] = "Sucessfully created formula!"
-      redirect_to @formula and return
+      redirect_to @formula
     else
       render 'new'
     end
   end
 
+  # PATCH/PUT /formulas/1
   def update
-    if params[:add_ingredient]
-      # rebuild the ingredient attributes that doesn't have an id, newly added ingredient that hasn't been saved yet. 
-      unless params[:formula][:ingredients_attributes].blank?
-        for attribute in params[:formula][:ingredients_attributes]
-          @formula.ingredients.build(attribute.last.except(:_destroy)) unless attribute.last.has_key?(:id)
-        end
-      end
-      # add one more empty ingredient attribute
-      @formula.ingredients.build
-    elsif params[:remove_ingredient]
-      # collect all marked for delete ingredient ids
-      removed_ingredients = params[:formula][:ingredients_attributes].collect { |i, att| att[:id] if (att[:id] && att[:_destroy].to_i == 1) }
-      # physically delete the ingredients from database
-      Ingredient.delete(removed_ingredients)
-      for attribute in params[:formula][:ingredients_attributes]
-        # rebuild ingredients attributes that doesn't have an id and its _destroy attribute is not 1
-        @formula.ingredients.build(attribute.last.except(:_destroy)) if (!attribute.last.has_key?(:id) && attribute.last[:_destroy].to_i == 0)
-      end
+    if @formula.update_attributes(formula_params)
+      flash[:message] = "Your Formula has been updated!"
+      redirect_to @formula
     else
-      # save goes like usual
-      if @formula.update_attributes(formula_params)
-        flash[:message] = "Your Formula has been updated!"
-        redirect_to @formula and return
-      end
+      render :action => 'edit'
     end
-    render :action => 'edit'
   end
 
+  # DELETE /formulas/1
   def destroy
     @formula.destroy
     flash[:message] = "Your Formula has been deleted!"
