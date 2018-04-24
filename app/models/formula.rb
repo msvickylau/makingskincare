@@ -3,7 +3,7 @@ class Formula < ActiveRecord::Base
   belongs_to :category
   has_many :ingredients
   has_many :comments
-  accepts_nested_attributes_for :ingredients, :reject_if => :all_blank, :allow_destroy => true
+  accepts_nested_attributes_for :ingredients, :reject_if => proc { |attributes| attributes['name'].blank? }, :allow_destroy => true
   
   has_many :formula_skinconcerns
   has_many :skinconcerns, :through => :formula_skinconcerns
@@ -14,18 +14,8 @@ class Formula < ActiveRecord::Base
   has_attached_file :image, styles: { :medium => "200x200#"}
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
-  before_save :destroy_image?
-
   def image_url
     image.url(:medium)
-  end
-
-  def image_delete
-    @image_delete ||= "0"
-  end
-
-  def image_delete=(value)
-    @image_delete = value
   end
 
   def skinconcerns_attributes=(skinconcern_attributes)
@@ -42,11 +32,4 @@ class Formula < ActiveRecord::Base
   def self.by_user(user_id)
     where(user: user_id)
   end
-
-  private
-
-  def destroy_image?
-    self.image.clear if @image_delete == "1"
-  end
-
 end
