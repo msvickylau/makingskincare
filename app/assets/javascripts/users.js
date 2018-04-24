@@ -16,8 +16,8 @@ function loadUserFormula(data) {
   var formulas = data["formulas"]; //only gives the array of users formulas.
   
   formulas.sort(function(firstFormula, secondFormula) { //sort JS obkect array by date.
-    firstDate = new Date(firstFormula.updated_at); //Turn strings into dates
-    secondDate = new Date(secondFormula.updated_at);
+    firstDate = new Date(firstFormula.created_at); //Turn strings into dates
+    secondDate = new Date(secondFormula.created_at);
     if (firstDate > secondDate) { //dates arranged from the most recent to the oldest
       return -1;
     } else if (firstDate < secondDate) {
@@ -49,7 +49,7 @@ function loadUserFormula(data) {
     // console.log(formulas[formula].updated_at);
 
 
-    var savedDate = formulas[formula].updated_at; //date as saved in DB
+    var savedDate = formulas[formula].created_at; //date as saved in DB
     var creationDate = new Date(savedDate); //created a new date object in JS
     var options = {month: 'short', day: 'numeric', year: 'numeric',  hour:'numeric', minute:'numeric', second:'numeric'}; //needed by toLocaleDateString, organizing date format
     var localDate = creationDate.toLocaleDateString('en-US', options); // returns: Apr 19, 2018 07:50:31 PM
