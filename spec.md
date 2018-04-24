@@ -2,18 +2,36 @@
 
 Specs:
 - [x] Use jQuery for implementing new requirements
-- [ ] Include a show resource rendered using jQuery and an Active Model Serialization JSON backend.
-- [ ] Include an index resource rendered using jQuery and an Active Model Serialization JSON backend.
-- [ ] Include at least one has_many relationship in information rendered via JSON and appended to the DOM.
-- [ ] Use your Rails API and a form to create a resource and render the response without a page refresh.
-- [ ] Translate JSON responses into js model objects.
-- [ ] At least one of the js model objects must have at least one method added by your code to the prototype.
 
-Confirm
-- [ ] You have a large number of small Git commits
-- [ ] Your commit messages are meaningful
-- [ ] You made the changes in a commit that relate to the commit message
-- [ ] You don't include changes in a commit that aren't related to the commit message
+- [x] Include a show resource rendered using jQuery and an Active Model Serialization JSON backend.
+      /skinconcerns/1 have "next" and "previous" buttons that navigate to the following skinconcern show page by alphebetical order of skinconcern name
+      /categories/1 have "next" and "previous" buttons that navigate to the following category show page by numerical order of category name
+
+- [x] Include an index resource rendered using jQuery and an Active Model Serialization JSON backend.
+      /formulas index page has 'see description' link, on click will append formulas description.
+
+- [x] Include at least one has_many relationship in information rendered via JSON and appended to the DOM.
+      Category has_many Formulas - renders next and previous category on button click
+      Formula has_many Comments - renders new comment in div after submiting a form 
+      User has_many Formulas - renders users formulas on "view formulas" button click
+      Skinconcerns has_many (and belongs to many) Formulas - renders next and previous skin concern on button click
+      Formula has_many Ingredients - renders new form feild for ingredient on click of 'Add Ingredient' button
+
+- [x] Use your Rails API and a form to create a resource and render the response without a page refresh.
+      Comment form creates a resource and renders the response to the DOM without a page refresh.
+
+- [x] Translate JSON responses into js model objects.
+      Upon submission of a comment; the id, user, and content of new comment was used to create a JS comment object.
+      Formula's date on users show page is taken from JSON response and turned into a JS date object
+
+- [x] At least one of the js model objects must have at least one method added by your code to the prototype.
+      Comment.prototype.renderComments -- The data of a comment is passed into the renderComments function and appended to the DOM.
+
+Confirm:
+- [x] You have a large number of small Git commits
+- [x] Your commit messages are meaningful
+- [x] You made the changes in a commit that relate to the commit message
+- [x] You don't include changes in a commit that aren't related to the commit message
 
 
 
