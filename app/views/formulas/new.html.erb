@@ -1,8 +1,8 @@
-<h1>New Formula</h1>
+<div class="container" style="width:60%;">
+  <h1>New Formula</h1>
 
-<%= form_for(@formula) do |f| %>
-  <%= render 'errors', x: @formula %>
-  <%= render 'form', f: f %>
-<% end %>
-
-
+  <%= form_for(@formula) do |f| %>
+    <%= render 'errors', x: @formula %>
+    <%= render 'form', f: f %>
+  <% end %>
+</div>

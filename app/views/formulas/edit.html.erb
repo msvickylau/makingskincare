@@ -1,13 +1,15 @@
-<% if @formula.user == current_user %>
+<div class="container" style="width:60%;">
+  <% if @formula.user == current_user %>
 
-  <h1>Edit Formula</h1>
-  <%= form_for(@formula) do |f| %>
-    <%= render 'errors', x: @formula %>
-    <%= render 'form', f: f %>
+    <h1>Edit Formula</h1>
+    <%= form_for(@formula) do |f| %>
+      <%= render 'errors', x: @formula %>
+      <%= render 'form', f: f %>
+    <% end %>
+
+  <% else %>
+
+    <h2> Sorry! You cannot edit a formula that is not yours! </h2>
+    <h4> Create a post <%= link_to "here.", new_formula_path %> </h4>
   <% end %>
-
-<% else %>
-
-  <h2> Sorry! You cannot edit a formula that is not yours! </h2>
-  <h4> Create a post <%= link_to "here.", new_formula_path %> </h4>
-<% end %>  
+</div>
