@@ -13,6 +13,17 @@ function loadCategory(data) {
   var formulas = (data["formula_list"])
   var categoryFormulaPage = $("#categoryFormulaPage")
 
+  formulas.sort(function(firstFormula, secondFormula) { //sort JS object array by date.
+    firstDate = new Date(firstFormula.created_at); //Turn strings into dates
+    secondDate = new Date(secondFormula.created_at);
+    if (firstDate > secondDate) { //dates arranged from the most recent to the oldest
+      return -1;
+    } else if (firstDate < secondDate) {
+      return 1;
+    } 
+    return 0;
+  });
+
   //empty the div first
   categoryFormulaPage.empty()
 

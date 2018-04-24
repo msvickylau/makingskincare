@@ -15,7 +15,7 @@ function loadUserFormula(data) {
   /// USERS FORMULAS DIV ///// 
   var formulas = data["formulas"]; //only gives the array of users formulas.
   
-  formulas.sort(function(firstFormula, secondFormula) { //sort JS obkect array by date.
+  formulas.sort(function(firstFormula, secondFormula) { //sort JS object array by date.
     firstDate = new Date(firstFormula.created_at); //Turn strings into dates
     secondDate = new Date(secondFormula.created_at);
     if (firstDate > secondDate) { //dates arranged from the most recent to the oldest
