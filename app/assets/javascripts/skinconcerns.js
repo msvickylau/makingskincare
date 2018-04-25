@@ -1,52 +1,68 @@
+// The below code is for Skinconcerns Show Page, /skinconcerns/1
+// show pages have next and previous buttons that append with formulas for each skinconcern.
+
+$(function(){
+  $(".js-previous-skinconcern").on("click", function (event) {
+    // get the id from the data-id attribute (current id) assign it to id
+    var id = $(".js-previous-skinconcern").attr("data-id")
+    // get previous skinconcern
+    $.get("/skinconcerns/" + id + "/previous", function(data) {
+      // pass data to loadSkinconcern
+      loadSkinconcern(data)
+    })
+    event.preventDefault();
+  })
+})
+
+$(function(){
+  $(".js-next-skinconcern").on("click", function (event) {
+    // get the id from the data-id attribute (current id) assign it to id
+    var id = $(".js-next-skinconcern").attr("data-id")
+    // get next skinconcern
+    $.get("/skinconcerns/" + id + "/next", function(data) {
+      // pass data to loadSkinconcern
+      loadSkinconcern(data)
+    })
+    event.preventDefault();
+  })
+})
+
 function loadSkinconcern(data) {
   // change the URL to the new route
   history.pushState({}, "", "/skinconcerns/" + data.id)
 
-  // re-set the id to current on the link
+  // re-set the id to current on the buttons
   $(".js-next-skinconcern").attr("data-id", data["id"]);
   $(".js-previous-skinconcern").attr("data-id",data["id"]);
 
-  ///// TITLE ///// 
-  ///// set skinconcernTitle to it's div and then empty current on page.
-  var skinconcernTitle = $("#skinconcernTitle")
+  // set skinconcernTitle to its div and then empty current on page.
+  var skinconcernTitle = $("#skinconcernTitle") 
   skinconcernTitle.empty()
-  // formulas without a skinconcern tag save with id of 0
-  if (data.id === 0) {
+
+  // header
+  if (data.id === 0) { // formulas without a skinconcern tag saves with id of 0
     skinconcernTitle.append("<h4 style='text-align: center;'>The below formulas don't have a skinconcern tag:</h4>")
-  } else {
+  } else { // append header with the following skinconcern name
     skinconcernTitle.append(
       "<h2 style='text-align: center;'>All formulas for skin concern:</h2>"+
       "<h1 style='text-align: center;''><large class='skinconcernName text-primary'>"+ (data["name"]) + "</large></h1>"
     )
   }
 
-  ///// Formula page ///// 
-  var formulas = (data["formula_list"])
+  // div where formulas go
   var skinconcernFormulaPage = $("#skinconcernFormulaPage")
 
-  formulas.sort(function(firstFormula, secondFormula) { //sort JS object array by date.
-    firstDate = new Date(firstFormula.created_at); //Turn strings into dates
-    secondDate = new Date(secondFormula.created_at);
-    if (firstDate > secondDate) { //dates arranged from the most recent to the oldest
-      return -1;
-    } else if (firstDate < secondDate) {
-      return 1;
-    } 
-    return 0;
-  });
-
-  //empty the div first
+  // empty the div
   skinconcernFormulaPage.empty()
 
+  // array of all formulas in the skinconcern
+  var formulas = (data["formula_list"])
+  
+  // most recent created_at date is sorted first. (defined in applications.js)
+  sortFormulaByDate(formulas)
+
   //iterate over each formula in the formula_list JSON object, and then insert back into skinconcernFormulaPage div.
-  $.each (formulas, function(formula) {
-    // console.log(formula);   //prints the index of the formula in the formula_list
-    // console.log(formulas[formula].id);
-    // console.log(formulas[formula].title);
-    // console.log(formulas[formula].user.username);
-    // console.log(formulas[formula].image_file_name);
-    // console.log(formulas[formula].image_url);
-    
+  $.each (formulas, function(formula) {    
     skinconcernFormulaPage.append(
       "<div class='skinconcernFormula col-lg-3'>" +
         "<div class='card border-light' style='max-width: 15rem; min-width: 15rem;'>" +
@@ -66,24 +82,3 @@ function loadSkinconcern(data) {
     )
   })
 }
-
-$(function(){
-  $(".js-previous-skinconcern").on("click", function (e) {
-    // get the id from the data-id attribute (current id and go to previous)
-    var id = $(".js-previous-skinconcern").attr("data-id")
-    $.get("/skinconcerns/" + id + "/previous", function(data) {
-      loadSkinconcern(data) //loads skinconcerns previous data
-    })
-    event.preventDefault();
-  })
-})
-
-$(function(){
-  $(".js-next-skinconcern").on("click", function (e) {
-    var id = $(".js-next-skinconcern").attr("data-id")
-    $.get("/skinconcerns/" + id + "/next", function(data) {
-      loadSkinconcern(data) //loads skinconcerns next data
-    })
-    event.preventDefault();
-  })
-})

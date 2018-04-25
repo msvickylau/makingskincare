@@ -1,35 +1,57 @@
+// The below code is for Categories Show Page, /categories/1
+// show pages have next and previous buttons that append with formulas for each category.
+
+$(function(){
+  $(".js-previous-category").on("click", function (event) {
+    // get the id from the data-id attribute (current id) assign it to id
+    var id = $(".js-previous-category").attr("data-id")
+    // get previous category
+    $.get("/categories/" + id + "/previous", function(data) {
+      // pass data to loadCategory
+      loadCategory(data) 
+    })
+    event.preventDefault();
+  })
+})
+
+$(function(){
+  $(".js-next-category").on("click", function (event) {
+    // get the id from the data-id attribute (current id) assign it to id
+    var id = $(".js-next-category").attr("data-id")
+    // get next category
+    $.get("/categories/" + id + "/next", function(data) {
+      // pass data to loadCategory
+      loadCategory(data)
+    })
+    event.preventDefault();
+  })
+})
+
 function loadCategory(data) {
   // change the URL to the new route
   history.pushState({}, "", "/categories/" + data.id)
 
-  // re-set the id to current on the link
+  // re-set the id to current on the buttons
   $(".js-next-category").attr("data-id", data["id"]);
   $(".js-previous-category").attr("data-id",data["id"]);
 
+  // replace header with following category name
   $(".categoryName").text(data["name"]);
 
+  // div where formulas go
+  var categoryFormulaPage = $("#categoryFormulaPage") 
 
-  ///// Formula page ///// 
-  var formulas = (data["formula_list"])
-  var categoryFormulaPage = $("#categoryFormulaPage")
-
-  formulas.sort(function(firstFormula, secondFormula) { //sort JS object array by date.
-    firstDate = new Date(firstFormula.created_at); //Turn strings into dates
-    secondDate = new Date(secondFormula.created_at);
-    if (firstDate > secondDate) { //dates arranged from the most recent to the oldest
-      return -1;
-    } else if (firstDate < secondDate) {
-      return 1;
-    } 
-    return 0;
-  });
-
-  //empty the div first
+  // empty the div
   categoryFormulaPage.empty()
 
-  //iterate over each formula in the formula_list JSON object, and then insert back into categoryFormulaPage div.
+  // array of all formulas in the category
+  var formulas = (data["formula_list"]) 
+
+  // most recent created_at date is sorted first. (defined in applications.js)
+  sortFormulaByDate(formulas)
+
+  // iterate over each formula in the formula_list JSON object, and then insert back into categoryFormulaPage div.
   $.each (formulas, function(formula) {
-    
     categoryFormulaPage.append(
       "<div class='categoryFormula col-lg-3'>" +
         "<div class='card border-light' style='max-width: 15rem; min-width: 15rem;'>" +
@@ -50,23 +72,3 @@ function loadCategory(data) {
   })
 }
 
-$(function(){
-  $(".js-previous-category").on("click", function (e) {
-    // get the id from the data-id attribute (current id and go to previous)
-    var id = $(".js-previous-category").attr("data-id")
-    $.get("/categories/" + id + "/previous", function(data) {
-      loadCategory(data) //loads categories previous data
-    })
-    event.preventDefault();
-  })
-})
-
-$(function(){
-  $(".js-next-category").on("click", function (e) {
-    var id = $(".js-next-category").attr("data-id")
-    $.get("/categories/" + id + "/next", function(data) {
-      loadCategory(data) //loads categories next data
-    })
-    event.preventDefault();
-  })
-})

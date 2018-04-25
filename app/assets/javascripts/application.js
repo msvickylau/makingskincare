@@ -13,3 +13,21 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+// sorts formula by date, most recent created_at date is sorted first.
+function sortFormulaByDate(formulas) {
+  //sort JS object array by date.
+  formulas.sort(function(firstFormula, secondFormula) { 
+    //Turn strings into dates
+    firstDate = new Date(firstFormula.created_at); 
+    secondDate = new Date(secondFormula.created_at);
+    //dates arranged from the most recent to the oldest
+    if (firstDate > secondDate) { 
+      return -1;
+    } else if (firstDate < secondDate) {
+      return 1;
+    } 
+    return 0;
+  });
+}
