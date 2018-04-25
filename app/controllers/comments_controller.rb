@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
     if @comment.save
       render json: @comment, status: 201
     else
+      flash[:message] = @comment.errors.full_messages
       render json: {errors: @comment.errors.full_messages}, status: 400
     end
   end
