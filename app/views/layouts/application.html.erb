@@ -14,18 +14,17 @@
 
   <body>
     <%= render 'layouts/navbar' %>
+    
 
     <% if !!flash[:message] %>
-      <div class="alert alert-dismissible alert-warning">
+      <div class="alert alert-dismissible alert-primary" style="max-width: 25rem; min-width: 20rem; position: fixed; right:2px; top:62px; z-index: 99">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <%= flash[:message] %>
+        <strong><%= flash[:message] %></strong>
       </div>
     <% end %>
 
     <div class ="container">
-      <br><br>
       <%= yield %>
-      <br><br>
     </div>
     
   </body>
