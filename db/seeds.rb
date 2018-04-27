@@ -6,175 +6,229 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create([
-    {id: 1, email: "vivi@gmail.com", username: "vivi"},
-    {id: 2, email: "coconutlover@gmail.com", username: "coconutlover"},
-    {id: 3, email: "chocobear@gmail.com", username: "chocobear"},
-    {id: 4, email: "jessicavocada@gmail.com", username: "Jessicavocado"}
-    ])
 
-Skinconcern.create([
-    {id: 1, name: "acne & blemishes"},
-    {id: 2, name: "anti-aging"},
-    {id: 3, name: "dark spots"},
-    {id: 4, name: "dryness"},
-    {id: 5, name: "dullness"},
-    {id: 6, name: "pore"},
-    {id: 7, name: ""},
-    {id: 8, name: "sunprotection"},
-    {id: 9, name: "oily skin"},
-    {id: 10, name: "redness"},
-    {id: 11, name: "cellulite"}
-    ])
+Category.create!({"id"=>1, "part"=>"face", "name"=>"Cleanser"})
+Category.create!({"id"=>2, "part"=>"face", "name"=>"Toner"})
+Category.create!({"id"=>3, "part"=>"face", "name"=>"Makeup Remover"})
+Category.create!({"id"=>4, "part"=>"face", "name"=>"Face Mositurizer"})
+Category.create!({"id"=>5, "part"=>"face", "name"=>"Face Serum"})
+Category.create!({"id"=>6, "part"=>"face", "name"=>"Face Scrub/Exfoliant"})
+Category.create!({"id"=>7, "part"=>"face", "name"=>"Face Mask"})
+Category.create!({"id"=>8, "part"=>"hair", "name"=>"Shampoo"})
+Category.create!({"id"=>9, "part"=>"hair", "name"=>"Conditioner"})
+Category.create!({"id"=>10, "part"=>"hair", "name"=>"Styling"})
+Category.create!({"id"=>11, "part"=>"body", "name"=>"Body Wash"})
+Category.create!({"id"=>12, "part"=>"body", "name"=>"Body Scrubs & Exfoliants"})
+Category.create!({"id"=>13, "part"=>"body", "name"=>"Body Mositurizer"})
+Category.create!({"id"=>14, "part"=>"body", "name"=>"Sunscreen & After Sun Care"})
+Category.create!({"id"=>15, "part"=>"body", "name"=>"Deodorant & Antiperspirant"})
 
-Category.create([
-    {part: 'face', name: 'Cleanser'},
-    {part: 'face', name: 'Toner'},
-    {part: 'face', name: 'Makeup Remover'},
-    {part: 'face', name: 'Face Mositurizer'},
-    {part: 'face', name: 'Face Serum'},
-    {part: 'face', name: 'Face Scrub/Exfoliant'},
-    {part: 'face', name: 'Face Mask'},
-    {part: 'hair', name: 'Shampoo'},
-    {part: 'hair', name: 'Conditioner'},
-    {part: 'hair', name: 'Styling'},
-    {part: 'body', name: 'Body Wash'},
-    {part: 'body', name: 'Body Scrubs & Exfoliants'},
-    {part: 'body', name: 'Body Mositurizer'},
-    {part: 'body', name: 'Sunscreen & After Sun Care'},
-    {part: 'body', name: 'Deodorant & Antiperspirant'},
-    ])
+Skinconcern.create!({"id"=>0, "name"=>""})
+Skinconcern.create!({"id"=>1, "name"=>"acne & blemishes"})
+Skinconcern.create!({"id"=>2, "name"=>"anti-aging"})
+Skinconcern.create!({"id"=>3, "name"=>"dark spots"})
+Skinconcern.create!({"id"=>4, "name"=>"dryness"})
+Skinconcern.create!({"id"=>5, "name"=>"dullness"})
+Skinconcern.create!({"id"=>6, "name"=>"pore"})
+Skinconcern.create!({"id"=>8, "name"=>"sun protection"})
+Skinconcern.create!({"id"=>9, "name"=>"oily skin"})
+Skinconcern.create!({"id"=>10, "name"=>"redness"})
+Skinconcern.create!({"id"=>11, "name"=>"cellulite"})
+
+User.create!({"id"=>1, "email"=>"coconutlover@gmail.com", "username"=>"coconutlover", "password"=>"$2a$11$1SHEpX3cXs.4t1ptZzO7COWFPWRv18Dtv6OF3H.illWjmgAoiwCbm"})
+User.create!({"id"=>2, "email"=>"chocobear@gmail.com", "username"=>"chocobear", "password"=>"$2a$11$fLEaVANNTvdFRY461iPbDObPJZMUG5ttEtK9A4t2waKF0l5hQ2tJq"})
+User.create!({"id"=>3, "email"=>"jessicavocada@gmail.com", "username"=>"Jessicavocado", "password"=>"$2a$11$ZpssC.NElqpopvGmtFTdeOSDsFNvfwLSCyaekCP6ghAL8us2jdNBK"})
+User.create!({"id"=>4, "email"=>"greencare@gmail.com", "username"=>"greencare", "password"=>"$2a$11$7yk0eSarzd6pLDvCY2PQzeC2CDHGnoWsvGKO/QO/ypz1lU.78MlGa"})
+User.create!({"id"=>5, "email"=>"jojoba@gmail.com", "username"=>"jojoba", "password"=>"$2a$11$pMm/39R7uX.Rmr2hf7ZB2uSCPYSXPrW9ZzuHKYjecTh5rg9.m3v2e"})
+User.create!({"id"=>6, "email"=>"withhoney@gmail.com", "username"=>"withhoney", "password"=>"$2a$11$JShzghcyfRIuOkdefhoPEOSm4HZG6xUSAYXgKAIuSkReTWoWgG/8."})
+User.create!({"id"=>7, "email"=>"simpleskincare@gmail.com", "username"=>"simpleskincare", "password"=>"$2a$11$FF0AJ.m3cnKqLuo.U1EOPOT9WfgOn5E.HKZ9sv6J38.X0B4TVmmSO"})
+User.create!({"id"=>9, "email"=>"organicisbest@gmail.com", "username"=>"organicisbest", "password"=>"$2a$11$AEniThN1d/QHBQpzLB2g9eZsLGbvGgP7MV/1nDa6Z/Vxo3A5017Da"})
+User.create!({"id"=>18, "email"=>"honeylemon@gmail.com", "username"=>"honeylemon", "password"=>"$2a$11$PPs86Ami/.LCyxTShL61v.8IRnwFMMUqTjWRQxLAkxHeovaXD951m"})
 
 
-Formula.create([
-    {id: 1, user_id: 1, category_id: 2, title: "Rose Water Toner", 
-        description: "Soothing toner, great for acne", 
-        direction: "Remove petals from stems and run them under luke-warm water to remove any leftover residue. Add petals to a large pot and top with enough distilled water to just cover (no more or you'll dilute your rosewater). over medium-low heat bring the water to a simmer and cover. Add witch hazel. Pour into spray bottles. Spray on clean face, remove excess with acotton ball.", 
-        created_at: "2018-02-01 07:40:15", 
-        updated_at: "2018-02-01 07:40:15", 
-        image_file_name: "rose_water.jpg", 
-        image_content_type: "image/jpeg", 
-        image_file_size: 29440, 
-        image_updated_at: "2018-02-01 07:40:14"
-        },
-    {id: 2, user_id: 1, category_id: 13, title: "Lotion Bars", 
-        description: "Easy to make lotion bars", 
-        direction: "Combine ingredients in a quart-size glass mason jar and place jar in a small saucepan of water until melted. This will save your bowl and you can just designate this jar for these type of projects and not even need to wash it out!  Turn the burner on and bring water to a boil. Stir ingredients constantly until they are melted and smooth.  Remove from heat, let cool a bit, and add any desired essential oils and/or vitamin E. Gently stir by hand until essential oils are incorporated.  Carefully pour into molds or whatever you will be allowing the lotion bars to harden in (ideas below). I used silicone baking cups for easy removal, though any mold would work.  Allow the lotion bars to cool completely before attempting to pop out of molds. These could be made in different shaped molds for different holiday gifts (hearts for Valentine’s Day, flowers for Mother’s Day, etc.) or made in a square baking pan and then cut into actual bars.", 
-        created_at: "2018-02-01 07:43:29", 
-        updated_at: "2018-02-01 07:43:29", 
-        image_file_name: "Homemade-Lotion-Bars-Image1.jpg", 
-        image_content_type: "image/jpeg", 
-        image_file_size: 101187, 
-        image_updated_at: "2018-02-01 07:43:29"
-        },
-    {id: 3, user_id: 1, category_id: 14, title: "Sunscreen Lotion Bars", 
-        description: "Homemade Sunscreen Bars", 
-        direction: "Combine all ingredients (except zinc oxide and essential oils if using) in a double boiler, or a glass bowl over a smaller saucepan with 1 inch of water in it.  Turn the burner on and bring water to a boil. Stir ingredients constantly until they are melted and smooth:  Remove from heat and add the zinc oxide powder and essential oils.  Gently stir by hand until essential oils are incorporated. Carefully pour into molds or whatever you will be allowing the lotion bars to harden in. I used these silicon baking cups, though any mold would work. This recipe exactly filled 12 silicon baking cups when I made it. Allow the lotion bars to cool completely before attempting to pop out of molds. These could be made in different shaped molds for different holiday gifts (hearts for valentines, flowers for Mother’s day, etc.) or made in a square baking pan and then cut into actual bars. They can be stored at room temperature or in the fridge or freezer for longer term storage. Keep below 80 degrees or they will melt! Adjust coverage to your needs and be careful not to burn while determining how long you can spend in the sun with these.", 
-        created_at: "2018-02-01 07:47:56", 
-        updated_at: "2018-02-01 07:47:56", 
-        image_file_name: "Homemade-Lotion-Bars-Image1.jpg", 
-        image_content_type: "image/jpeg", 
-        image_file_size: 101187, 
-        image_updated_at: "2018-02-01 07:47:56"
-        },
-    {id: 4, user_id: 1, category_id: 13, title: "Lotion with shea butter", 
-        description: "organic lotion", 
-        direction: "Combine shea butter and safflower oil in a glass bowl.  Start mixing the shea butter and safflower with a hand immersion mixer to make a shea butter lotion.  Continue mixing until smooth, should take no more than 2 minutes to turn onto a lotion.  Pour into a pretty cream or lotion container and slather the cream on your body!", 
-        created_at: "2018-02-01 07:52:04", 
-        updated_at: "2018-02-01 07:52:04", 
-        image_file_name: "shea-butter-lotion-1-800.jpg", 
-        image_content_type: "image/jpeg", 
-        image_file_size: 64255, 
-        image_updated_at: "2018-02-01 07:52:03"
-        },
-    {id: 5, user_id: 2, category_id: 12, title: "Coconut Sugar Scrub", 
-        description: "coconut vanilla sugar body scrub will leave your skin ready to flaunt", 
-        direction: "In a bowl, combine all ingredients. Add more or less oil depending on how oily you like your scrub.  Scoop the mixture into a reusable container.  Slather across your skin in the shower and enjoy! Just be careful. The bottom of your shower will likely get slippery.", 
-        created_at: "2018-02-01 08:10:44", 
-        updated_at: "2018-02-01 08:10:44", 
-        image_file_name: "images.jpeg", 
-        image_content_type: "image/jpeg", 
-        image_file_size: 5141, 
-        image_updated_at: "2018-02-01 08:10:43"
-        },
-    {id: 6, user_id: 2, category_id: 9, title: "Coconut Hair Mask", 
-        description: "Apple cider vinegar is good for strengthening hair, while coconut oil replenishes protein.", 
-        direction: "Add coconut oil and apple cider vinegar in a bowl. Mix well.  Coat and apply evenly to damp or dry hair and leave on for 15-20 minutes before rinsing out.  shampoo and condition as normal.", 
-        created_at: "2018-02-01 08:14:33", 
-        updated_at: "2018-02-01 08:14:33", 
-        image_file_name: "schema-photo-5-Coconut-Oil-Hair-Masks-for-Every-Hair-Problem3.jpg", 
-        image_content_type: "image/jpeg", 
-        image_file_size: 50222, 
-        image_updated_at: "2018-02-01 08:14:33"
-        },
-    {id: 7, user_id: 2, category_id: 1, title: "Oil cleanser", 
-        description: "Oil cleanser for blackhead-prone skin", 
-        direction: "Mix all oils together. Shake before each use and rub gently on the forehead, t-zone area, cheeks, and chin. Leave on for 1-2 minutes and then remove with a warm, wet washcloth, lastly a final rinse of warm water.", 
-        created_at: "2018-02-01 08:19:15", 
-        updated_at: "2018-02-01 08:19:15", 
-        image_file_name: "Oil-Cleanser.jpg", 
-        image_content_type: "image/jpeg", 
-        image_file_size: 118408, 
-        image_updated_at: "2018-02-01 08:19:14"
-        },
-    {id: 8, user_id: 2, category_id: 3, title: "Makeup Remover for Oily Skin", 
-        description: "DIY makeup remover. Works great on stubborn waterproof mascara!", 
-        direction: "Use about a quarter-sized amount of oil and massage over your face for one to two minutes. (No need to pre-wash or wet your skin.) Soak a clean washcloth in very hot water and wring it out before placing it over your face. Allow it to sit and steam your face for about a minute.  Give your skin a wipe with the clean side of the cloth and allow the thin layer of oil left behind to remain and soak into your skin.", 
-        created_at: "2018-02-01 08:23:29", 
-        updated_at: "2018-02-01 08:23:29", 
-        image_file_name: "Oil-Cleanser.jpg", 
-        image_content_type: "image/jpeg", 
-        image_file_size: 118408, 
-        image_updated_at: "2018-02-01 08:23:28"
-        },
-    {id: 9, user_id: 3, category_id: 7, title: "Exquisite Chocolate Face Mask Recipe", 
-        description: "This edible chocolate face mask features raw cacao powder and other ingredients right from the kitchen that make skin healthier, the tasty way.", 
-        direction: "Mash the banana with a fork, then add the rest of the ingredients.  Generously apply the chocolate mixture to the face and neck.  After 10-20 minutes, wash the face mask off.", 
-        created_at: "2018-02-01 08:27:53", 
-        updated_at: "2018-02-01 08:27:53", 
-        image_file_name: "Screen_Shot_2018-02-01_at_3.26.31_AM.png", 
-        image_content_type: "image/png", 
-        image_file_size: 301870, 
-        image_updated_at: "2018-02-01 08:27:53"
-        },
-    {id: 10, user_id: 3, category_id: 4, title: "Light weight face mositurizer", 
-        description: "Clean healthy facial moisturizer. This cream has only a few ingredients, no dyes, no chemical preservatives, no scents. Its non greasy and leaves my face feeling well moisturized. I also use it as a primer for my makeup in the morning, and I put a little on a cotton ball to clean off stubborn eye makeup", 
-        direction: "Start by melting the beeswax and coconut oil in the almond oil.   Pour the melted oils into your blender and WALK AWAY. It is super-duper essential that that stuff get COOL before you start to blend. There is no getting around this. For me it took about 1 hr 15.    Mix the essential oil into your cup of Aloe Vera Gel.   Fire up the blender. Slowly pour the aloe vera gel into the blender as it whips. It’ll transform from a thick oil to a light and fluffy white lotion texture. The first time I did this I had to call my husband into the room to look- its for real lotion!   That’s it! You’ve made your own DIY facial moisturizer! Store some in a small container for your vanity, and put extra in the fridge. Keep in mind that lotion has a shelf life. Don’t use anything that looks/smells/feels wrong.", 
-        created_at: "2018-02-01 08:34:00", 
-        updated_at: "2018-02-01 08:34:00", 
-        image_file_name: "coconut-oil-works.jpg", 
-        image_content_type: "image/jpeg", 
-        image_file_size: 76031, 
-        image_updated_at: "2018-02-01 08:34:00"
-        },
-    {id: 11, user_id: 4, category_id: 7, title: "Avocado and Honey face mask", 
-        description: "Hydrating avocado mask to help  soften dry flakey skin patches.", 
-        direction: " Remove seeds and peel the skin from the avocado and mash it up. Mix and stir thoroughly with 1 tablespoon of honey until a standard paste is produced.  A short application time of 15 minutes helps to erase any signs of dull complexion and gives the skin a radiant glow.", 
-        created_at: "2018-02-01 18:45:42", 
-        updated_at: "2018-02-01 18:45:42", 
-        image_file_name: "avocado-honey.jpg", 
-        image_content_type: "image/jpeg", 
-        image_file_size: 71827, 
-        image_updated_at: "2018-02-01 18:45:42"
-        },
-    {id: 12, user_id: 4, category_id: 7, title: "Avocado and Yogurt Face Mask", 
-        description: "Great facial mask to restore essential facial moisture. In addition, the lactic acid in yogurt help to kills bacteria and treat acne. ", 
-        direction: "Take 1/4 avocado and squash it until the lumps disappear. Mix it with 1 teaspoon of organic yogurt and stir again until both are evenly combined. Apply for 10-15 mins, wash off with lukewarm water.", 
-        created_at: "2018-02-01 18:48:46", 
-        updated_at: "2018-02-01 18:48:46", 
-        image_file_name: "avocado-yogurt-768x512.jpg", 
-        image_content_type: "image/jpeg", 
-        image_file_size: 55232, 
-        image_updated_at: "2018-02-01 18:48:46"
-        },
-    {id: 13, user_id: 4, category_id: 12, title: "Coffee Body Scrub", 
-        description: "This coffee body scrub recipe will leave yours skin smooth and well hydrated. Coffee basically “buffs” your skin and gives it a nice golden glow.  Plus it can reduce the appearance of cellulite!", 
-        direction: "(1) In a fast blender mix sugar and coconut oil until they are just blended. You don’t want to mix too long as this will break down the sugar and melt the coconut oil.  (2) Pour the sugar and coconut oil in an aluminum bowl placed in another bowl filled with cold iced water.   (3) Start whipping the scrub with an electric mixer until the scrub is fluffy and creamy. Add the ground coffee and liquid soap until they are just combined.   (4) Put the scrub in a pretty container and use within 1 month.   (5) If it’s hot (more than 25C) in your apartment, keep it in the fridge. Otherwise, you can leave it at room temperature.   (6)Use weekly in the morning shower as the body scrub, gently scrub your body but avoid sensitive areas.", 
-        created_at: "2018-02-01 19:52:26", 
-        updated_at: "2018-02-01 19:52:26", 
-        image_file_name: "coffee-body-scrub-500.jpg", 
-        image_content_type: "image/jpeg", 
-        image_file_size: 40925, 
-        image_updated_at: "2018-02-01 19:52:26"
-        },
-    ])
+# Formula.create({
+#     "id"=>1, 
+#     "user_id"=>9, 
+#     "category_id"=>2, 
+#     "title"=>"Rose Water Toner", 
+#     "description"=>"Soothing toner, great for acne", 
+#     "direction"=>"Remove petals from stems and run them under luke-warm water to remove any leftover residue. Add petals to a large pot and top with enough distilled water to just cover (no more or you'll dilute your rosewater). over medium-low heat bring the water to a simmer and cover. Add witch hazel. Pour into spray bottles. Spray on clean face, remove excess with acotton ball.", 
+#     "created_at"=>"Thu, 01 Feb 2018 07:40:15 UTC +00:00", 
+#     "image"=> File.open("#{Rails.root}/public/system/formulas/images/000/000/001/medium/rose_water.jpg")
+# })
+
+
+Ingredient.create!({"id"=>1, "name"=>"2 roses", "formula_id"=>1, "created_at"=>"Thu, 01 Feb 2018 07:40:15 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:40:15 UTC +00:00"})
+Ingredient.create!({"id"=>2, "name"=>"2 cups distilled water", "formula_id"=>1, "created_at"=>"Thu, 01 Feb 2018 07:40:15 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:40:15 UTC +00:00"})
+Ingredient.create!({"id"=>3, "name"=>"1/8 cup of witch hazel", "formula_id"=>1, "created_at"=>"Thu, 01 Feb 2018 07:40:15 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:40:15 UTC +00:00"})
+Ingredient.create!({"id"=>4, "name"=>"1 cup coconut oil", "formula_id"=>2, "created_at"=>"Thu, 01 Feb 2018 07:43:29 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:43:29 UTC +00:00"})
+Ingredient.create!({"id"=>5, "name"=>"1 cup shea butter, cocoa butter, or mango butter (or a mix of all three)", "formula_id"=>2, "created_at"=>"Thu, 01 Feb 2018 07:43:29 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:43:29 UTC +00:00"})
+Ingredient.create!({"id"=>6, "name"=>"1 cup beeswax", "formula_id"=>2, "created_at"=>"Thu, 01 Feb 2018 07:43:29 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:43:29 UTC +00:00"})
+Ingredient.create!({"id"=>7, "name"=>"optional: essential oils of choice", "formula_id"=>2, "created_at"=>"Thu, 01 Feb 2018 07:43:29 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:43:29 UTC +00:00"})
+Ingredient.create!({"id"=>8, "name"=>"optional: 1 teaspoon vitamin E oil", "formula_id"=>2, "created_at"=>"Thu, 01 Feb 2018 07:43:29 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:43:29 UTC +00:00"})
+Ingredient.create!({"id"=>9, "name"=>"1 cup coconut oil (I get mine here)", "formula_id"=>3, "created_at"=>"Thu, 01 Feb 2018 07:47:56 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:47:56 UTC +00:00"})
+Ingredient.create!({"id"=>10, "name"=>"1 cup beeswax", "formula_id"=>3, "created_at"=>"Thu, 01 Feb 2018 07:47:56 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:47:56 UTC +00:00"})
+Ingredient.create!({"id"=>11, "name"=>"1 cup shea butter, cocoa butter or mango butter (or a mix of all three equal to 1 cup)", "formula_id"=>3, "created_at"=>"Thu, 01 Feb 2018 07:47:56 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:47:56 UTC +00:00"})
+Ingredient.create!({"id"=>12, "name"=>"2 tablespoons (or more) of non-nano Zinc Oxide", "formula_id"=>3, "created_at"=>"Thu, 01 Feb 2018 07:47:56 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:47:56 UTC +00:00"})
+Ingredient.create!({"id"=>13, "name"=>"Optional: Vitamin E oil to preserve. I added 1 tsp vitamin E oil for this recipe made with 1 cup of each ingredient)", "formula_id"=>3, "created_at"=>"Thu, 01 Feb 2018 07:47:56 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:47:56 UTC +00:00"})
+Ingredient.create!({"id"=>14, "name"=>"Optional: a few drops of vanilla or essential oil for scent (do not use citrus oils!)", "formula_id"=>3, "created_at"=>"Thu, 01 Feb 2018 07:47:56 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:47:56 UTC +00:00"})
+Ingredient.create!({"id"=>15, "name"=>"10 tbs of refined or raw shea butter", "formula_id"=>4, "created_at"=>"Thu, 01 Feb 2018 07:52:04 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:52:04 UTC +00:00"})
+Ingredient.create!({"id"=>16, "name"=>"10 tbs of safflower oil", "formula_id"=>4, "created_at"=>"Thu, 01 Feb 2018 07:52:04 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:52:04 UTC +00:00"})
+Ingredient.create!({"id"=>17, "name"=>"Lavender essential oil (optional)", "formula_id"=>4, "created_at"=>"Thu, 01 Feb 2018 07:52:04 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:52:04 UTC +00:00"})
+Ingredient.create!({"id"=>18, "name"=>"1 cup raw organic sugar (or brown sugar)", "formula_id"=>5, "created_at"=>"Thu, 01 Feb 2018 08:10:44 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:10:44 UTC +00:00"})
+Ingredient.create!({"id"=>19, "name"=>"1/2 cup extra virgin olive oil, or grape seed oil or almond oil", "formula_id"=>5, "created_at"=>"Thu, 01 Feb 2018 08:10:44 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:10:44 UTC +00:00"})
+Ingredient.create!({"id"=>20, "name"=>"10 drops vanilla essential oil", "formula_id"=>5, "created_at"=>"Thu, 01 Feb 2018 08:10:44 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:10:44 UTC +00:00"})
+Ingredient.create!({"id"=>21, "name"=>"1-2 tablespoons coconut oil", "formula_id"=>5, "created_at"=>"Thu, 01 Feb 2018 08:10:44 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:10:44 UTC +00:00"})
+Ingredient.create!({"id"=>22, "name"=>" 2 tbs organic coconut oil, melted", "formula_id"=>6, "created_at"=>"Thu, 01 Feb 2018 08:14:33 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:14:33 UTC +00:00"})
+Ingredient.create!({"id"=>23, "name"=>"1 tbs apple cider vinegar", "formula_id"=>6, "created_at"=>"Thu, 01 Feb 2018 08:14:33 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:14:33 UTC +00:00"})
+Ingredient.create!({"id"=>24, "name"=>"1/2 cup jojoba oil ", "formula_id"=>7, "created_at"=>"Thu, 01 Feb 2018 08:19:15 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:19:15 UTC +00:00"})
+Ingredient.create!({"id"=>25, "name"=>"1/4 cup tamanu oil", "formula_id"=>7, "created_at"=>"Thu, 01 Feb 2018 08:19:15 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:19:15 UTC +00:00"})
+Ingredient.create!({"id"=>26, "name"=>"9 drops of Frankincense essential oil", "formula_id"=>7, "created_at"=>"Thu, 01 Feb 2018 08:19:15 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:19:15 UTC +00:00"})
+Ingredient.create!({"id"=>27, "name"=>"1/3 castor oil", "formula_id"=>8, "created_at"=>"Thu, 01 Feb 2018 08:23:29 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:23:29 UTC +00:00"})
+Ingredient.create!({"id"=>28, "name"=>"2/3 olive oil", "formula_id"=>8, "created_at"=>"Thu, 01 Feb 2018 08:23:29 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:23:29 UTC +00:00"})
+Ingredient.create!({"id"=>29, "name"=>"2 TBSP raw cacao powder", "formula_id"=>9, "created_at"=>"Thu, 01 Feb 2018 08:27:53 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:27:53 UTC +00:00"})
+Ingredient.create!({"id"=>30, "name"=>"1 TBSP yogurt", "formula_id"=>9, "created_at"=>"Thu, 01 Feb 2018 08:27:53 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:27:53 UTC +00:00"})
+Ingredient.create!({"id"=>31, "name"=>"1 tsp raw honey", "formula_id"=>9, "created_at"=>"Thu, 01 Feb 2018 08:27:53 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:27:53 UTC +00:00"})
+Ingredient.create!({"id"=>32, "name"=>"1/4 a  banana", "formula_id"=>9, "created_at"=>"Thu, 01 Feb 2018 08:27:53 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:27:53 UTC +00:00"})
+Ingredient.create!({"id"=>33, "name"=>"1 cup aloe vera gel", "formula_id"=>10, "created_at"=>"Thu, 01 Feb 2018 08:34:00 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:34:00 UTC +00:00"})
+Ingredient.create!({"id"=>34, "name"=>"3/4 ounce (by weight) beeswax", "formula_id"=>10, "created_at"=>"Thu, 01 Feb 2018 08:34:00 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:34:00 UTC +00:00"})
+Ingredient.create!({"id"=>35, "name"=>"1/4 cup almond oil", "formula_id"=>10, "created_at"=>"Thu, 01 Feb 2018 08:34:00 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:34:00 UTC +00:00"})
+Ingredient.create!({"id"=>36, "name"=>"1/4 cut coconut oil", "formula_id"=>10, "created_at"=>"Thu, 01 Feb 2018 08:34:00 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:34:00 UTC +00:00"})
+Ingredient.create!({"id"=>37, "name"=>"10 drops of your favorite essential oil", "formula_id"=>10, "created_at"=>"Thu, 01 Feb 2018 08:34:00 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:34:00 UTC +00:00"})
+Ingredient.create!({"id"=>38, "name"=>"1 tablespoon of honey", "formula_id"=>11, "created_at"=>"Thu, 01 Feb 2018 18:45:42 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 18:45:42 UTC +00:00"})
+Ingredient.create!({"id"=>39, "name"=>"1 organic avocado", "formula_id"=>11, "created_at"=>"Thu, 01 Feb 2018 18:45:42 UTC +00:00", "updated_at"=>"Fri, 02 Feb 2018 04:01:14 UTC +00:00"})
+Ingredient.create!({"id"=>40, "name"=>"1/4 avocado ", "formula_id"=>12, "created_at"=>"Thu, 01 Feb 2018 18:48:46 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 18:48:46 UTC +00:00"})
+Ingredient.create!({"id"=>41, "name"=>"1 teaspoon of organic yogurt", "formula_id"=>12, "created_at"=>"Thu, 01 Feb 2018 18:48:46 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 18:48:46 UTC +00:00"})
+Ingredient.create!({"id"=>42, "name"=>"1/3 cup of organic whole brown sugar(cassonade, muscovado)", "formula_id"=>13, "created_at"=>"Thu, 01 Feb 2018 19:52:26 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 19:55:09 UTC +00:00"})
+Ingredient.create!({"id"=>43, "name"=>"1/3 cup organic coconut oil (it needs to be cold and in solid form. If the coconut oil is melted put it in the fridge until it hardens.)", "formula_id"=>13, "created_at"=>"Thu, 01 Feb 2018 19:52:26 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 19:55:09 UTC +00:00"})
+Ingredient.create!({"id"=>44, "name"=>"1/3 cup of organic liquid castile soap like Dr Bronners", "formula_id"=>13, "created_at"=>"Thu, 01 Feb 2018 19:52:26 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 19:55:09 UTC +00:00"})
+Ingredient.create!({"id"=>45, "name"=>"2 tbs of organic ground coffee", "formula_id"=>13, "created_at"=>"Thu, 01 Feb 2018 19:52:26 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 19:52:26 UTC +00:00"})
+Ingredient.create!({"id"=>46, "name"=>"1 tbsp jojoba oil", "formula_id"=>14, "created_at"=>"Sat, 03 Feb 2018 03:50:31 UTC +00:00", "updated_at"=>"Sat, 03 Feb 2018 03:50:31 UTC +00:00"})
+Ingredient.create!({"id"=>47, "name"=>"1/2 tbsp argan oil", "formula_id"=>14, "created_at"=>"Sat, 03 Feb 2018 03:50:31 UTC +00:00", "updated_at"=>"Sat, 03 Feb 2018 03:50:31 UTC +00:00"})
+Ingredient.create!({"id"=>48, "name"=>"2-4 drops lavender essential oil", "formula_id"=>14, "created_at"=>"Sat, 03 Feb 2018 03:50:31 UTC +00:00", "updated_at"=>"Sat, 03 Feb 2018 03:50:31 UTC +00:00"})
+Ingredient.create!({"id"=>49, "name"=>"1 cup of sugar or baking soda", "formula_id"=>15, "created_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00"})
+Ingredient.create!({"id"=>50, "name"=>"1/2 cup of coconut oil or olive oil", "formula_id"=>15, "created_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00"})
+Ingredient.create!({"id"=>51, "name"=>"1 teaspoon of lemon zest", "formula_id"=>15, "created_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00"})
+Ingredient.create!({"id"=>52, "name"=>"1-2 drops of lemon extract (optional)", "formula_id"=>15, "created_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00"})
+Ingredient.create!({"id"=>53, "name"=>"1 can full fat coconut milk (about 13.5 oz) ", "formula_id"=>16, "created_at"=>"Mon, 05 Feb 2018 23:10:13 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:10:13 UTC +00:00"})
+Ingredient.create!({"id"=>54, "name"=>"2 Tbsp liquid raw honey", "formula_id"=>16, "created_at"=>"Mon, 05 Feb 2018 23:10:13 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:10:13 UTC +00:00"})
+Ingredient.create!({"id"=>55, "name"=>"1 tsp jojoba oil ", "formula_id"=>16, "created_at"=>"Mon, 05 Feb 2018 23:10:13 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:10:13 UTC +00:00"})
+Ingredient.create!({"id"=>56, "name"=>"1 tsp castor oil", "formula_id"=>16, "created_at"=>"Mon, 05 Feb 2018 23:10:13 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:10:13 UTC +00:00"})
+Ingredient.create!({"id"=>57, "name"=>"2 Tbsp apple cider vinegar ", "formula_id"=>16, "created_at"=>"Mon, 05 Feb 2018 23:10:13 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:10:13 UTC +00:00"})
+Ingredient.create!({"id"=>58, "name"=>"1 tsp essential oils of choice (lavender, cedarwood, rosemary, peppermint, carrot, clary sage and tea tree are all good for hair)", "formula_id"=>16, "created_at"=>"Mon, 05 Feb 2018 23:10:13 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:10:13 UTC +00:00"})
+Ingredient.create!({"id"=>59, "name"=>"1 whole orange (for dark hair) or lemon (for light hair), preferably organic (to avoid having pesticides in your hairspray)", "formula_id"=>17, "created_at"=>"Mon, 05 Feb 2018 23:18:09 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:18:09 UTC +00:00"})
+Ingredient.create!({"id"=>60, "name"=>"2 cups distilled or filtered water ", "formula_id"=>17, "created_at"=>"Mon, 05 Feb 2018 23:18:09 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:18:09 UTC +00:00"})
+Ingredient.create!({"id"=>61, "name"=>"2-3 tablespoons high proof vodka (or other clear grain alcohol)", "formula_id"=>17, "created_at"=>"Mon, 05 Feb 2018 23:18:09 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:18:09 UTC +00:00"})
+Ingredient.create!({"id"=>62, "name"=>"6-8 drops of lavender essential oil ", "formula_id"=>17, "created_at"=>"Mon, 05 Feb 2018 23:18:09 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:18:09 UTC +00:00"})
+Ingredient.create!({"id"=>63, "name"=>"1/4 cup coconut oil", "formula_id"=>18, "created_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00"})
+Ingredient.create!({"id"=>64, "name"=>"1/4 cup raw honey", "formula_id"=>18, "created_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00"})
+Ingredient.create!({"id"=>65, "name"=>"1/2 cup liquid Castile soap", "formula_id"=>18, "created_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00"})
+Ingredient.create!({"id"=>66, "name"=>"1 teaspoon vitamin E", "formula_id"=>18, "created_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00"})
+Ingredient.create!({"id"=>67, "name"=>"15 drops eucalyptus essential oil", "formula_id"=>18, "created_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00"})
+Ingredient.create!({"id"=>68, "name"=>"10 drops sweet orange essential oil", "formula_id"=>18, "created_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00"})
+Ingredient.create!({"id"=>69, "name"=>"10 drops lemon or grapefruit essential oil", "formula_id"=>18, "created_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00"})
+Ingredient.create!({"id"=>70, "name"=>"1/4 cup baking soda", "formula_id"=>19, "created_at"=>"Mon, 05 Feb 2018 23:35:08 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:35:08 UTC +00:00"})
+Ingredient.create!({"id"=>71, "name"=>" 1/4 cup cornstarch (you can also use arrowroot powder)", "formula_id"=>19, "created_at"=>"Mon, 05 Feb 2018 23:35:08 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:35:08 UTC +00:00"})
+Ingredient.create!({"id"=>72, "name"=>"3 tablespoons coconut oil", "formula_id"=>19, "created_at"=>"Mon, 05 Feb 2018 23:35:08 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:35:08 UTC +00:00"})
+Ingredient.create!({"id"=>73, "name"=>"2 tablespoons shea butter", "formula_id"=>19, "created_at"=>"Mon, 05 Feb 2018 23:35:08 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:35:08 UTC +00:00"})
+Ingredient.create!({"id"=>74, "name"=>"Essential oils (I used 2 drops lavender, 2 drops jasmine and 2 drops eucalyptus)", "formula_id"=>19, "created_at"=>"Mon, 05 Feb 2018 23:35:08 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:35:08 UTC +00:00"})
+Ingredient.create!({"id"=>75, "name"=>"1 teaspoon of organic cinnamon powder", "formula_id"=>20, "created_at"=>"Tue, 06 Feb 2018 22:42:51 UTC +00:00", "updated_at"=>"Tue, 06 Feb 2018 22:42:51 UTC +00:00"})
+Ingredient.create!({"id"=>76, "name"=>"1 tablespoon of raw honey", "formula_id"=>20, "created_at"=>"Tue, 06 Feb 2018 22:42:51 UTC +00:00", "updated_at"=>"Tue, 06 Feb 2018 22:42:51 UTC +00:00"})
+Ingredient.create!({"id"=>77, "name"=>"3/4 cup olive oil", "formula_id"=>21, "created_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00", "updated_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00"})
+Ingredient.create!({"id"=>78, "name"=>"3 cups granulated sugar", "formula_id"=>21, "created_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00", "updated_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00"})
+Ingredient.create!({"id"=>79, "name"=>"Juice of one lemon", "formula_id"=>21, "created_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00", "updated_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00"})
+Ingredient.create!({"id"=>80, "name"=>"Zest from 2 lemons", "formula_id"=>21, "created_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00", "updated_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00"})
+Ingredient.create!({"id"=>81, "name"=>"A couple drops of your favorite invigorating essential oil.", "formula_id"=>21, "created_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00", "updated_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00"})
+Ingredient.create!({"id"=>85, "name"=>";lkjmn", "formula_id"=>22, "created_at"=>"Tue, 13 Feb 2018 03:14:44 UTC +00:00", "updated_at"=>"Tue, 13 Feb 2018 03:14:44 UTC +00:00"})
+Ingredient.create!({"id"=>86, "name"=>"1/3 cup castile soap Baby Mild or Tea Tree", "formula_id"=>23, "created_at"=>"Tue, 13 Feb 2018 06:00:26 UTC +00:00", "updated_at"=>"Tue, 13 Feb 2018 06:00:26 UTC +00:00"})
+Ingredient.create!({"id"=>87, "name"=>"1/3 cup honey", "formula_id"=>23, "created_at"=>"Tue, 13 Feb 2018 06:00:26 UTC +00:00", "updated_at"=>"Tue, 13 Feb 2018 06:00:26 UTC +00:00"})
+Ingredient.create!({"id"=>88, "name"=>"3 TB distilled water boiled water will also work", "formula_id"=>23, "created_at"=>"Tue, 13 Feb 2018 06:00:26 UTC +00:00", "updated_at"=>"Tue, 13 Feb 2018 06:00:26 UTC +00:00"})
+Ingredient.create!({"id"=>90, "name"=>"2 TB skin-nourishing oil I use jojoba, Other options include: almond, avocado, olive, apricot, argan", "formula_id"=>23, "created_at"=>"Tue, 13 Feb 2018 19:02:29 UTC +00:00", "updated_at"=>"Tue, 13 Feb 2018 19:02:29 UTC +00:00"})
+
+FormulaSkinconcern.create({"id"=>1, "formula_id"=>1, "skinconcern_id"=>1, "created_at"=>"Thu, 01 Feb 2018 07:40:15 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:40:15 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>2, "formula_id"=>1, "skinconcern_id"=>4, "created_at"=>"Thu, 01 Feb 2018 07:40:15 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:40:15 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>3, "formula_id"=>1, "skinconcern_id"=>5, "created_at"=>"Thu, 01 Feb 2018 07:40:15 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:40:15 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>4, "formula_id"=>1, "skinconcern_id"=>6, "created_at"=>"Thu, 01 Feb 2018 07:40:15 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:40:15 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>6, "formula_id"=>2, "skinconcern_id"=>4, "created_at"=>"Thu, 01 Feb 2018 07:43:29 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:43:29 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>7, "formula_id"=>2, "skinconcern_id"=>5, "created_at"=>"Thu, 01 Feb 2018 07:43:29 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:43:29 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>9, "formula_id"=>3, "skinconcern_id"=>8, "created_at"=>"Thu, 01 Feb 2018 07:47:56 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:47:56 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>10, "formula_id"=>3, "skinconcern_id"=>4, "created_at"=>"Thu, 01 Feb 2018 07:48:17 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:48:17 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>12, "formula_id"=>4, "skinconcern_id"=>4, "created_at"=>"Thu, 01 Feb 2018 07:52:04 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:52:04 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>13, "formula_id"=>4, "skinconcern_id"=>5, "created_at"=>"Thu, 01 Feb 2018 07:52:04 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:52:04 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>15, "formula_id"=>5, "skinconcern_id"=>4, "created_at"=>"Thu, 01 Feb 2018 08:10:44 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:10:44 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>16, "formula_id"=>5, "skinconcern_id"=>5, "created_at"=>"Thu, 01 Feb 2018 08:10:44 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:10:44 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>18, "formula_id"=>6, "skinconcern_id"=>4, "created_at"=>"Thu, 01 Feb 2018 08:14:33 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:14:33 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>19, "formula_id"=>6, "skinconcern_id"=>5, "created_at"=>"Thu, 01 Feb 2018 08:14:33 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:14:33 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>21, "formula_id"=>7, "skinconcern_id"=>1, "created_at"=>"Thu, 01 Feb 2018 08:19:15 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:19:15 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>22, "formula_id"=>7, "skinconcern_id"=>6, "created_at"=>"Thu, 01 Feb 2018 08:19:15 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:19:15 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>23, "formula_id"=>8, "skinconcern_id"=>9, "created_at"=>"Thu, 01 Feb 2018 08:23:29 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:23:29 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>24, "formula_id"=>9, "skinconcern_id"=>2, "created_at"=>"Thu, 01 Feb 2018 08:27:53 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:27:53 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>25, "formula_id"=>9, "skinconcern_id"=>3, "created_at"=>"Thu, 01 Feb 2018 08:27:53 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:27:53 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>26, "formula_id"=>9, "skinconcern_id"=>4, "created_at"=>"Thu, 01 Feb 2018 08:27:53 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:27:53 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>27, "formula_id"=>9, "skinconcern_id"=>5, "created_at"=>"Thu, 01 Feb 2018 08:27:53 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:27:53 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>28, "formula_id"=>9, "skinconcern_id"=>6, "created_at"=>"Thu, 01 Feb 2018 08:27:54 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:27:54 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>29, "formula_id"=>9, "skinconcern_id"=>10, "created_at"=>"Thu, 01 Feb 2018 08:27:54 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:27:54 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>30, "formula_id"=>10, "skinconcern_id"=>2, "created_at"=>"Thu, 01 Feb 2018 08:34:00 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:34:00 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>31, "formula_id"=>10, "skinconcern_id"=>4, "created_at"=>"Thu, 01 Feb 2018 08:34:00 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:34:00 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>32, "formula_id"=>10, "skinconcern_id"=>5, "created_at"=>"Thu, 01 Feb 2018 08:34:00 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:34:00 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>34, "formula_id"=>11, "skinconcern_id"=>4, "created_at"=>"Thu, 01 Feb 2018 18:45:42 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 18:45:42 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>35, "formula_id"=>11, "skinconcern_id"=>5, "created_at"=>"Thu, 01 Feb 2018 18:45:42 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 18:45:42 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>36, "formula_id"=>12, "skinconcern_id"=>1, "created_at"=>"Thu, 01 Feb 2018 18:48:46 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 18:48:46 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>37, "formula_id"=>12, "skinconcern_id"=>4, "created_at"=>"Thu, 01 Feb 2018 18:48:46 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 18:48:46 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>38, "formula_id"=>12, "skinconcern_id"=>5, "created_at"=>"Thu, 01 Feb 2018 18:48:46 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 18:48:46 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>40, "formula_id"=>13, "skinconcern_id"=>4, "created_at"=>"Thu, 01 Feb 2018 19:52:26 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 19:52:26 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>41, "formula_id"=>13, "skinconcern_id"=>5, "created_at"=>"Thu, 01 Feb 2018 19:52:26 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 19:52:26 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>42, "formula_id"=>13, "skinconcern_id"=>11, "created_at"=>"Thu, 01 Feb 2018 19:52:26 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 19:52:26 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>45, "formula_id"=>14, "skinconcern_id"=>1, "created_at"=>"Sat, 03 Feb 2018 03:50:31 UTC +00:00", "updated_at"=>"Sat, 03 Feb 2018 03:50:31 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>46, "formula_id"=>14, "skinconcern_id"=>4, "created_at"=>"Sat, 03 Feb 2018 03:50:31 UTC +00:00", "updated_at"=>"Sat, 03 Feb 2018 03:50:31 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>47, "formula_id"=>14, "skinconcern_id"=>5, "created_at"=>"Sat, 03 Feb 2018 03:50:31 UTC +00:00", "updated_at"=>"Sat, 03 Feb 2018 03:50:31 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>49, "formula_id"=>15, "skinconcern_id"=>1, "created_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>50, "formula_id"=>15, "skinconcern_id"=>2, "created_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>51, "formula_id"=>15, "skinconcern_id"=>4, "created_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>52, "formula_id"=>15, "skinconcern_id"=>5, "created_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>53, "formula_id"=>15, "skinconcern_id"=>9, "created_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>54, "formula_id"=>15, "skinconcern_id"=>6, "created_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>56, "formula_id"=>16, "skinconcern_id"=>4, "created_at"=>"Mon, 05 Feb 2018 23:10:13 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:10:13 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>57, "formula_id"=>18, "skinconcern_id"=>4, "created_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>60, "formula_id"=>20, "skinconcern_id"=>1, "created_at"=>"Tue, 06 Feb 2018 22:42:51 UTC +00:00", "updated_at"=>"Tue, 06 Feb 2018 22:42:51 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>65, "formula_id"=>21, "skinconcern_id"=>11, "created_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00", "updated_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>66, "formula_id"=>21, "skinconcern_id"=>3, "created_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00", "updated_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>67, "formula_id"=>21, "skinconcern_id"=>4, "created_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00", "updated_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>68, "formula_id"=>21, "skinconcern_id"=>5, "created_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00", "updated_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>70, "formula_id"=>20, "skinconcern_id"=>9, "created_at"=>"Tue, 13 Feb 2018 01:51:54 UTC +00:00", "updated_at"=>"Tue, 13 Feb 2018 01:51:54 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>75, "formula_id"=>23, "skinconcern_id"=>1, "created_at"=>"Tue, 13 Feb 2018 06:00:26 UTC +00:00", "updated_at"=>"Tue, 13 Feb 2018 06:00:26 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>76, "formula_id"=>23, "skinconcern_id"=>9, "created_at"=>"Tue, 13 Feb 2018 06:00:26 UTC +00:00", "updated_at"=>"Tue, 13 Feb 2018 06:00:26 UTC +00:00"})
+
+Formula.create!({"id"=>2, "user_id"=>1, "category_id"=>13, "title"=>"Lotion Bars", "description"=>"Easy to make lotion bars", "direction"=>"Combine ingredients in a quart-size glass mason jar and place jar in a small saucepan of water until melted. This will save your bowl and you can just designate this jar for these type of projects and not even need to wash it out!  \r\nTurn the burner on and bring water to a boil. Stir ingredients constantly until they are melted and smooth.  \r\nRemove from heat, let cool a bit, and add any desired essential oils and/or vitamin E.\r\nGently stir by hand until essential oils are incorporated.  \r\nCarefully pour into molds or whatever you will be allowing the lotion bars to harden in (ideas below). I used silicone baking cups for easy removal, though any mold would work.  \r\nAllow the lotion bars to cool completely before attempting to pop out of molds. These could be made in different shaped molds for different holiday gifts (hearts for Valentine’s Day, flowers for Mother’s Day, etc.) or made in a square baking pan and then cut into actual bars.  ", "created_at"=>"Thu, 01 Feb 2018 07:43:29 UTC +00:00", "updated_at"=>"Tue, 24 Apr 2018 05:25:45 UTC +00:00", "image_file_name"=>"Screen_Shot_2018-04-24_at_1.24.48_AM.png", "image_content_type"=>"image/png", "image_file_size"=>408073, "image_updated_at"=>"Tue, 24 Apr 2018 05:25:45 UTC +00:00"})
+Formula.create!({"id"=>3, "user_id"=>1, "category_id"=>14, "title"=>"Sunscreen Lotion Bars", "description"=>"Homemade Sunscreen Bars", "direction"=>"Combine all ingredients (except zinc oxide and essential oils if using) in a double boiler, or a glass bowl over a smaller saucepan with 1 inch of water in it.\r\nTurn the burner on and bring water to a boil. Stir ingredients constantly until they are melted and smooth:\r\nRemove from heat and add the zinc oxide powder and essential oils.\r\nGently stir by hand until essential oils are incorporated.\r\nCarefully pour into molds or whatever you will be allowing the lotion bars to harden in. I used these silicon baking cups, though any mold would work. This recipe exactly filled 12 silicon baking cups when I made it.\r\nAllow the lotion bars to cool completely before attempting to pop out of molds. These could be made in different shaped molds for different holiday gifts (hearts for valentines, flowers for Mother’s day, etc.) or made in a square baking pan and then cut into actual bars.\r\nThey can be stored at room temperature or in the fridge or freezer for longer term storage. Keep below 80 degrees or they will melt! Adjust coverage to your needs and be careful not to burn while determining how long you can spend in the sun with these.", "created_at"=>"Thu, 01 Feb 2018 07:47:56 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:47:56 UTC +00:00", "image_file_name"=>"Homemade-Lotion-Bars-Image1.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>101187, "image_updated_at"=>"Thu, 01 Feb 2018 07:47:56 UTC +00:00"})
+Formula.create!({"id"=>4, "user_id"=>1, "category_id"=>13, "title"=>"Lotion with shea butter", "description"=>"organic lotion", "direction"=>"Combine shea butter and safflower oil in a glass bowl.  Start mixing the shea butter and safflower with a hand immersion mixer to make a shea butter lotion.  Continue mixing until smooth, should take no more than 2 minutes to turn onto a lotion.  Pour into a pretty cream or lotion container and slather the cream on your body!", "created_at"=>"Thu, 01 Feb 2018 07:52:04 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:52:04 UTC +00:00", "image_file_name"=>"shea-butter-lotion-1-800.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>64255, "image_updated_at"=>"Thu, 01 Feb 2018 07:52:03 UTC +00:00"})
+Formula.create!({"id"=>5, "user_id"=>2, "category_id"=>12, "title"=>"Coconut Sugar Scrub", "description"=>"coconut vanilla sugar body scrub will leave your skin ready to flaunt", "direction"=>"In a bowl, combine all ingredients. Add more or less oil depending on how oily you like your scrub.\r\n\r\nScoop the mixture into a reusable container.\r\n\r\nSlather across your skin in the shower and enjoy! Just be careful. The bottom of your shower will likely get slippery.", "created_at"=>"Thu, 01 Feb 2018 08:10:44 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:10:44 UTC +00:00", "image_file_name"=>"images.jpeg", "image_content_type"=>"image/jpeg", "image_file_size"=>5141, "image_updated_at"=>"Thu, 01 Feb 2018 08:10:43 UTC +00:00"})
+Formula.create({"id"=>6, "user_id"=>2, "category_id"=>9, "title"=>"Coconut Hair Mask", "description"=>"Apple cider vinegar is good for strengthening hair, while coconut oil replenishes protein.", "direction"=>"Add coconut oil and apple cider vinegar in a bowl. Mix well.  Coat and apply evenly to damp or dry hair and leave on for 15-20 minutes before rinsing out.  shampoo and condition as normal.", "created_at"=>"Thu, 01 Feb 2018 08:14:33 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:14:33 UTC +00:00", "image_file_name"=>"schema-photo-5-Coconut-Oil-Hair-Masks-for-Every-Hair-Problem3.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>50222, "image_updated_at"=>"Thu, 01 Feb 2018 08:14:33 UTC +00:00"})
+Formula.create({"id"=>7, "user_id"=>2, "category_id"=>1, "title"=>"Oil cleanser", "description"=>"Oil cleanser for blackhead-prone skin", "direction"=>"Mix all oils together. Shake before each use and rub gently on the forehead, t-zone area, cheeks, and chin. Leave on for 1-2 minutes and then remove with a warm, wet washcloth, lastly a final rinse of warm water.", "created_at"=>"Thu, 01 Feb 2018 08:19:15 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:19:15 UTC +00:00", "image_file_name"=>"oil.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>63237, "image_updated_at"=>"Wed, 07 Feb 2018 04:50:56 UTC +00:00"})
+Formula.create({"id"=>8, "user_id"=>2, "category_id"=>3, "title"=>"Makeup Remover for Oily Skin", "description"=>"DIY makeup remover. Works great on stubborn waterproof mascara!", "direction"=>"Use about a quarter-sized amount of oil and massage over your face for one to two minutes. (No need to pre-wash or wet your skin.)  Soak a clean washcloth in very hot water and wring it out before placing it over your face. Allow it to sit and steam your face for about a minute.  Give your skin a wipe with the clean side of the cloth and allow the thin layer of oil left behind to remain and soak into your skin.\r\n", "created_at"=>"Thu, 01 Feb 2018 08:23:29 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:23:29 UTC +00:00", "image_file_name"=>"Oil-Cleanser.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>118408, "image_updated_at"=>"Thu, 01 Feb 2018 08:23:28 UTC +00:00"})
+Formula.create({"id"=>9, "user_id"=>3, "category_id"=>7, "title"=>"Exquisite Chocolate Face Mask Recipe", "description"=>"This edible chocolate face mask features raw cacao powder and other ingredients right from the kitchen that make skin healthier, the tasty way.", "direction"=>"Mash the banana with a fork, then add the rest of the ingredients.  Generously apply the chocolate mixture to the face and neck.  After 10-20 minutes, wash the face mask off.", "created_at"=>"Thu, 01 Feb 2018 08:27:53 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:27:53 UTC +00:00", "image_file_name"=>"Screen_Shot_2018-02-01_at_3.26.31_AM.png", "image_content_type"=>"image/png", "image_file_size"=>301870, "image_updated_at"=>"Thu, 01 Feb 2018 08:27:53 UTC +00:00"})
+Formula.create({"id"=>10, "user_id"=>3, "category_id"=>4, "title"=>"Light weight face mositurizer", "description"=>"Clean healthy facial moisturizer. This cream has only a few ingredients, no dyes, no chemical preservatives, no scents. Its non greasy and leaves my face feeling well moisturized. I also use it as a primer for my makeup in the morning, and I put a little on a cotton ball to clean off stubborn eye makeup", "direction"=>"Start by melting the beeswax and coconut oil in the almond oil.   Pour the melted oils into your blender and WALK AWAY. It is super-duper essential that that stuff get COOL before you start to blend. There is no getting around this. For me it took about 1 hr 15.    Mix the essential oil into your cup of Aloe Vera Gel.   Fire up the blender. Slowly pour the aloe vera gel into the blender as it whips. It’ll transform from a thick oil to a light and fluffy white lotion texture. The first time I did this I had to call my husband into the room to look- its for real lotion!   That’s it! You’ve made your own DIY facial moisturizer! Store some in a small container for your vanity, and put extra in the fridge. Keep in mind that lotion has a shelf life. Don’t use anything that looks/smells/feels wrong.", "created_at"=>"Thu, 01 Feb 2018 08:34:00 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:34:00 UTC +00:00", "image_file_name"=>"coconut-oil-works.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>76031, "image_updated_at"=>"Thu, 01 Feb 2018 08:34:00 UTC +00:00"})
+Formula.create({"id"=>11, "user_id"=>4, "category_id"=>7, "title"=>"Avocado and Honey face mask", "description"=>"Hydrating avocado mask to help  soften dry flakey skin patches.", "direction"=>" Remove seeds and peel the skin from the avocado and mash it up. Mix and stir thoroughly with 1 tablespoon of honey until a standard paste is produced.  A short application time of 15 minutes helps to erase any signs of dull complexion and gives the skin a radiant glow.", "created_at"=>"Thu, 01 Feb 2018 18:45:42 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 18:45:42 UTC +00:00", "image_file_name"=>"avocado-honey.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>71827, "image_updated_at"=>"Thu, 01 Feb 2018 18:45:42 UTC +00:00"})
+Formula.create({"id"=>13, "user_id"=>4, "category_id"=>12, "title"=>"Coffee Body Scrub", "description"=>"This coffee body scrub recipe will leave yours skin smooth and well hydrated. Coffee basically “buffs” your skin and gives it a nice golden glow.  Plus it can reduce the appearance of cellulite!", "direction"=>"(1) In a fast blender mix sugar and coconut oil until they are just blended. You don’t want to mix too long as this will break down the sugar and melt the coconut oil.  (2) Pour the sugar and coconut oil in an aluminum bowl placed in another bowl filled with cold iced water.   (3) Start whipping the scrub with an electric mixer until the scrub is fluffy and creamy\r\nAdd the ground coffee and liquid soap until they are just combined.   (4) Put the scrub in a pretty container and use within 1 month.   (5) If it’s hot (more than 25C) in your apartment, keep it in the fridge. Otherwise, you can leave it at room temperature.   (6)Use weekly in the morning shower as the body scrub, gently scrub your body but avoid sensitive areas.", "created_at"=>"Mon, 05 Feb 2018 19:52:26 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 19:52:26 UTC +00:00", "image_file_name"=>"coffee-body-scrub-500.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>40925, "image_updated_at"=>"Thu, 01 Feb 2018 19:52:26 UTC +00:00"})
+Formula.create({"id"=>14, "user_id"=>9, "category_id"=>5, "title"=>"Facial Serum ", "description"=>"Easy to make, great for dry skin and acne. ", "direction"=>"Pour the base oil and premium oil into a 1 oz amber glass bottle using a small funnel. Add drops of essential oil. Close the bottle, and shake well to combine ingredients. Store in a cool, dark place away from sunlight. When applying to face, just a few drops will do the trick. Be sure to apply the DIY facial serum after cleansing and toning. After applying, allow 10-15 minutes for the DIY facial serum to fully absorb.", "created_at"=>"Thu, 01 Feb 2018 03:50:31 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 03:50:31 UTC +00:00", "image_file_name"=>"serum.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>51305, "image_updated_at"=>"Sat, 03 Feb 2018 03:50:30 UTC +00:00"})
+Formula.create({"id"=>15, "user_id"=>3, "category_id"=>6, "title"=>"Sugar lemon face scrub", "description"=>"This delicious and natural sugar scrub is composed of lemon grind, which contains citric and plant acids that work to cleanse, while lightening and brightening the skin and removing dead skin cells. Cocunut oil – which acts as an antibiotic – contains multivitamins and multi-nutrients which nourish and moisturize.", "direction"=>"Simply mix all ingredients together and place in an airtight glass container (use baking soda if you have sensitive or dry skin). Here are some tips when exfoliating \r\n- Do not use body exfoliators on your face as these tend to be coarser and could damage the sensitive skin on your face\r\n- Do not apply makeup after exfoliating\r\n- Exfoliate your neck also\r\n- Always test on the back of your hand prior to applying on your face\r\n- Exfoliate at night. ", "created_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00", "image_file_name"=>"craftberry1-645x689.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>36410, "image_updated_at"=>"Mon, 05 Feb 2018 23:01:20 UTC +00:00"})
+Formula.create({"id"=>16, "user_id"=>5, "category_id"=>8, "title"=>"Moisturizing PH balanced shampoo", "description"=>"This recipe won’t lather like regular shampoos, but it will cleanse and moisturize. Don’t use too much though, or you’ll end up with leftover residue in your hair, making it feel gunky.", "direction"=>"Combine all ingredients in a mixing bowl and whisk until smooth. This will separate some, so shake well before each use.  \r\nTo use, massage a small amount on the scalp and use your fingers or a comb to spread through the hair. Leave on for a few minutes before rinsing off.  \r\nIf your hair is naturally very oily, you can follow this up with an apple cider vinegar rinse made with ¼ cup apple cider vinegar and ¼ cup purified water.\r\n", "created_at"=>"Tue, 06 Feb 2018 23:10:13 UTC +00:00", "updated_at"=>"Tue, 06 Feb 2018 23:10:13 UTC +00:00", "image_file_name"=>"Depositphotos_50174355_m-2015-800x534.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>60223, "image_updated_at"=>"Mon, 05 Feb 2018 23:10:13 UTC +00:00"})
+Formula.create({"id"=>17, "user_id"=>6, "category_id"=>10, "title"=>"Citrus-Lavender Hairspray", "description"=>"This is not a maximum hold hairspray that will freeze a prom up-do or 80’s bangs. I can say with confidence that it’s a flexible hold formula. I was a loyal user of firm hold hairspray for years before trying this formula, now I PREFER this to my old sprays.", "direction"=>"(1) Cut a whole orange or lemon into wedges and combine with 2 cups water in a small pot. Boil over medium-high heat until liquid is reduced by half.  (2) Strain liquid through cheesecloth into a measuring cup. If you boiled too much liquid out add water until you have 1 cup. Allow the citrus juice to cool.  (3) Combine alcohol and essential oils in a small bowl, swirl to mix, then add to the cup of citrus juice. (Feel free to experiment with your favorite essential oil or leave them out altogether.)  (4) Use a funnel to pour into a spray bottle with a fine mister and shake to combine ingredients. Shake before each use.", "created_at"=>"Thu, 01 Feb 2018 13:18:09 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 13:18:09 UTC +00:00", "image_file_name"=>"Screen_Shot_2018-02-06_at_11.41.12_PM.png", "image_content_type"=>"image/png", "image_file_size"=>404643, "image_updated_at"=>"Wed, 07 Feb 2018 04:41:41 UTC +00:00"})
+Formula.create({"id"=>18, "user_id"=>2, "category_id"=>11, "title"=>"Homemade Body wash with honey and coconut oil", "description"=>"Natural moisturizing body wash with coconut oil, It moisturizes like no other, without clogging pores, and smells like you spent the day at the beach.", "direction"=>"(1) Scoop coconut oil into a microwave safe bowl and heat on medium setting for 30 seconds until melted.   (2) Add honey, essential oils and vitamin E and whisk together.   (3)Add Castile soap slowly, stirring gently to avoid creating suds. (4)Transfer to glass or plastic bottle. (5)Shake before each use.", "created_at"=>"Tue, 06 Feb 2018 23:29:32 UTC +00:00", "updated_at"=>"Tue, 06 Feb 2018 23:29:32 UTC +00:00", "image_file_name"=>"5D3_4413.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>40734, "image_updated_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00"})
+Formula.create({"id"=>19, "user_id"=>7, "category_id"=>15, "title"=>"Lavender Coconut Deodorant", "description"=>"Store bought deodorants that are truly non-toxic typically lose their effectiveness after a few hours. This homemade deodorant recipe really works!", "direction"=>"Melt the coconut oil and shea butter together over low heat. Stir in the baking soda, cornstarch/arrowroot, and essential oils and pour into a small jar with a lid. You’ll be amazed at how well this solidifies. I apply it with my fingers but it would be super easy to use as a bar as well.\r\n\r\nApparently, after a few months of use the baking soda can mess up your underarm pH – you’ll know this has happened if you get the crazy itchiness again. According to Crunchy Betty, swabbing with apple cider vinegar before applying the deodorant will correct the pH.", "created_at"=>"Thu, 01 Feb 2018 07:35:08 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 07:35:08 UTC +00:00", "image_file_name"=>"DIY-natural-deodorant-lavender.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>281678, "image_updated_at"=>"Mon, 05 Feb 2018 23:35:07 UTC +00:00"})
+Formula.create({"id"=>20, "user_id"=>9, "category_id"=>7, "title"=>"Honey Cinnamon Acne mask", "description"=>"Both cinnamon and honey have anti-microbial properties. On top of that, honey may help reduce inflammation and provide a moist environment conducive to healing.", "direction"=>"Put 1 teaspoon of organic cinnamon powder in a small mixing bowl. Add 1 tablespoon of raw honey as well. Mix them well. apply to skin with a brush. Leave it on for 10 to 15 minutes. Repeat 2 or 3 times a week for at least 2 weeks to treat severe acne breakouts.\r\n", "created_at"=>"Tue, 06 Feb 2018 22:42:51 UTC +00:00", "updated_at"=>"Tue, 06 Feb 2018 22:42:51 UTC +00:00", "image_file_name"=>"Screen_Shot_2018-02-06_at_5.26.47_PM.png", "image_content_type"=>"image/png", "image_file_size"=>153579, "image_updated_at"=>"Tue, 06 Feb 2018 22:42:50 UTC +00:00"})
+Formula.create({"id"=>21, "user_id"=>9, "category_id"=>12, "title"=>"Lemon Olive Oil Body Scrub", "description"=>"This is a great cleansing scrub for reducing your risk of oily skin. The olive oil helps to balance out the lemon, so your skin will be left clean but not dry.", "direction"=>"Combine olive oil and sugar first, followed by the lemon juice and rind. Finish by adding essential oil—rosemary and grapefruit are both invigorating and good for your skin.\r\nApply to skin in circular motions, then rinse off.", "created_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00", "updated_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00", "image_file_name"=>"lemon-mint-sugar-scrub-for-smooth-legs.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>132301, "image_updated_at"=>"Tue, 13 Feb 2018 01:32:18 UTC +00:00"})
+Formula.create({"id"=>23, "user_id"=>9, "category_id"=>1, "title"=>"Honey Face Wash", "description"=>"This DIY homemade honey face wash is super easy to make. It has resulted in both happier skin that is soft and smooth. The tea tree oil is great for fighting acne bacteria.", "direction"=>"In a soap dispenser, add the water first (to prevent bubbles) then the liquid castile soap, honey, and oil. Shake the ingredients together until the honey is fully dissolved.\r\nShake the soap dispenser every few days in between uses.", "created_at"=>"Tue, 13 Feb 2018 06:00:26 UTC +00:00", "updated_at"=>"Tue, 13 Feb 2018 22:05:36 UTC +00:00", "image_file_name"=>"DIY-honey-face-wash.jpg", "image_content_type"=>"image/jpeg", "image_file_size"=>76705, "image_updated_at"=>"Tue, 13 Feb 2018 22:05:36 UTC +00:00"})
+
+Comment.create!({"id"=>1, "user_id"=>1, "formula_id"=>1, "content"=>"Fresh rose water smells so good! thanks for sharing!", "created_at"=>"Wed, 11 Apr 2018 19:00:36 UTC +00:00", "updated_at"=>"Wed, 11 Apr 2018 19:00:36 UTC +00:00"})
+Comment.create!({"id"=>2, "user_id"=>2, "formula_id"=>1, "content"=>"Awesome! Thanks for sharing!", "created_at"=>"Wed, 11 Apr 2018 19:01:36 UTC +00:00", "updated_at"=>"Wed, 11 Apr 2018 19:01:36 UTC +00:00"})
+Comment.create!({"id"=>3, "user_id"=>3, "formula_id"=>1, "content"=>"Great recipe!", "created_at"=>"Wed, 11 Apr 2018 19:08:19 UTC +00:00", "updated_at"=>"Wed, 11 Apr 2018 19:08:19 UTC +00:00"})
+Comment.create!({"id"=>4, "user_id"=>9, "formula_id"=>3, "content"=>"This is my favorite recipe for lotion bars! I added lavender oil for scent and love it!", "created_at"=>"Wed, 11 Apr 2018 19:11:50 UTC +00:00", "updated_at"=>"Wed, 11 Apr 2018 19:11:50 UTC +00:00"})
+Comment.create!({"id"=>131, "user_id"=>9, "formula_id"=>23, "content"=>"thanks for sharing! ", "created_at"=>"Sat, 14 Apr 2018 20:59:11 UTC +00:00", "updated_at"=>"Sat, 14 Apr 2018 20:59:11 UTC +00:00"})
+Comment.create!({"id"=>135, "user_id"=>5, "formula_id"=>1, "content"=>"This is great for calming irritated skin! ", "created_at"=>"Sat, 14 Apr 2018 21:23:53 UTC +00:00", "updated_at"=>"Sat, 14 Apr 2018 21:23:53 UTC +00:00"})
+Comment.create!({"id"=>138, "user_id"=>4, "formula_id"=>4, "content"=>"This is great! I use it right out of the shower and my skin feels amazing.", "created_at"=>"Thu, 19 Apr 2018 04:08:13 UTC +00:00", "updated_at"=>"Thu, 19 Apr 2018 04:08:13 UTC +00:00"})
+Comment.create!({"id"=>139, "user_id"=>3, "formula_id"=>4, "content"=>"It's easy to make too!", "created_at"=>"Thu, 19 Apr 2018 04:08:29 UTC +00:00", "updated_at"=>"Thu, 19 Apr 2018 04:08:29 UTC +00:00"})
+Comment.create!({"id"=>140, "user_id"=>9, "formula_id"=>23, "content"=>"hey this great! thanks for sharing!", "created_at"=>"Sat, 21 Apr 2018 23:53:44 UTC +00:00", "updated_at"=>"Sat, 21 Apr 2018 23:53:44 UTC +00:00"})
+Comment.create!({"id"=>143, "user_id"=>1, "formula_id"=>23, "content"=>"Lavender oil works great with this recipe! ", "created_at"=>"Tue, 24 Apr 2018 05:36:07 UTC +00:00", "updated_at"=>"Tue, 24 Apr 2018 05:36:07 UTC +00:00"})
+Comment.create!({"id"=>144, "user_id"=>2, "formula_id"=>23, "content"=>"This is a great formula! thanks for sharing!!", "created_at"=>"Tue, 24 Apr 2018 20:51:30 UTC +00:00", "updated_at"=>"Tue, 24 Apr 2018 20:51:30 UTC +00:00"})
+Comment.create!({"id"=>152, "user_id"=>18, "formula_id"=>23, "content"=>"This shampoo makes my hair feel very smooth! Thanks for sharing.", "created_at"=>"Wed, 25 Apr 2018 02:15:28 UTC +00:00", "updated_at"=>"Wed, 25 Apr 2018 02:15:28 UTC +00:00"})
