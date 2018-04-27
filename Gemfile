@@ -28,7 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'dotenv-rails', groups: [:development, :test]
-gem 'devise'
+gem 'devise', '~> 4.4.3'
 gem 'omniauth-facebook'
 
 
