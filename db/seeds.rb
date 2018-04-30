@@ -1,11 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
+# This file should contain all the record creation needed to seed the database with its default values and examples.
+# The data can then be loaded with the rails db:seed command
 
 Category.create!({"id"=>1, "part"=>"face", "name"=>"Cleanser"})
 Category.create!({"id"=>2, "part"=>"face", "name"=>"Toner"})
@@ -66,7 +60,7 @@ Ingredient.create!({"id"=>18, "name"=>"1 cup raw organic sugar (or brown sugar)"
 Ingredient.create!({"id"=>19, "name"=>"1/2 cup extra virgin olive oil, or grape seed oil or almond oil", "formula_id"=>5, "created_at"=>"Thu, 01 Feb 2018 08:10:44 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:10:44 UTC +00:00"})
 Ingredient.create!({"id"=>20, "name"=>"10 drops vanilla essential oil", "formula_id"=>5, "created_at"=>"Thu, 01 Feb 2018 08:10:44 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:10:44 UTC +00:00"})
 Ingredient.create!({"id"=>21, "name"=>"1-2 tablespoons coconut oil", "formula_id"=>5, "created_at"=>"Thu, 01 Feb 2018 08:10:44 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:10:44 UTC +00:00"})
-Ingredient.create!({"id"=>22, "name"=>" 2 tbs organic coconut oil, melted", "formula_id"=>6, "created_at"=>"Thu, 01 Feb 2018 08:14:33 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:14:33 UTC +00:00"})
+Ingredient.create!({"id"=>22, "name"=>"2 tbs organic coconut oil, melted", "formula_id"=>6, "created_at"=>"Thu, 01 Feb 2018 08:14:33 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:14:33 UTC +00:00"})
 Ingredient.create!({"id"=>23, "name"=>"1 tbs apple cider vinegar", "formula_id"=>6, "created_at"=>"Thu, 01 Feb 2018 08:14:33 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:14:33 UTC +00:00"})
 Ingredient.create!({"id"=>24, "name"=>"1/2 cup jojoba oil ", "formula_id"=>7, "created_at"=>"Thu, 01 Feb 2018 08:19:15 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:19:15 UTC +00:00"})
 Ingredient.create!({"id"=>25, "name"=>"1/4 cup tamanu oil", "formula_id"=>7, "created_at"=>"Thu, 01 Feb 2018 08:19:15 UTC +00:00", "updated_at"=>"Thu, 01 Feb 2018 08:19:15 UTC +00:00"})
@@ -176,7 +170,9 @@ FormulaSkinconcern.create({"id"=>52, "formula_id"=>15, "skinconcern_id"=>5, "cre
 FormulaSkinconcern.create({"id"=>53, "formula_id"=>15, "skinconcern_id"=>9, "created_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00"})
 FormulaSkinconcern.create({"id"=>54, "formula_id"=>15, "skinconcern_id"=>6, "created_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:01:21 UTC +00:00"})
 FormulaSkinconcern.create({"id"=>56, "formula_id"=>16, "skinconcern_id"=>4, "created_at"=>"Mon, 05 Feb 2018 23:10:13 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:10:13 UTC +00:00"})
-FormulaSkinconcern.create({"id"=>57, "formula_id"=>18, "skinconcern_id"=>4, "created_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>57, "formula_id"=>17, "skinconcern_id"=>0, "created_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>58, "formula_id"=>18, "skinconcern_id"=>4, "created_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00"})
+FormulaSkinconcern.create({"id"=>59, "formula_id"=>19, "skinconcern_id"=>0, "created_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00", "updated_at"=>"Mon, 05 Feb 2018 23:29:32 UTC +00:00"})
 FormulaSkinconcern.create({"id"=>60, "formula_id"=>20, "skinconcern_id"=>1, "created_at"=>"Tue, 06 Feb 2018 22:42:51 UTC +00:00", "updated_at"=>"Tue, 06 Feb 2018 22:42:51 UTC +00:00"})
 FormulaSkinconcern.create({"id"=>65, "formula_id"=>21, "skinconcern_id"=>11, "created_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00", "updated_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00"})
 FormulaSkinconcern.create({"id"=>66, "formula_id"=>21, "skinconcern_id"=>3, "created_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00", "updated_at"=>"Tue, 13 Feb 2018 01:32:19 UTC +00:00"})
@@ -212,11 +208,11 @@ Comment.create!({"id"=>1, "user_id"=>1, "formula_id"=>1, "content"=>"Fresh rose 
 Comment.create!({"id"=>2, "user_id"=>2, "formula_id"=>1, "content"=>"Awesome! Thanks for sharing!", "created_at"=>"Wed, 11 Apr 2018 19:01:36 UTC +00:00", "updated_at"=>"Wed, 11 Apr 2018 19:01:36 UTC +00:00"})
 Comment.create!({"id"=>3, "user_id"=>3, "formula_id"=>1, "content"=>"Great recipe!", "created_at"=>"Wed, 11 Apr 2018 19:08:19 UTC +00:00", "updated_at"=>"Wed, 11 Apr 2018 19:08:19 UTC +00:00"})
 Comment.create!({"id"=>4, "user_id"=>9, "formula_id"=>3, "content"=>"This is my favorite recipe for lotion bars! I added lavender oil for scent and love it!", "created_at"=>"Wed, 11 Apr 2018 19:11:50 UTC +00:00", "updated_at"=>"Wed, 11 Apr 2018 19:11:50 UTC +00:00"})
-Comment.create!({"id"=>131, "user_id"=>9, "formula_id"=>23, "content"=>"thanks for sharing! ", "created_at"=>"Sat, 14 Apr 2018 20:59:11 UTC +00:00", "updated_at"=>"Sat, 14 Apr 2018 20:59:11 UTC +00:00"})
+Comment.create!({"id"=>131, "user_id"=>6, "formula_id"=>23, "content"=>"thanks for sharing! ", "created_at"=>"Sat, 14 Apr 2018 20:59:11 UTC +00:00", "updated_at"=>"Sat, 14 Apr 2018 20:59:11 UTC +00:00"})
 Comment.create!({"id"=>135, "user_id"=>5, "formula_id"=>1, "content"=>"This is great for calming irritated skin! ", "created_at"=>"Sat, 14 Apr 2018 21:23:53 UTC +00:00", "updated_at"=>"Sat, 14 Apr 2018 21:23:53 UTC +00:00"})
 Comment.create!({"id"=>138, "user_id"=>4, "formula_id"=>4, "content"=>"This is great! I use it right out of the shower and my skin feels amazing.", "created_at"=>"Thu, 19 Apr 2018 04:08:13 UTC +00:00", "updated_at"=>"Thu, 19 Apr 2018 04:08:13 UTC +00:00"})
 Comment.create!({"id"=>139, "user_id"=>3, "formula_id"=>4, "content"=>"It's easy to make too!", "created_at"=>"Thu, 19 Apr 2018 04:08:29 UTC +00:00", "updated_at"=>"Thu, 19 Apr 2018 04:08:29 UTC +00:00"})
-Comment.create!({"id"=>140, "user_id"=>9, "formula_id"=>23, "content"=>"hey this great! thanks for sharing!", "created_at"=>"Sat, 21 Apr 2018 23:53:44 UTC +00:00", "updated_at"=>"Sat, 21 Apr 2018 23:53:44 UTC +00:00"})
+Comment.create!({"id"=>140, "user_id"=>7, "formula_id"=>23, "content"=>"hey this great! thanks for sharing!", "created_at"=>"Sat, 21 Apr 2018 23:53:44 UTC +00:00", "updated_at"=>"Sat, 21 Apr 2018 23:53:44 UTC +00:00"})
 Comment.create!({"id"=>143, "user_id"=>1, "formula_id"=>23, "content"=>"Lavender oil works great with this recipe! ", "created_at"=>"Tue, 24 Apr 2018 05:36:07 UTC +00:00", "updated_at"=>"Tue, 24 Apr 2018 05:36:07 UTC +00:00"})
 Comment.create!({"id"=>144, "user_id"=>2, "formula_id"=>23, "content"=>"This is a great formula! thanks for sharing!!", "created_at"=>"Tue, 24 Apr 2018 20:51:30 UTC +00:00", "updated_at"=>"Tue, 24 Apr 2018 20:51:30 UTC +00:00"})
 Comment.create!({"id"=>152, "user_id"=>18, "formula_id"=>23, "content"=>"This shampoo makes my hair feel very smooth! Thanks for sharing.", "created_at"=>"Wed, 25 Apr 2018 02:15:28 UTC +00:00", "updated_at"=>"Wed, 25 Apr 2018 02:15:28 UTC +00:00"})
