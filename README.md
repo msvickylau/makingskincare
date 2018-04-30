@@ -18,3 +18,7 @@ Committing code is easy:
 
 ## License
 [makingskincare](https://github.com/vlaunyc/makingskincare/blob/master/LICENSE) is licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+## More Info
+Watch my demo [here](https://youtu.be/sVbDJ5y8Q-M).
+Read my blog post [here](http://vicky-lau.com/making_skincare_-_my_rails_app_now_with_a_jquery_front_end).
