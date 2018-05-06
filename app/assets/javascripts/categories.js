@@ -51,17 +51,17 @@ function loadCategory(data) {
   sortFormulaByDate(formulas)
 
   // iterate over each formula in the formula_list JSON object, and then insert back into categoryFormulaPage div.
-  $.each (formulas, function(formula) {
+  $.each (formulas, function(index, formula) {
     categoryFormulaPage.append(
       "<div class='categoryFormula col-lg-3'>" +
         "<div class='card border-light' style='max-width: 15rem; min-width: 15rem;'>" +
           "<div class='card-body'>" +
-          "<h5 class='formulaTitle'><a href='/formulas/" + (formulas[formula].id) + "'>" + (formulas[formula].title) + "</a> </h5>" +
-          "<h6 class='formulaUserName'>By: " + (formulas[formula].user.username) + "</h6>" +
+          "<h5 class='formulaTitle'><a href='/formulas/" + formula.id + "'>" + formula.title + "</a> </h5>" +
+          "<h6 class='formulaUserName'>By: " + formula.user.username + "</h6>" +
 
           "<span class='formulaImage'>" +
-            "<a href='/formulas/" + (formulas[formula].id) +"'>" +
-              "<img src='"+ (formulas[formula].image_url)+ "' alt='" +(formulas[formula].image_url)+"'>" +
+            "<a href='/formulas/" + formula.id +"'>" +
+              "<img src='"+ formula.image_url + "' alt='" + formula.image_url+"'>" +
             "</a>" +
           "</span>" +
         
