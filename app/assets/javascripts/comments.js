@@ -11,7 +11,7 @@ $(function(){
       data: $(this).serialize(), // takes our form data and serializes it
       success: function(response) {
         // on success, update the DOM with response in the form of data
-        var comment = new Comment(response);
+        let comment = new Comment(response);
         comment.renderComments();
         $(".commentBox").val("");
       }
@@ -29,17 +29,18 @@ function Comment(data) {
 
 // this method appends html to the div id="submitted-comments"
 Comment.prototype.renderComments = function() {
-  var html = "" ;
+  let html = "" ;
   html += 
-  "<br>" +
-  "<div class=\'card' id=\'comment-" + this.id + "'>" +
-    "<div class=\'card-body'>" +
-      "<h6 class=\'card-subtitle mb-2 text-muted'>Posted by: "  + 
-        "<a href='/users/" + this.user.id + "'>" + this.user.username + "</a>" + 
-      "</h6>" + 
-      "<p class=\'card-text'>" + this.content + "</p>"
-    "</div>"
-  "</div>";
+  `<br>
+    <div class=\'card' id=\'comment-${this.id}'>
+    <div class=\'card-body'>
+      <h6 class=\'card-subtitle mb-2 text-muted'>Posted by: 
+        <a href='/users/${this.user.id}'>${this.user.username}</a>
+      </h6>
+      <p class=\'card-text'>${this.content}</p>
+    </div>
+  </div>`;
 
   $("#submitted-comments").append(html);
 };
+

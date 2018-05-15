@@ -4,7 +4,7 @@
 $(function(){
   $(".js-previous-category").on("click", function (event) {
     // get the id from the data-id attribute (current id) assign it to id
-    var id = $(".js-previous-category").attr("data-id")
+    let id = $(".js-previous-category").attr("data-id")
     // get previous category
     $.get("/categories/" + id + "/previous", function(data) {
       // pass data to loadCategory
@@ -17,7 +17,7 @@ $(function(){
 $(function(){
   $(".js-next-category").on("click", function (event) {
     // get the id from the data-id attribute (current id) assign it to id
-    var id = $(".js-next-category").attr("data-id")
+    let id = $(".js-next-category").attr("data-id")
     // get next category
     $.get("/categories/" + id + "/next", function(data) {
       // pass data to loadCategory
@@ -39,13 +39,13 @@ function loadCategory(data) {
   $(".categoryName").text(data["name"]);
 
   // div where formulas go
-  var categoryFormulaPage = $("#categoryFormulaPage") 
+  let categoryFormulaPage = $("#categoryFormulaPage") 
 
   // empty the div
   categoryFormulaPage.empty()
 
   // array of all formulas in the category
-  var formulas = (data["formula_list"]) 
+  let formulas = (data["formula_list"]) 
 
   // most recent created_at date is sorted first. (defined in applications.js)
   sortFormulaByDate(formulas)
@@ -53,21 +53,21 @@ function loadCategory(data) {
   // iterate over each formula in the formula_list JSON object, and then insert back into categoryFormulaPage div.
   $.each (formulas, function(index, formula) {
     categoryFormulaPage.append(
-      "<div class='categoryFormula col-lg-3'>" +
-        "<div class='card border-light' style='max-width: 15rem; min-width: 15rem;'>" +
-          "<div class='card-body'>" +
-          "<h5 class='formulaTitle'><a href='/formulas/" + formula.id + "'>" + formula.title + "</a> </h5>" +
-          "<h6 class='formulaUserName'>By: " + formula.user.username + "</h6>" +
+      `<div class='categoryFormula col-lg-3'>
+        <div class='card border-light' style='max-width: 15rem; min-width: 15rem;'>
+          <div class='card-body'>
+          <h5 class='formulaTitle'><a href='/formulas/${formula.id}'>${formula.title}</a> </h5>
+          <h6 class='formulaUserName'>By: ${formula.user.username}</h6>
 
-          "<span class='formulaImage'>" +
-            "<a href='/formulas/" + formula.id +"'>" +
-              "<img src='"+ formula.image_url + "' alt='" + formula.image_url+"'>" +
-            "</a>" +
-          "</span>" +
+          <span class='formulaImage'>
+            <a href='/formulas/${formula.id}'>
+              <img src='${formula.image_url}' alt='${formula.image_file_name}'>
+            </a>
+          </span>
         
-          "</div>" +
-        "</div><br>" +
-      "</div>"
+          </div>
+        </div><br>
+      </div>`
     )
   })
 }

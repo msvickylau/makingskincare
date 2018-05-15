@@ -5,7 +5,7 @@ $(function() {
   // in the formula div, when you click on .js-more ("see description" link)
   $(".formula").on('click', '.js-more', function(event) {
     // this.dataset.id; grabs data-id of 'see descriptions' link, which is === formula.id
-    var id = this.dataset.id;
+    let id = this.dataset.id;
 
     $.get("/formulas/" + id + ".json", function(data) {
       // replace div of id="description-#", "see descriptions" link with formula's description
@@ -23,10 +23,10 @@ $(document).ready(function(){
   $('#addNewIngredient').click(function(){
 
     // create date object
-    var date = new Date();
+    let date = new Date();
 
     // get number of milliseconds since midnight Jan 1, 1970, and use it for ingredients key 
-    var mSec = date.getTime();
+    let mSec = date.getTime();
 
     // Replace 0 with milliseconds 
     idAttributeIngredient = "formula_ingredients_attributes_0_name".replace("0", mSec);
@@ -34,14 +34,14 @@ $(document).ready(function(){
 
     // append input feild with unique ingredient attributes in div ingredientsSet
     $('div#ingredientsSet').append(
-      "<div class='ingredientsForm input-group mb-3'>" +
-        "<input class='form-control' type='text' name='"+ nameAttributeIngredient+"' id='"+idAttributeIngredient+"'>" +
-        "<div class='input-group-append'>" +
-          "<span class='input-group-text'>" +
-            "<button type='button' class='removeIngredient close'> ×</button>" +
-          "</span>" +
-        "</div>" +
-      "</div>"
+      `<div class='ingredientsForm input-group mb-3'>
+        <input class='form-control' type='text' name='${nameAttributeIngredient}' id='${idAttributeIngredient}'>
+        <div class='input-group-append'>
+          <span class='input-group-text'>
+            <button type='button' class='removeIngredient close'> ×</button>
+          </span>
+        </div>
+      </div>`
     );
   });
   
