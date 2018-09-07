@@ -17,7 +17,7 @@ $(function(){
 $(function(){
   $(".js-next-skinconcern").on("click", function (event) {
     // get the id from the data-id attribute (current id) assign it to id
-    let id = $(".js-next-skinconcern").attr("data-id")
+    const id = $(".js-next-skinconcern").attr("data-id")
     // get next skinconcern
     $.get("/skinconcerns/" + id + "/next", function(data) {
       // pass data to loadSkinconcern
