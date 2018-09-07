@@ -2,6 +2,8 @@
 
 Making Skincare is a web application created for the DIY natural skincare community. It is a rails web application where users can browse formulas created by members, or create an account and share their own formulas. Formulas can be sorted by categories and skin concerns.
 
+![makingskincare_screenshots](https://user-images.githubusercontent.com/24817278/44478202-ee23af80-a60a-11e8-8feb-a31d6f7db888.jpg)
+
 ## Usage
 To use this app, just clone, run `bundle install`, `rake db:migrate`, `rake db:seed` and then run `rails s`.
 Everything should be set up.
