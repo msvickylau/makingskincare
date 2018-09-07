@@ -6,7 +6,7 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
-    <%= analytics_init if Rails.env.production? %>
+    <!-- <%= analytics_init if Rails.env.production? %> -->
     <meta charset="utf-8">
 
     <%= render 'layouts/bootstrapcdn' %>
@@ -14,7 +14,7 @@
 
   <body>
     <%= render 'layouts/navbar' %>
-    
+
 
     <% if !!flash[:message] %>
       <div class="alert alert-dismissible alert-primary" style="max-width: 25rem; min-width: 20rem; position: fixed; right:2px; top:62px; z-index: 99">
@@ -26,6 +26,6 @@
     <div class ="container">
       <%= yield %>
     </div>
-    
+
   </body>
 </html>
