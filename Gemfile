@@ -28,7 +28,5 @@ gem 'omniauth-facebook'
 # Easy upload management for ActiveRecord
 gem 'paperclip', '~> 5.1'
 
-gem 'sqlite3', group: :development
-
-gem 'pg', '0.18.1', group: :production
+gem 'pg'
 gem 'rails_12factor', group: :production
