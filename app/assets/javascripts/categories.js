@@ -8,7 +8,7 @@ $(function(){
     // get previous category
     $.get("/categories/" + id + "/previous", function(data) {
       // pass data to loadCategory
-      loadCategory(data) 
+      loadCategory(data)
     })
     event.preventDefault();
   })
@@ -39,13 +39,13 @@ function loadCategory(data) {
   $(".categoryName").text(data["name"]);
 
   // div where formulas go
-  let categoryFormulaPage = $("#categoryFormulaPage") 
+  let categoryFormulaPage = $("#categoryFormulaPage")
 
   // empty the div
   categoryFormulaPage.empty()
 
   // array of all formulas in the category
-  let formulas = (data["formula_list"]) 
+  let formulas = (data["formula_list"])
 
   // most recent created_at date is sorted first. (defined in applications.js)
   sortFormulaByDate(formulas)
@@ -53,22 +53,19 @@ function loadCategory(data) {
   // iterate over each formula in the formula_list JSON object, and then insert back into categoryFormulaPage div.
   $.each (formulas, function(index, formula) {
     categoryFormulaPage.append(
-      `<div class='categoryFormula col-lg-3'>
-        <div class='card border-light' style='max-width: 15rem; min-width: 15rem;'>
-          <div class='card-body'>
-          <h5 class='formulaTitle'><a href='/formulas/${formula.id}'>${formula.title}</a> </h5>
-          <h6 class='formulaUserName'>By: ${formula.user.username}</h6>
+      `<div class='card border-light' style='max-width: 15rem; min-width: 15rem;  margin: 1rem;'>
+        <div class='card-body'>
+        <h5 class='formulaTitle'><a href='/formulas/${formula.id}'>${formula.title}</a> </h5>
+        <h6 class='formulaUserName'>By: ${formula.user.username}</h6>
 
-          <span class='formulaImage'>
-            <a href='/formulas/${formula.id}'>
-              <img src='${formula.image_url}' alt='${formula.image_file_name}'>
-            </a>
-          </span>
-        
-          </div>
-        </div><br>
+        <span class='formulaImage'>
+          <a href='/formulas/${formula.id}'>
+            <img src='${formula.image_url}' alt='${formula.image_file_name}'>
+          </a>
+        </span>
+
+        </div>
       </div>`
     )
   })
 }
-

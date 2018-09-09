@@ -15,27 +15,27 @@
 
 <div class="row" id="skinconcernFormulaPage">
   <% @formulas.each do |formula| %>
-    <div class="skinconcernFormula col-lg-3">
-      <div class="card border-light" style="max-width: 15rem; min-width: 15rem;">
-        <div class="skinconcernFormula card-body">
-          <h5 class="formulaTitle"><%= link_to formula.title, formula_path(formula)%> </h5>
+    <div class="card border-light" style="max-width: 15rem; min-width: 15rem; margin: 1rem;">
 
-          <% if formula.user != nil %>
-              <h6 class="formulaUserName">By: <%= formula.user.username %> </h6>
-            <% else %>
-              <h6>By: anonymous </h6>
+      <div class="skinconcernFormula card-body">
+        <h5 class="formulaTitle"><%= link_to formula.title, formula_path(formula)%> </h5>
+
+        <% if formula.user != nil %>
+            <h6 class="formulaUserName">By: <%= formula.user.username %> </h6>
+          <% else %>
+            <h6>By: anonymous </h6>
+        <% end %>
+
+        <span class="formulaImage">
+          <%= link_to formula_path(formula) do %>
+            <%= image_tag formula.image.url(:medium) %>
           <% end %>
+        </span>
 
-          <span class="formulaImage">
-            <%= link_to formula_path(formula) do %>
-              <%= image_tag formula.image.url(:medium) %>
-            <% end %>
-          </span>
-          
-        </div>
-      </div><br>
+      </div>
+
     </div>
   <%end%>
-</div> 
+</div>
 
 <style>body {background-color: #e7e7e7;}</style>

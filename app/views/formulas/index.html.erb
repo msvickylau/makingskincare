@@ -2,33 +2,30 @@
 
 <div class="row" id="formulasIndex">
   <% @formulas.each do |formula| %>
-    <div class="formula col-lg-3">
-      <div class="card border-light" style="max-width: 15rem; min-width: 15rem;">
-        <div class="formula card-body">
-          <h5 class="formulaTitle"><%= link_to formula.title, formula_path(formula)%> </h5>
+    <div class="card border-light" style="max-width: 15rem; min-width: 15rem; margin: 1rem;">
+      <div class="formula card-body">
+        <h5 class="formulaTitle"><%= link_to formula.title, formula_path(formula)%> </h5>
 
-          <% if formula.user != nil %>
-              <h6 class="formulaUserName">By: <%= formula.user.username %> </h6>
-            <% else %>
-              <h6>By: anonymous </h6>
+        <% if formula.user != nil %>
+            <h6 class="formulaUserName">By: <%= formula.user.username %> </h6>
+          <% else %>
+            <h6>By: anonymous </h6>
+        <% end %>
+
+        <span class="formulaImage">
+          <%= link_to formula_path(formula) do %>
+            <%= image_tag formula.image.url(:medium) %>
           <% end %>
+        </span>
 
-          <span class="formulaImage">
-            <%= link_to formula_path(formula) do %>
-              <%= image_tag formula.image.url(:medium) %>
-            <% end %>
-          </span>
+        <p><small> Created on <%=time_created(formula)%> </small></p>
 
-          <p><small> Created on <%=time_created(formula)%> </small></p>
-
-          <div id="description-<%= formula.id %>" class="text-muted"><%=formula.description.truncate(0)%>
-            <a href='#' data-id="<%= formula.id %>" class='js-more'>see description</a>
-          </div>
-
+        <div id="description-<%= formula.id %>" class="text-muted"><%=formula.description.truncate(0)%>
+          <a href='#' data-id="<%= formula.id %>" class='js-more'>see description</a>
         </div>
-      </div><br>
+      </div>
     </div>
   <%end%>
-</div> 
+</div>
 
 <style>body {background-color: #e7e7e7;}</style>

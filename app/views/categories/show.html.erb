@@ -8,8 +8,8 @@
 
 <div class="row" id="categoryFormulaPage">
   <% @formulas.each do |formula| %>
-    <div class="categoryFormula col-lg-3">
-      <div class="card border-light" style="max-width: 15rem; min-width: 15rem;">
+    <div class="card border-light" style="max-width: 15rem; min-width: 15rem; margin: 1rem;">
+
         <div class="card-body">
           <h5><%= link_to formula.title, formula_path(formula)%> </h5>
 
@@ -24,9 +24,9 @@
               <%= image_tag formula.image.url(:medium) %>
             <% end %>
           </span>
-          
+
         </div>
-      </div><br>
+
     </div>
   <%end%>
 </div> 

@@ -36,7 +36,7 @@ function loadSkinconcern(data) {
   $(".js-previous-skinconcern").attr("data-id",data["id"]);
 
   // set skinconcernTitle to its div and then empty current on page.
-  let skinconcernTitle = $("#skinconcernTitle") 
+  let skinconcernTitle = $("#skinconcernTitle")
   skinconcernTitle.empty()
 
   // header
@@ -57,27 +57,25 @@ function loadSkinconcern(data) {
 
   // array of all formulas in the skinconcern
   let formulas = (data["formula_list"])
-  
+
   // most recent created_at date is sorted first. (defined in applications.js)
   sortFormulaByDate(formulas)
 
   //iterate over each formula in the formula_list JSON object, and then insert back into skinconcernFormulaPage div.
-  $.each (formulas, function(index, formula) {    
+  $.each (formulas, function(index, formula) {
     skinconcernFormulaPage.append(
-      `<div class='skinconcernFormula col-lg-3'>
-        <div class='card border-light' style='max-width: 15rem; min-width: 15rem;'>
-          <div class='card-body'>
-          <h5 class='formulaTitle'><a href='/formulas/${formula.id}'>${formula.title}</a> </h5>
-          <h6 class='formulaUserName'>By: ${formula.user.username}</h6>
+      `<div class='card border-light' style='max-width: 15rem; min-width: 15rem;  margin: 1rem;'>
+        <div class='skinconcernFormula card-body'>
+        <h5 class='formulaTitle'><a href='/formulas/${formula.id}'>${formula.title}</a> </h5>
+        <h6 class='formulaUserName'>By: ${formula.user.username}</h6>
 
-          <span class='formulaImage'>
-            <a href='/formulas/${formula.id}'>
-              <img src='${formula.image_url}' alt='${formula.image_file_name}'>
-            </a>
-          </span>
-        
-          </div>
-        </div><br>
+        <span class='formulaImage'>
+          <a href='/formulas/${formula.id}'>
+            <img src='${formula.image_url}' alt='${formula.image_file_name}'>
+          </a>
+        </span>
+
+        </div>
       </div>`
     )
   })

@@ -1,44 +1,41 @@
 <div class="row">
+  <div class="col-sm-4">
 
-  <div class="col-sm-5">
     <h5>View Formulas by:</h5>
     <%= render 'nav_tabs' %>
-   
     <div id="myTabContent" class="tab-content">
-
       <div class="tab-pane fade active show" id="first"><br>
         <h6>All</h6>
-        <%= render partial: 'skinconcerns/skinconcern', collection: @skinconcerns, as: :x %> 
-      </div><!-- end of tab -->
-    
+        <%= render partial: 'skinconcerns/skinconcern', collection: @skinconcerns, as: :x %>
+      </div>
       <div class="tab-pane fade" id="second"><br>
         <h6>Face</h6>
         <%= render partial: 'categories/category', collection: @face_categories, as: :x %> <br>
-
         <h6>Body</h6>
         <%= render partial: 'categories/category', collection: @body_categories, as: :x %> <br>
-
         <h6>Hair</h6>
-        <%= render partial: 'categories/category', collection: @hair_categories, as: :x %> 
-      </div><!-- end of tab -->
-
+        <%= render partial: 'categories/category', collection: @hair_categories, as: :x %>
+      </div>
       <div class="tab-pane fade" id="third"><br>
         <div class="list-group">
           <h6><a href="/formulas">Browse All</a></h6>
           <% @formulas.each do |formula| %>
             <a><%=link_to formula.title, formula_path(formula), :class => "list-group-item list-group-item-action"%></a>
-          <% end %> 
+          <% end %>
         </div>
-      </div><!-- end of tab -->
-    </div><!-- end of all tabs  -->
-  </div><!-- end of col-5 -->
+      </div>
+    </div>
+  </div>
 
-  <div class="col-sm-7"> 
-    <%= render 'blockquote' %><br>
-     
+  <div class="col-sm-8">
+    <%= render 'blockquote' %>
+    <br>
     <h4>Check out our newest formulas!</h4>
-    <%= render partial: 'formulas/formula_info', collection: Formula.last_five_formulas, as: :x %>
-    
-    <img style="width: 100%;" src="https://cranberrylane.com/pub/media/home/classes.png"><br><br>
-  </div><!-- end of col-7 -->
-</div> <!-- end of row -->
+    <%= render partial: 'formulas/formula_info', collection: Formula.last_five_formulas, as: :x %><br><br>
+  </div>
+
+</div>
+
+<div>
+  <img style="width: 100%;" src="https://cranberrylane.com/pub/media/home/classes.png"><br><br>
+</div>

@@ -1,38 +1,33 @@
 <%= render "devise/shared/view" %>
-<div class="row">
-  <div class="col-sm-1"></div> 
-  <div class="col-sm-5"> 
-    <div class="card border-light mb-3">
-      <div class="card-body">
 
-        <h2>Log in</h2>
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="field">
-            <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control" %>
-          </div>
+<div class="card border-light mb-3" style="width: 500px; position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);
+">
+  <div class="card-body">
 
-          <div class="field">
-            <%= f.label :password %><br />
-            <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
-          </div>
+    <h2>Log in</h2>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control" %>
+      </div>
 
-          <% if devise_mapping.rememberable? -%>
-            <div class="field">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me %>
-            </div>
-          <% end %>
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+      </div>
 
-          <div class="actions">
-            <%= f.submit "Log in",:class => 'btn btn-primary' %>
-          </div>
-        <% end %><!-- of form -->
-        <%= render "devise/shared/links" %>
+      <% if devise_mapping.rememberable? -%>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
 
-      </div><!-- end of card-body -->
-    </div><!-- end of card border -->
-  </div><!--end of col -->
-</div><!--end of row -->
+      <div class="actions">
+        <%= f.submit "Log in",:class => 'btn btn-primary' %>
+      </div>
+    <% end %><!-- of form -->
+    <%= render "devise/shared/links" %>
 
-
+  </div><!-- end of card-body -->
+</div><!-- end of card border -->
