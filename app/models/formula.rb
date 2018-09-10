@@ -4,14 +4,17 @@ class Formula < ActiveRecord::Base
   has_many :ingredients
   has_many :comments
   accepts_nested_attributes_for :ingredients, :reject_if => proc { |attributes| attributes['name'].blank? }, :allow_destroy => true
-  
+
   has_many :formula_skinconcerns
   has_many :skinconcerns, :through => :formula_skinconcerns
-  
+
   validates :title, :description, :category, :ingredients, :direction, :image, presence: true
 
   #paperclip, to add image file
-  has_attached_file :image, styles: { :medium => "200x200#"}
+  has_attached_file :image,
+    :storage => :cloudinary,
+    :path => ':id/:style/:filename',
+    :styles => { :medium => "200x200#" }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   def image_url

@@ -23,10 +23,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'dotenv-rails', groups: [:development, :test, :production]
 gem 'devise', '~> 4.4.3'
-gem 'omniauth-facebook'
+# gem 'omniauth-facebook'
 
 # Easy upload management for ActiveRecord
-gem 'paperclip', '~> 5.1'
+gem 'paperclip-cloudinary'
 
 gem 'pg'
 gem 'rails_12factor', group: :production
