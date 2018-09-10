@@ -1,6 +1,37 @@
 # This file should contain all the record creation needed to seed the database with its default values and examples.
 # The data can then be loaded with the rails db:seed command
 
+Category.create!({"part"=>"face", "name"=>"Cleanser"})
+Category.create!({"part"=>"face", "name"=>"Toner"})
+Category.create!({"part"=>"face", "name"=>"Makeup Remover"})
+Category.create!({"part"=>"face", "name"=>"Face Mositurizer"})
+Category.create!({"part"=>"face", "name"=>"Face Serum"})
+Category.create!({"part"=>"face", "name"=>"Face Scrub/Exfoliant"})
+Category.create!({"part"=>"face", "name"=>"Face Mask"})
+Category.create!({"part"=>"hair", "name"=>"Shampoo"})
+Category.create!({"part"=>"hair", "name"=>"Conditioner"})
+Category.create!({"part"=>"hair", "name"=>"Styling"})
+Category.create!({"part"=>"body", "name"=>"Body Wash"})
+Category.create!({"part"=>"body", "name"=>"Body Scrubs & Exfoliants"})
+Category.create!({"part"=>"body", "name"=>"Body Mositurizer"})
+Category.create!({"part"=>"body", "name"=>"Sunscreen & After Sun Care"})
+Category.create!({"part"=>"body", "name"=>"Deodorant & Antiperspirant"})
+
+Skinconcern.create!({"name"=>""})
+Skinconcern.create!({"name"=>"acne & blemishes"})
+Skinconcern.create!({"name"=>"anti-aging"})
+Skinconcern.create!({"name"=>"dark spots"})
+Skinconcern.create!({"name"=>"dryness"})
+Skinconcern.create!({"name"=>"dullness"})
+Skinconcern.create!({"name"=>"pore"})
+Skinconcern.create!({"name"=>"sun protection"})
+Skinconcern.create!({"name"=>"oily skin"})
+Skinconcern.create!({"name"=>"redness"})
+Skinconcern.create!({"name"=>"cellulite"})
+
+=begin
+
+
 Category.create!({"id"=>1, "part"=>"face", "name"=>"Cleanser"})
 Category.create!({"id"=>2, "part"=>"face", "name"=>"Toner"})
 Category.create!({"id"=>3, "part"=>"face", "name"=>"Makeup Remover"})
@@ -216,3 +247,5 @@ Comment.create!({"id"=>140, "user_id"=>7, "formula_id"=>23, "content"=>"hey this
 Comment.create!({"id"=>143, "user_id"=>1, "formula_id"=>23, "content"=>"Lavender oil works great with this recipe! ", "created_at"=>"Tue, 24 Apr 2018 05:36:07 UTC +00:00", "updated_at"=>"Tue, 24 Apr 2018 05:36:07 UTC +00:00"})
 Comment.create!({"id"=>144, "user_id"=>2, "formula_id"=>23, "content"=>"This is a great formula! thanks for sharing!!", "created_at"=>"Tue, 24 Apr 2018 20:51:30 UTC +00:00", "updated_at"=>"Tue, 24 Apr 2018 20:51:30 UTC +00:00"})
 Comment.create!({"id"=>152, "user_id"=>18, "formula_id"=>23, "content"=>"This shampoo makes my hair feel very smooth! Thanks for sharing.", "created_at"=>"Wed, 25 Apr 2018 02:15:28 UTC +00:00", "updated_at"=>"Wed, 25 Apr 2018 02:15:28 UTC +00:00"})
+
+=end
