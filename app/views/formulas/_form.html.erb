@@ -15,7 +15,7 @@
 
 <div id="ingredientsSet">
   <h5>Ingredients: <small>(Please write amount and ingredient on each line)</small></h5>
-  
+
   <%= f.fields_for :ingredients do |ingredient_fields| %>
     <div class="ingredientsForm input-group mb-3">
       <%= ingredient_fields.text_field :name, :class => "form-control"%>
@@ -34,7 +34,7 @@
 <div class="field">
   <h4>Directions:</h4>
   <%= f.text_area :direction, cols: 50, rows: 6, :class => "form-control"%>
-</div><br> 
+</div><br>
 
 <div class="field">
   <h5>Skin Concerns: (select all that apply)</h5>
@@ -52,8 +52,8 @@
 </div><br>
 
 <div class="field">
-  <h5>Image:</h5> 
-    <% if @formula.image.exists? %>
+  <h5>Image:</h5>
+    <% if @formula.image_file_name != nil %>
       <%= image_tag @formula.image.url(:medium, class: "formula_image") %><br>
       <p>Choose another image to replace existing one:</p>
     <% end %>

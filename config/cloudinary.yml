@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: di9wmi5ud
+  api_key: <%= ENV['CLOUD_API_KEY'] %>
+  api_secret: <%= ENV['CLOUD_API_SECRET'] %>
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: di9wmi5ud
+  api_key: <%= ENV['CLOUD_API_KEY'] %>
+  api_secret: <%= ENV['CLOUD_API_SECRET'] %>
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: di9wmi5ud
+  api_key: <%= ENV['CLOUD_API_KEY'] %>
+  api_secret: <%= ENV['CLOUD_API_SECRET'] %>
+  enhance_image_tag: true
+  static_image_support: false

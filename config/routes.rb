@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_for :users
 
   resources :skinconcerns, only: [:show, :index]
   resources :categories, only: [:show, :index]
@@ -19,7 +19,5 @@ Rails.application.routes.draw do
 
   get '/categories/:id/next', to: 'categories#next_category'
   get '/categories/:id/previous', to: 'categories#previous_category'
-  
+
 end
-
-

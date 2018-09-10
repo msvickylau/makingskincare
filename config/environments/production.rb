@@ -81,6 +81,8 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
+  config.paperclip_defaults = { storage: :cloudinary, path: 'public/images/:class/:attachment/:id/:style/:filename.:extension', url: '/images/:class/:attachment/:id/:style/:filename.:extension', cloudinary_credentials: Rails.root.join("config/cloudinary.yml"), secure: true, }
+
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
