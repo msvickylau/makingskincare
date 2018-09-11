@@ -10,6 +10,7 @@ class SkinconcernSerializer < ActiveModel::Serializer
           id: formula.user_id,
           username: User.find(formula.user_id).username
         },
+        skinconcern_ids: formula.skinconcerns.ids,
         created_at: formula.created_at,
         image_file_name: formula.image_file_name,
         image_url: formula.image_url

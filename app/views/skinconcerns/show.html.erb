@@ -3,7 +3,7 @@
 
 <div id="skinconcernTitle">
   <% if @skinconcern.name == "" %>
-    <h4 style="text-align: center;">All formulas:</h4>
+    <h4 style="text-align: center;">All formulas without a skinconcern tag:</h4>
   <% else %>
     <h2 style="text-align: center;">All formulas for skin concern:</h2>
     <h1 style="text-align: center;"><large class="skinconcernName text-primary"><%=@skinconcern.name%></large></h1>
@@ -12,30 +12,54 @@
 
 <br>
 
+<% if @skinconcern.name == "" %>
+  <div class="row" id="skinconcernFormulaPage">
+    <% @formulas_with_no_skinconcern_tags.each do |formula| %>
+      <div class="card border-light" style="max-width: 15rem; min-width: 15rem; margin: 1rem;">
 
-<div class="row" id="skinconcernFormulaPage">
-  <% @formulas.each do |formula| %>
-    <div class="card border-light" style="max-width: 15rem; min-width: 15rem; margin: 1rem;">
+        <div class="skinconcernFormula card-body">
+          <h5 class="formulaTitle"><%= link_to formula.title, formula_path(formula)%> </h5>
 
-      <div class="skinconcernFormula card-body">
-        <h5 class="formulaTitle"><%= link_to formula.title, formula_path(formula)%> </h5>
-
-        <% if formula.user != nil %>
-            <h6 class="formulaUserName">By: <%= formula.user.username %> </h6>
-          <% else %>
-            <h6>By: anonymous </h6>
-        <% end %>
-
-        <span class="formulaImage">
-          <%= link_to formula_path(formula) do %>
-            <%= image_tag formula.image.url(:medium) %>
+          <% if formula.user != nil %>
+              <h6 class="formulaUserName">By: <%= formula.user.username %> </h6>
+            <% else %>
+              <h6>By: anonymous </h6>
           <% end %>
-        </span>
 
+          <span class="formulaImage">
+            <%= link_to formula_path(formula) do %>
+              <%= image_tag formula.image.url(:medium) %>
+            <% end %>
+          </span>
+        </div>
       </div>
+    <%end%>
+  </div>
+<% else %>
+  <div class="row" id="skinconcernFormulaPage">
+    <% @formulas.each do |formula| %>
+      <div class="card border-light" style="max-width: 15rem; min-width: 15rem; margin: 1rem;">
 
-    </div>
-  <%end%>
-</div>
+        <div class="skinconcernFormula card-body">
+          <h5 class="formulaTitle"><%= link_to formula.title, formula_path(formula)%> </h5>
+
+          <% if formula.user != nil %>
+              <h6 class="formulaUserName">By: <%= formula.user.username %> </h6>
+            <% else %>
+              <h6>By: anonymous </h6>
+          <% end %>
+
+          <span class="formulaImage">
+            <%= link_to formula_path(formula) do %>
+              <%= image_tag formula.image.url(:medium) %>
+            <% end %>
+          </span>
+        </div>
+      </div>
+    <%end%>
+  </div>
+<% end %>
+
+
 
 <style>body {background-color: #e7e7e7;}</style>

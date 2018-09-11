@@ -6,6 +6,7 @@ class SkinconcernsController < ApplicationController
   def show
     @skinconcern = Skinconcern.find(params[:id])
     @formulas = @skinconcern.formulas.order("created_at DESC")
+    @formulas_with_no_skinconcern_tags = Formula.all.select{ |formula| formula.skinconcerns.count == 1 }
 
     respond_to do |format|
       format.html { render :show }
