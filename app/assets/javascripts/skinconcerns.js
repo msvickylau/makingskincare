@@ -40,8 +40,8 @@ function loadSkinconcern(data) {
   skinconcernTitle.empty()
 
   // header
-  if (data.id === 0) { // formulas without a skinconcern tag saves with id of 0
-    skinconcernTitle.append("<h4 style='text-align: center;'>The below formulas don't have a skinconcern tag:</h4>")
+  if (data.id === 1) { // formulas without a skinconcern tag saves with id of 0
+    skinconcernTitle.append("<h4 style='text-align: center;'>All formulas:</h4>")
   } else { // append header with the following skinconcern name
     skinconcernTitle.append(
       "<h2 style='text-align: center;'>All formulas for skin concern:</h2>"+
