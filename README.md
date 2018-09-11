@@ -5,7 +5,7 @@ Making Skincare is a web application created for the DIY natural skincare commun
 ![makingskincare_screenshots](https://user-images.githubusercontent.com/24817278/44478202-ee23af80-a60a-11e8-8feb-a31d6f7db888.jpg)
 
 ## Usage
-Try here: https://makingskincare.herokuapp.com/(https://makingskincare.herokuapp.com/). <br/>
+Try here: [https://makingskincare.herokuapp.com/](https://makingskincare.herokuapp.com/). <br/>
 Log-in:`user@user.com` Password:`user123`
 
 To use this app, just clone, run `bundle install`, `rake db:migrate`, `rake db:seed` and then run `rails s`.
